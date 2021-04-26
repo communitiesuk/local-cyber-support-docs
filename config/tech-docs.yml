@@ -1,0 +1,42 @@
+# Host to use for canonical URL generation (without trailing slash)
+host: https://github.com/communitiesuk/local-cyber-support-docs
+
+# Header-related options
+show_govuk_logo: false
+service_name: MHCLG Technical Documentation Library
+service_link: https://github.com/communitiesuk/local-cyber-support-docs
+phase: Beta
+
+# Links to show on right-hand-side of header
+header_links:
+  Template: https://github.com/alphagov/tech-docs-template
+  Ruby gem: https://github.com/alphagov/tech-docs-gem
+  Support: /support
+footer_links:
+  #Accessibility: /accessibility/
+  
+# Table of contents depth – how many levels to include in the table of contents.
+# If your ToC is too long, reduce this number and we'll only show higher-level
+# headings.
+max_toc_heading_level: 3
+
+# Multi-page options
+multipage_nav: true
+collapsible_nav: true
+
+# Show links to contribute on GitHub
+show_contribution_banner: false
+github_repo: https://github.com/communitiesuk/local-cyber-support-docs
+
+# Enable search
+enable_search: false
+
+# Ownership for page reviews
+default_owner_slack: '#tech-writers'
+owner_slack_workspace: gds
+
+redirects:
+  page-expiry.html: configure_project/page_expiry_and_review/#set-review-date-for-pages
+  search.html: create_project/create_new_project/#enable-search
+  content.html: write_docs/content/#write-your-content
+  create_new_project.html: create_project/create_new_project/#create-a-new-documentation-project
