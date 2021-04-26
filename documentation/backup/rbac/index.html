@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>RBAC least privilege - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbac/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="RBAC least privilege - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbac/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="RBAC least privilege" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbac/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#bring-your-own-device"><span>Bring your own device</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#mfa-best-practice"><span>MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#conditional-access-policies-best-practice"><span>Conditional access policies best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#operating-systems-best-practice"><span>Operating Systems Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas"><span>Open VAS</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-reporting-tool"><span>Active Directory Reporting Tool</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy"><span>Logging Made Easy</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#password-and-best-practice"><span>Password and best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#fine-grained-password-policy"><span>Fine grained password policy</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas"><span>OpenVAS</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#principal-security-concerns"><span>Principal security concerns</span></a>
+  </li>
+</ul>
+</li></ul><ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="rbac-least-privilege">RBAC least privilege</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
+    <embed src="../../../assets/backup/Local Digital CYBER - RBAC-LP Best Practice v1.2.pdf" type="application/pdf" width="100%" height="700">
+        <p><a href="../../../assets/backup/Local Digital CYBER - RBAC-LP Best Practice v1.2.pdf">Download PDF</a></p>
+    </embed>
+</object></p>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>
