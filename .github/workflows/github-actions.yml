@@ -1,0 +1,34 @@
+name: Deploy techdocs
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - run: gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+      - run: \curl -sSL https://rvm.io/mpapis.asc | sudo gpg --import -
+      - run: \curl -sSL https://rvm.io/pkuczynski.asc | sudo gpg --import -
+      - run: \curl -sSL https://get.rvm.io | bash -s stable --ruby
+      - run: source /home/runner/.rvm/scripts/rvm
+      - run: /home/runner/.rvm/bin/rvm install ruby-2.6.1
+      - run: sudo gem install middleman
+      - run: sudo gem install bundler:1.17.3
+      - run: bundle install
+      - run: bundle exec middleman build
+      - run: git config --global user.email "rob@example.com"
+      - run: git config --global user.name "rob"
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PAGES }}
+          publish_dir: ./build
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
