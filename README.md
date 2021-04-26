@@ -11,5 +11,6 @@ For support and/or assistance with this site, please refer queries to the cyber 
 
 [cyber@localdigital.gov.uk](mailto:cyber@localdigital.gov.uk) | [www.localdigital.gov.uk](www.localdigital.gov.uk) | MHCLG Digital blog | MHCLG Digital jobs | @LDgovUK# MHCLG Technical Documentation Library
 
+This project uses the [Tech Docs Template][template], which is a [Middleman template][mmt] that you can use to build technical documentation using a GOV.UK style.
 
 [https://tdt-documentation.london.cloudapps.digital/#technical-documentation-template](https://tdt-documentation.london.cloudapps.digital/#technical-documentation-template)
