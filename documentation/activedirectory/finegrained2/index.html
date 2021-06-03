@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Conditional access policies best practice - MHCLG Technical Documentation Library</title>
+    <title>Fine grained password policy 2 - MHCLG Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/mfa/condaccess/">
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/activedirectory/finegrained2/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Conditional access policies best practice - MHCLG Technical Documentation Library" />
-      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/mfa/condaccess/" />
+      <meta name="twitter:title" content="Fine grained password policy 2 - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/activedirectory/finegrained2/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
-      <meta property="og:title" content="Conditional access policies best practice" />
+      <meta property="og:title" content="Fine grained password policy 2" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/mfa/condaccess/" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/activedirectory/finegrained2/" />
 
     
   </head>
@@ -342,11 +342,173 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="conditional-access-policies-best-practice">Conditional access policies best practice</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - CAP Best Practice v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="fine-grained-password-policy-2">Fine grained password policy 2</h1><h1 id="overview-of-active-directory-best-practice">Overview of active directory best practice</h1><h2 id="password-policies-m365-integration-amp-domain-controller-placement">Password policies, M365 integration &amp; domain controller placement</h2><p>v1.0</p>
+<h2 id="objective">Objective</h2>
+<ul>
+<li>Outline guidance and approach of considerations to be given to key elements of</li>
+</ul>
+<p>active directory.</p>
 
+<ul>
+<li>In particular, this pack covers the areas of password policies, M365 integration</li>
+</ul>
+<p>and domain controller placement.</p>
+<h2 id="concepts-for-account-security-areas-of-security">Concepts for account security - Areas of security</h2><h3 id="key-areas-for-consideration-around-password-policies">Key areas for consideration around password policies</h3>
+<ul>
+<li><p>Password Requirements</p></li>
+<li><p>Fine Grained Policies</p></li>
+<li><p>Password Auditing</p></li>
+</ul>
+<h2 id="microsoft-365-integration">Microsoft 365 Integration</h2>
+<ul>
+<li>Azure AD Connect Software</li>
+</ul>
+<h2 id="active-directory-domain-controller-placement">Active Directory Domain Controller Placement</h2>
+<ul>
+<li><p>Local Redundancy</p></li>
+<li><p>Geographical Redundancy</p></li>
+</ul>
+<h2 id="why-are-these-practices-important">Why are these practices important?</h2><h3 id="password-policies">Password Policies:</h3>
+<ul>
+<li>The more secure the password and the more educated your users, the lower the</li>
+</ul>
+<p>risk of an account breach.</p>
+<h3 id="m365-integration">M365 Integration:</h3>
+<ul>
+<li>By having a second Azure AD Connector ready in staging mode will facilitate a speedy</li>
+</ul>
+<p>recovery from a failure of the primary Connector, and ensure the configuration is</p>
+<p>identical. Microsoft only allow for a single one per domain so staging mode is the best</p>
+<p>that is currently possible.</p>
+<h3 id="domain-controller-placement">Domain Controller Placement:</h3>
+<ul>
+<li>By having Domain Controllers in multiple locations logon speeds and availability will</li>
+</ul>
+<p>improve as well as providing a DR site Directory for aiding in recovery.</p>
+<h2 id="considerations-for-password-policies">Considerations for password policies</h2><p>“But we already have password complexity set, is that not enough ?”</p>
+<p>The simple answer is - probably not</p>
+<h2 id="password-requirements">Password Requirements</h2>
+<ul>
+<li>Using the standard domain policy for all accounts can mean privileged</li>
+</ul>
+<p>accounts may not be as secure as they could be.</p>
+
+<ul>
+<li>Domains that have ‘evolved’ may still have a weak level of requirements as</li>
+</ul>
+<p>the policies are not automatically upgraded with stronger settings.</p>
+<h2 id="fine-grained-policies">Fine Grained Policies</h2>
+<ul>
+<li>These are a great way to enforce a tiered level of security, and not over</li>
+</ul>
+<p>complicate non-privileged accounts</p>
+<h2 id="considerations-for-password-policies-cont">Considerations for password policies (cont.)</h2><h2 id="password-auditing">Password Auditing</h2>
+<ul>
+<li>Auditing passwords on a regular basis will help identify users who need</li>
+</ul>
+<p>education on the importance of account security. It will also identify any</p>
+<p>passwords that have not been changed in a long time.</p>
+<h2 id="overview-of-active-directory-best-practice-password-policies">Password policies</h2><h2 id="overview-of-active-directory-best-practice-password-requirements">Password Requirements</h2>
+<ul>
+<li><p>Maintain at least an 8-character minimum length requirement</p></li>
+<li><p>Don&rsquo;t require character composition requirements. For example, #&amp;(^%$ - but</p></li>
+</ul>
+<p>do require ‘special characters’ are used as part of the password</p>
+
+<ul>
+<li><p>Don&rsquo;t require mandatory periodic password resets for user accounts</p></li>
+<li><p>Don&rsquo;t use a single word, eg ‘password’ or a commonly-used phrase like</p></li>
+</ul>
+<p>‘Iloveyou’</p>
+<h2 id="overview-of-active-directory-best-practice-password-requirements-2">Password requirements</h2>
+<ul>
+<li>Ban common passwords, to keep the most vulnerable passwords out of your</li>
+</ul>
+<p>system</p>
+
+<ul>
+<li>Make passwords hard to guess, even by those who know a lot about you,</li>
+</ul>
+<p>such as the names and birthdays of your friends and family, your favorite</p>
+<p>bands, and phrases you like to use</p>
+
+<ul>
+<li>Educate your users to not re-use their organization passwords for non-work</li>
+</ul>
+<p>related purposes</p>
+<p>Review the latest guidance from the NCSC at: https://www.ncsc.gov.uk/collection/passwords/updating-your-</p>
+<p>approach#tip5-password-collection</p>
+<h2 id="overview-of-active-directory-best-practice-fine-grained-policies">Fine grained policies\</h2>
+<ul>
+<li>You can use fine-grained password policies to specify multiple password</li>
+</ul>
+<p>policies within a single domain and apply different restrictions for password</p>
+<p>and account lockout policies to different sets of users in a domain.</p>
+
+<ul>
+<li>For example, you can apply stricter settings to privileged accounts and less</li>
+</ul>
+<p>strict settings to the accounts of other users. In other cases, you might want</p>
+<p>to apply a special password policy for accounts whose passwords are</p>
+<p>synchronized with other data sources.</p>
+<p>#You must use the Windows Server 2012 or newer version of Active Directory Administrative Center to administer fine-</p>
+<p>grained password policies through a graphical user interface.</p>
+<h2 id="overview-of-active-directory-best-practice-password-auditing">Password auditing</h2>
+<ul>
+<li>Password security audits help you test the strength of your users&rsquo; passwords</li>
+</ul>
+<p>and your resiliency against password attacks. Not only can they help you</p>
+<p>uncover weak passwords, but they also provide an opportunity to educate</p>
+<p>your employees on proper password utilization.</p>
+<h2 id="overview-of-active-directory-best-practice-microsoft-365-integration">Microsoft 365 integration</h2>
+<ul>
+<li>Having a second Azure AD Connector ready in staging mode will facilitate a</li>
+</ul>
+<p>speedy recovery from a failure of the primary connector, and ensure the</p>
+<p>configuration is identical. Microsoft only allow for a single one per domain so</p>
+<p>staging mode is the best that is currently possible.</p>
+
+<ul>
+<li>If the connector (or the server it runs on) fails, then the selected options at the</li>
+</ul>
+<p>point of installation of the software would not be carried out until the server was</p>
+<p>rebuilt. Primarily these would be password synchronisation related, and new</p>
+<p>account synchronisation.</p>
+<h2 id="additional-recommendations">Additional recommendations</h2>
+<ul>
+<li>Keep a documented set of the configuration settings elsewhere on your</li>
+</ul>
+<p>network</p>
+
+<ul>
+<li>Update your Azure AD Connect software on a regular basis to take</li>
+</ul>
+<p>advantage of enhancements in security and features</p>
+
+<ul>
+<li>Remember to update the standby staging server!</li>
+</ul>
+<h2 id="overview-of-active-directory-best-practice-domain-controller-placement">Domain controller placement</h2>
+<ul>
+<li>Microsoft advise that it is best practice to ensure the physical security of domain</li>
+</ul>
+<p>controllers in hub and satellite locations so that unauthorized personnel cannot</p>
+<p>access them, so consider this when selecting locations for off site domain</p>
+<p>controller placement.</p>
+<h2 id="further-considerations">Further considerations</h2><h2 id="multi-factor-authentication">Multi Factor Authentication</h2>
+<ul>
+<li>This gives you additional security on accounts in case username/password</li>
+</ul>
+<p>combinations are breached by requiring a 3rd (or more) level of</p>
+<p>authentication (examples : authentication apps, tokens, biometrics)</p>
+<h2 id="password-storage-products">Password Storage Products</h2>
+<ul>
+<li>There are plenty of password storage products on the market which keep your passwords securely, and you limit access to it with its own level of security. The passwords are not displayed, but you can copy them to use.</li>
+</ul>
+<p>Refer to the NCSC guidelines on using these systems:</p>
+<p><a href="https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide">https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide</a></p>
+<p><a href="http://localdigital.gov.uk/cyber-support-feedback">We</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">welcome</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">feedback</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">on</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">our</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">cyber</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">support</a><a href="http://localdigital.gov.uk/cyber-support-feedback"> </a><a href="http://localdigital.gov.uk/cyber-support-feedback">service</a></p>
+<h3 id="ldgovuk">@LDgovUK</h3><h3 id="www-localdigital-gov-uk">www.localdigital.gov.uk</h3><h4 id="localdigital-fixtheplumbing">LocalDigital #FixThePlumbing</h4>
             
           </main>
 
