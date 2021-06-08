@@ -20,7 +20,7 @@ jobs:
       - run: sudo gem install middleman
       - run: sudo gem install bundler
       - run: bundle install
-      - run: bundle exec middleman build
+      - run: export RUBYOPT='-W0' && bundle exec middleman build
       - run: git config --global user.email "rob@example.com"
       - run: git config --global user.name "rob"
       - name: Deploy to Github Pages
