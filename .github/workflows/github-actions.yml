@@ -16,11 +16,11 @@ jobs:
       - run: \curl -sSL https://rvm.io/pkuczynski.asc | sudo gpg --import -
       - run: \curl -sSL https://get.rvm.io | bash -s stable --ruby
       - run: source /home/runner/.rvm/scripts/rvm
-      - run: /home/runner/.rvm/bin/rvm install ruby-2.6.1
+      - run: /home/runner/.rvm/bin/rvm install ruby-3.0.1
       - run: sudo gem install middleman
       - run: sudo gem install bundler:1.17.3
       - run: bundle install
-      - run: bundle exec middleman build -W0 --verbose
+      - run: bundle exec middleman build
       - run: git config --global user.email "rob@example.com"
       - run: git config --global user.name "rob"
       - name: Deploy to Github Pages
