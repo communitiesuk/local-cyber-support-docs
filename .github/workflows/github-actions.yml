@@ -18,7 +18,7 @@ jobs:
       - run: source /home/runner/.rvm/scripts/rvm
       - run: /home/runner/.rvm/bin/rvm install ruby-3.0.1
       - run: sudo gem install middleman
-      - run: sudo gem install bundler:1.17.3
+      - run: sudo gem install bundler
       - run: bundle install
       - run: bundle exec middleman build
       - run: git config --global user.email "rob@example.com"
