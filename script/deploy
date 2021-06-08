@@ -48,7 +48,7 @@ if [[ $BEHIND_ORIGIN != "" ]]; then
 fi
 echo "OK!"
 
-bundle exec middleman build
+bundle exec middleman build --verbose
 cp Staticfile.auth build
 cf target -o govuk-service-manual -s integration
 cf push
