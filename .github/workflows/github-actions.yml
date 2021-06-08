@@ -20,7 +20,7 @@ jobs:
       - run: sudo gem install middleman
       - run: sudo gem install bundler:1.17.3
       - run: bundle install
-      - run: bundle exec middleman build --verbose
+      - run: bundle exec middleman build -W0 --verbose
       - run: git config --global user.email "rob@example.com"
       - run: git config --global user.name "rob"
       - name: Deploy to Github Pages
