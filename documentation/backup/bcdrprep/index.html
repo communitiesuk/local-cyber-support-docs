@@ -112,47 +112,52 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
   </li>
 </ul>
 <ul>
@@ -205,7 +210,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +252,61 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="bcdr-prep">BCDR prep</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - Business Continuity - BCDR Prep v1.1.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-bc-dr-test-preparation">Overview of BC/DR test preparation</h1><p><font size="5"><strong>Objective</strong></font></p>
+<p>Outline guidance and approach to enable preparation to perform Business Continuity DR Testing of Local Authority (LA) Council information systems.</p>
+<p>This follows on from the BIA definition of the service criticality and the RPO &amp; RTO definition. The agreed RTO/RPO drives the backup design and infrastructure solution, which is then tested as part of a BC/DR exercise at least annually to ensure you can recover in the event of a disaster.</p>
+<p>BC/DR testing will enable Local Authorities to prove their ability to recover following a ransomware attack or a disaster.</p>
+<p><font size="5"><strong>CTP connections</strong></font></p>
+<p>Mission Critical service resilience and recovery.</p>
+<p><img src="../../../assets/backup/BCDRTP01.png" /></p>
+<p><font size="5"><strong>BC/DR definition</strong></font></p>
+<p>Business Continuity and Disaster Recovery (BC/DR) is a set of processes and techniques used to help an organisation recover from a major incident/disaster and continue or resume routine business operations. It is a broad term that combines the roles and functions of IT and business in the aftermath of a disaster.</p>
+<p>The Local Authorities Business Continuity Plan should to cover all elements of the end to end business in case of an incident.</p>
+<p>An incident management plan is a key element to ensuring effective recovery from an incident.</p>
+<p>For cyber security incidents which impact IT services the NCSC has guidelines here which advise on the 10 steps to Cyber Security.</p>
+<p><font size="5"><strong>BC/DR plan definition</strong></font></p>
+<p>Devise a consistent plan, and ensure all plan components are fully accessible in the event of a major disaster</p>
+
+<ul>
+<li>Make sure the BC/DR plan will work with or without the internal key people who developed it</li>
+<li>Make sure your BC/DR plan is accessible offsite and with no access to internal IT Systems</li>
+<li>Prioritise Applications Recovery Order and the dependencies each have</li>
+<li>Create your plan with the mentality that anything can happen.</li>
+<li>Detail the high level approach, identifying the core infrastructure services required to run a service in DR (gold builds, backups, batch schedulers, network data flows, DNS, compute power, storage etc)</li>
+</ul>
+<p><font size="5"><strong>Why is BC/DR testing important?</strong></font></p>
+<p>It tests the LA’s ability to respond to incidents that could affect the operation of essential functions/services.</p>
+<p>The test exercises should reflect past experience, scenario planning, or threat intelligence and should draw heavily on risk assessment, considering all relevant assets and vulnerabilities, especially where they relate to essential services.</p>
+<p>It also enables the Local Authority to understand the complexity of the IT Recovery process in terms of:
+- The Data Centre services that are prerequisites to a recovery, e.g. networks, storage, DNS, Active Directory, desktop services etc;
+- The personnel and skills required to be available to perform recovery;
+- Proving that the the recovery is possible within target RPO &amp; RTO.</p>
+<p><font size="5"><strong>How to perform a BC/DR test</strong></font></p>
+
+<ul>
+<li><p>Test the plan: An initial “dry run” of the plan is performed by conducting a structured walk-through test. An actual test-run must then be performed and any problems encountered are corrected.</p></li>
+<li><p>This cycle of Test, Evaluate and Update (the BCDR Plan) is a key activity to ensure the plan is current, achievable and practicable.</p></li>
+<li><p>Take a staged approach:</p>
+<p>Produce a detailed plan and a series of DR tests for each LA Service</p>
+<p>Identify a scenario for DR test which ensures the integrity of business data is maintained at all times during the test.</p></li>
+<li><p>Take a staged approach cont’d:
+Perform configuration checks on DR infrastructure to ensure all are configured and built correctly.</p>
+<p>Ensure that the DR test plan for each IT service includes fail over to the secondary DC and switching back to the primary DC</p>
+<p>This plan must include service readiness checks to ensure service is operational</p></li>
+</ul>
+<p>Regularly test your plan in a realistic way to make sure it works.</p>
+
+<ul>
+<li><p>Full Proven test
+Plan and perform a test failover(s) and switch back, which just proves the recovery capability, with basic service checks run on the DR service.</p>
+<p>Note: be prepared to repeat this exercise increasing level of test assurance each time.</p>
+<p>Repeat Full Proven test after each major infrastructure change.</p></li>
+<li><p>Full Operational test
+Plan and perform full failover and run the business service for an agreed period from the DR Data Centre.</p>
+<p>Repeat this Full Operational at least every 12 months</p></li>
+</ul>
+<p><font size="5"><strong>BC/DR continuous improvement cycle</strong></font></p>
+<p><img src="../../../assets/backup/BCDRTP02.png" /></p>
 
             
           </main>

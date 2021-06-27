@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>RBAC ME - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbacme/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="RBAC ME - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbacme/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="RBAC ME" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/rbacme/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained2/#fine-grained-password-policy-2"><span>Fine grained password policy 2</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#overview-of-fine-grained-password-policy-implementation"><span>Overview of fine grained password policy implementation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-reporting-tool"><span>Active Directory Reporting Tool</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and Identity Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy"><span>Logging Made Easy</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas"><span>Open VAS</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/exchange/#exchange-on-premise"><span>Exchange On Premise</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="role-based-access-control-model-example">Role Based Access Control Model Example</h1><p><font size="4"><strong>RBAC Definition</strong></font>
+RBAC - Role Based Access Control is an approach used to restrict system access to authorised users only.</p>
+<p>In essence it is how you delegate permissions from specific tasks to a specific group, to which relevant user accounts are then added. The below picture shows this in a visual manner.</p>
+<p><img src="../../../assets/backup/RBACMOD01.png" /></p>
+<p>This approach stops excessive permissions being granted to accounts. The main benefits of this are that if an individual account is compromised you will not have exposed all (or a large number of) systems as the access of this individual account will be very specific and restricted.</p>
+<p>RBAC lets employees have access rights only to the information they need to do their jobs and prevents them from accessing information that doesn&rsquo;t pertain to them.</p>
+<p>In the role-based access control data model, roles are based on several factors, including authorization, responsibility and job competency. As such, companies can designate whether a user is an end user, an administrator or a specialist user. In addition, access to computer resources can be limited to specific tasks, such as the ability to view, create or modify files. An employee&rsquo;s role in an organization determines the permissions that individual is granted and ensures that employees can&rsquo;t access sensitive information or perform high-level tasks that are not required for their own role.</p>
+<p>The use of RBAC to manage user privileges within a single system or application is widely accepted as a best practice method to protect the system from unauthorised access.</p>
+<p><font size="4"><strong>Approach</strong></font></p>
+<p>The starting point for any RBAC model is to define what you actually want the role to cover. By clearly defining the role requirements you will then be able to decide upon and grant the exact required permissions before you even consider adding in the users.</p>
+<p>By using RBAC you are delegating roles to the users of the group. The precise approach for the delegation of control is to be managed by the creation of Roles, in the form of Active Directory Security Groups (hereafter referred to as Role Groups).</p>
+<p>These Roles will then be applied to the relevant privileged users.</p>
+<p><em>But why should we delegate control ?</em></p>
+<p>Well, the key reason is that by simplifying roles and not giving any more control than required to carry out tasks gives you a more secure system (eg if an account is compromised you will not expose full system access, rather just the level of access to what the account was assigned).</p>
+<p>The roles may then be made up of another selection of nested Active Directory Security Groups (hereafter referred to Permission Groups) <em>which will actually be used to delegate to the control required.</em></p>
+<p>With this approach it allows for more consistency across all users, Permissions Groups can only be members of Role Groups, <strong>they should never be added directly to a user account.</strong></p>
+<p>As an added benefit, if there is a requirement for additional permissions - new Permissions Groups can be created and then added to the required Role Groups.</p>
+<p><font size="4"><strong>Example roles</strong></font></p>
+<p>You should base your roles on specific areas of management of your systems. For example you will have generalist roles for user support. These will not require deep permissions into anything other than workstations or user account management in most organisations.</p>
+<p>Staff who administer your general server estate will require the ability to log into the consoles of the server. They will not need to be able to log into networking equipment with administrative credentials.</p>
+<p>Working on this basis you can start to develop your own roles and the associated permissions, and then consider who actually needs accounts for these roles.</p>
+<p>The following roles are typical examples of how to delegate permissions to distinct roles, giving usable subsets of access for the required users. There are many other roles which can be deployed, and of course you can amalgamate roles together if you have smaller teams if so desired. Note that the standard user type of account is not detailed here as that is already in place.</p>
+<p>Good RBAC design will have the principle of ‘Least Privilege’ at its heart.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Description</th>
+<th style="text-align: center">Purpose</th>
+</tr><tr>
+<td>Helpdesk / User Administrator</td>
+<td style="text-align: center">This account role will be used for Active Directory Management of non-privileged accounts, groups and workstations. Also, this will be used to access user desktops remotely using Remote Assistance, with local administrator rights to the workstations.</td>
+</tr><tr>
+<td>Server Administrator</td>
+<td style="text-align: center">This account role will be used for Active Directory Management of Helpdesk, Administrator and Server Administrator accounts. Also, this will be used to access the Servers via Remote Desktop, with local administrator rights to these servers.</td>
+</tr><tr>
+<td>Database Administrator</td>
+<td style="text-align: center">This account role will be used to manage the SQL Instances and/or Databases.  This account will not have permissions to log onto or administer the Servers running the SQL instances, rather just have access to the SQL instances themselves.</td>
+</tr><tr>
+<td>Backup Administrator</td>
+<td style="text-align: center">This account role will be used to manage access to the backup servers and devices.</td>
+</tr><tr>
+<td>Email Administrator</td>
+<td style="text-align: center">This account role will be used to manage the email services on premise, and where applicable will have rights within the M365 environment.</td>
+</tr><tr>
+<td>Network Administrator</td>
+<td style="text-align: center">This account role is aimed at being used to access Network Devices such as Switches, Routers and Firewalls</td>
+</tr><tr>
+<td>Domain Administrators</td>
+<td style="text-align: center">This account role will be a member of the Built In Domain Administrator groups.</td>
+</tr>
+        </table>
+      </div><p>As previously mentioned, these are merely sample role types which you may consider implementing or basing your own roles around. This is not a definitive list.</p>
+<p>For example, with Database management, you can have a single ‘all encompassing’ role for management, or separate the roles into more granular ones for specific tasks - such as:
+Database server privileged accounts (for maintenance accounts performing tasks such as TX log backups, Maintenance plans, etc).</p>
+<p>Individual DBA accounts for explicit database management.</p>
+<p>DB Administration accounts for the administration of the entire SQL instance.</p>
+<p><font size="4"><strong>Aggregated Roles</strong></font></p>
+<p>In smaller IT teams splitting the roles out in a very specific manner might not be the best way to do things, but there is still the need to reduce the scope of administrative accounts to reduce any potential attack surface.</p>
+<p>In circumstances like these you may wish to amalgamate similar roles together (eg SQL Administrators and Oracle Administrators), but keep them separate from email administrators or General User Administration.</p>
+<p>Follow the ‘spirit’ of separation of duties wherever possible, but in a way which minimises crossover between distinctly different roles without creating a large number of accounts per user.</p>
+<p>As detailed earlier with Databases you can either have 3 distinct roles for the different aspects of management of a database setup, or aggregate the roles into a single one for control of the database environment.</p>
+<p><font size="4"><strong>Sample creation process for a group/role</strong></font></p>
+
+<ol>
+<li> Define the resources and services you wish to control</li>
+<li> Create (Security) group for the role</li>
+<li> Create a mapping of roles to resources</li>
+<li> Assign users (new separate accounts ideally) to the role/group</li>
+<li> Apply the group to ACL (Access Control Lists)</li>
+</ol>
+<p><em>Example : Helpdesk / User Administrator</em></p>
+
+<ol>
+<li> Define the resources and services you wish to control</li>
+</ol>
+<p>Ability to reset user passwords and unlock accounts</p>
+
+<ol>
+<li> Create (Security) group for the role</li>
+</ol>
+<p>Name Group Appropriately and keep in the correct OU for this type of object</p>
+<p>Example : “User Admins”</p>
+
+<ol>
+<li> Create a mapping of roles to resources</li>
+</ol>
+<p>Role will require access via RSAT (Remote Server Administration Tools) installed ideally on a jump server.</p>
+<p>Role will require ability to log onto the jump server (set as RDS Permissions in the GPO for the OU where the Jump Servers are located).</p>
+<p>Role will require delegated permissions to required OU’s in Active Directory</p>
+
+<ul>
+<li>Either at top level, or delegated permissions to an OU</li>
+</ul>
+<p>Assigning any other required permissions to the role group.</p>
+
+<ol>
+<li> Assign users (new separate accounts ideally) to the role/group</li>
+</ol>
+<p>Create users with agreed upon naming suffix (in this instance .hd - example john.smith.hd) and add these accounts to the new security group for the role</p>
+
+<ol>
+<li> Apply the group to ACL (Access Control Lists)</li>
+</ol>
+<p>Add the group to the security for resources, granting required permissions to perform the role</p>
+<p><font size="4"><strong>A Simple RBAC</strong></font></p>
+<p>RBAC does not have to be a complicated process. For example a simple way to illustrate Role Based Access is to lock RDS access to servers down to a specific group of accounts - such as those designated as ‘Server Administrators’. This protects your servers from unauthorised access in a simple manner.</p>
+<p>To do this you may employ the following process:</p>
+<p>Create a ‘Server Administrator’ Role (Security Group)</p>
+<p>Change Remote Access to a server to have ALL users and groups removed.</p>
+<p>Add the new ‘Server Administrator’ Role Security Group to the allowed RDS users.</p>
+<p>Create and add new users to the ‘Server Administrator’ Role Security Group (eg john.smith.sa)</p>
+<p>Test access with accounts that have and don’t have the permissions. This should ratify you have successfully configured the role and its users.</p>
+<p><font size="4"><strong>Example of username designation</strong></font></p>
+<p>In order to give you full traceability of ‘who did what’, each user in a role should have their own uniquely identifiable account name. And in order to make the accounts descriptive, the recognised convention is to add a suitable suffix to the account name.</p>
+<p>The detail listed in this table is purely an example of what you can use as are not a ratified standard, they are merely derived from the role purpose.</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Account Naming Convention</th>
+<th style="text-align: center">Description</th>
+</tr><tr>
+<td>%username%.hd</td>
+<td style="text-align: center">Helpdesk / User Administrator</td>
+</tr><tr>
+<td>%username%.sa</td>
+<td style="text-align: center">Server Administrator</td>
+</tr><tr>
+<td>%username%.dba</td>
+<td style="text-align: center">Database Administrator</td>
+</tr><tr>
+<td>%username%.bk</td>
+<td style="text-align: center">Backup Administrator</td>
+</tr><tr>
+<td>%username%.ea</td>
+<td style="text-align: center">Email Administrator</td>
+</tr><tr>
+<td>%username%.na</td>
+<td style="text-align: center">Network Administrator</td>
+</tr><tr>
+<td>%username%.da</td>
+<td style="text-align: center">Domain Administrators</td>
+</tr>
+        </table>
+      </div><p>As an example, regular user ‘John Smith’ may have an account of john.smith</p>
+<p>The user may then have a helpdesk administrator account of john.smith.hd, and a database administrator account of john.smith.dba</p>
+<p><font size="4"><strong>Further Considerations</strong></font></p>
+<p><font size="4"><strong>When Planning:</strong></font></p>
+<p><font size="3"><strong>Take a sensible approach.</strong></font>
+Think of RBAC as an ongoing program, not a project. Don’t expect to achieve 100% coverage of all access via RBAC as you implement it. A comprehensive RBAC solution could take months or even years to complete. It is realistic and acceptable to implement RBAC in steps or phases.</p>
+<p><font size="3"><strong>Do an in-depth exercise to clean up bad data and entitlements.</strong></font>
+Do this exercise as prerequisite before creating and defining roles for the RBAC program. Much cleaner data is one of the prime recipes of the successful RBAC program implementation.</p>
+<p><font size="3"><strong>Start simple and familiar.</strong></font>
+Target roles for areas that are more familiar in the business.  This way you eliminate the “discovery” portion of trying to figure out what access might be needed.</p>
+<p><font size="3"><strong>Target areas of high turn-over.</strong></font>
+Identify the business areas where provisioning and de-provisioning processes are already established. These areas are usually very well understood from an access perspective.</p>
+<p><font size="3"><strong>Start small.</strong></font>
+Don’t try and do all roles across the entire organization in one go.  That will fail.</p>
+<p><font size="3">*<em>Assign role owners *</em></font>
+Assign role owners to represent each area from the business side. Identify the people who have the best insider knowledge about their departments as role owners.</p>
+<p><font size="3"><strong>Make roles reusable.</strong></font>
+If only one person in the whole organization has some particular role, maybe that access shouldn’t be managed via RBAC. Each role should have at least two members so that factors such as sickness and holiday cover are accounted for.</p>
+<p>Make sure the roles you define are applicable to groups of people; otherwise, your role model will be unwieldy and will not deliver the goals of efficiency and simplification</p>
+<p><font size="4"><strong>Documentation:</strong></font>
+Document roles and responsibilities</p>
+<p>List the new accounts that have access to these roles</p>
+<p><font size="4"><strong>Testing:</strong></font>
+<font size="3"><strong>Test and verify your roles.</strong></font>
+Roles need as much testing and verification as other functionality – may be more. If you define roles sub-optimally at the outset and put them into production, you can end up with a lot of users who lack the access they need or who have more access than they should. 
+There can be a big cleanup effort if you roll out a role structure that has not been set up and tested properly.</p>
+<p><font size="4"><strong>Auditing:</strong></font>
+<font size="3"><strong>Regularly review</strong></font>
+Regularly review the memberships of the roles.</p>
+<p><font size="3"><strong>Remove users</strong></font>
+Remove users who no longer require access. This should include any supplier accounts, project staff accounts, etc.</p>
+<p><font size="3"><strong>Remember - roles change</strong></font>
+As part of your auditing consider this, and that Roles aren’t a one-time thing.</p>
+<p>They need to change with the business and you’ll need to revisit them periodically to make sure to verify that they continue to be relevant and that the appropriate users are grouped under their most suitable roles.</p>
+<p>Plan to establish proper role maintenance processes. Consider establishing role recertification processes to keep them up to date with business changes.</p>
+<p><font size="4"><strong>Remember:</strong></font>
+<font size="3"><strong>Enforce the least privilege</strong></font>
+Define roles so that you don’t give people access they don’t need.</p>
+<p>Setting up roles for the least privilege is a best practice for reducing security risk, both from malicious intent and from user errors.</p>
+<p><font size="3"><strong>Review NCSC guidelines</strong></font>
+https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/managing-user-privileges</p>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/accessibility/">Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>

@@ -112,47 +112,52 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
   </li>
 </ul>
 <ul>
@@ -205,7 +210,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +252,88 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="rto-rpo">RTO/RPO</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - Business Continuity - RTO and RPO v1.1.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-rto-amp-rpo">Overview of RTO &amp; RPO</h1><p><font size="5"><strong>Objective</strong></font></p>
+
+<ul>
+<li><p>Outline guidance and approach to enable RTO and RPO target definition for all Local Authority council information systems.</p></li>
+<li><p>This is in response to Objective 1 in the <a href="https://drive.google.com/file/d/15X8Su03cWojw0OCHrPpjc_YhzECopMfZ/view?usp=sharing">Building Resilience in Local Governments – Final Report</a>, dated May 2020 which states:</p>
+<p>“In the majority of local authorities, a short-term solution of backing up critical systems and data to ensure organisations are able to regain control after an incident.</p></li>
+<li><p>A common, enterprise-grade , backup solution utilising cloud technology, encryption and multi-factor authentication … to provide a consistent and approved process would significantly assist in the reduction of these risks.”</p></li>
+<li><p>Defining RTO &amp; RPO figures support LAs ability to recover more quickly following a ransomware attack or a disaster</p></li>
+</ul>
+<p><font size="5"><strong>CTP Connections</strong></font></p>
+<p>Mission Critical service resilience and recovery.</p>
+<p><img src="../../../assets/backup/RTORPO01.png" /></p>
+<p><font size="5"><strong>RTO &amp; RPO definition</strong></font></p>
+<p><strong>RTO:</strong>the measure of how quickly the LA is able to restore an application service</p>
+<p><strong>RPO:</strong>the measure back in time to when data was last saved in a usable format (usually the most recent backup)</p>
+<p>i.e. how much data you can afford to lose since the last backup?</p>
+<p><img src="../../../assets/backup/RTORPO02.png" /></p>
+<p><font size="5"><strong>Why are they important?</strong></font></p>
+<p><strong>They are:</strong>
+- an agreed level of risk exposure of a disaster or ransomware attack to the IT service for the business
+- the recovery time from loss of service due to ransomware attack or other disaster
+- the targets agreed between the business service owner and the IT organisation
+- a key Service Level</p>
+<p><strong>They drive:</strong>
+- the underlying network and IT infrastructure design, IT service design and resilience for the business service
+- the backup frequency and processes for restoration
+- they contribute to the BCDR Planning so the business can have a clear view of recovery activities and their dependencies</p>
+<p><font size="5"><strong>How to define an RTO &amp; RPO?</strong></font></p>
+
+<ul>
+<li>They are an agreed outcome from a Business Impact Assessment (BIA) for each area of the business.</li>
+</ul>
+<p><strong>BIA overview</strong></p>
+
+<ul>
+<li>A BIA is designed to analyse and predict the consequences of a disruption to a business process and the criticality of the service to the organisation.</li>
+<li>It provides critical information required to provide recovery priorities, strategies for the BCDR Plan including RTO &amp; RPO.</li>
+<li>It highlights the impact to the LA (and their customers) of the loss of a business process or service from both a monetary and reputational perspective.</li>
+</ul>
+<p><font size="5"><strong>Recommendation</strong></font></p>
+
+<ul>
+<li>Produce BIA for each LA service that are agreed by service owners and ratified at senior level.</li>
+<li>By clearly defining RTO and RPO you will be able to strike a balance between disaster preparation and cost efficiency which is right for your organisation.</li>
+<li>The resulting RTO &amp; RPO should be used as key target for BCDR testing for each service.</li>
+<li>Do not assume IT is automatically available. In a disaster all services should be assumed to be unavailable.</li>
+</ul>
+<p><font size="5"><strong>BIA areas for consideration</strong></font></p>
+
+<ul>
+<li><p>A BIA does not just cover ICT. It should cover all business areas, their functions, the impact of their not being available and the length of time that can be withstood before their restoration.</p></li>
+<li><p>Typical areas to be considered for inclusion in a BIA are:</p></li>
+</ul>
+<p><strong>Monetary Impact:</strong></p>
+<p>The “Monetary Impact&quot; of a failure must be considered in terms of both revenue lost and expenses incurred to the specific area concerned (not the whole council)</p>
+<p><strong>Non-Monetary Impacts:</strong></p>
+
+<ul>
+<li>Impact to staff or public wellbeing</li>
+<li>Damage to, or loss of, premises, technology, or information</li>
+<li>Breaches of statutory requirements</li>
+<li>Breaches of regulatory requirements</li>
+<li>Damage to reputation</li>
+<li>Deterioration service quality</li>
+<li>Environmental damage</li>
+<li><p>Premises e.g. what critical functions are run from each building</p></li>
+<li><p>Critical ICT Applications/Software e.g.</p>
+<p>Application name</p>
+<p>Critical function</p>
+<p>Purpose of use</p></li>
+<li><p>Vital Records- Paper / Electronic</p></li>
+<li><p>External Vendors, Suppliers, Contractors etc. Dependencies</p></li>
+<li><p>Special Equipment / Plant / Vehicles</p></li>
+</ul>
+<p><strong>Telecommunications requirement</strong>
+- For example, any critical / unique telephone numbers required to perform critical functions)</p>
+<p><strong>Minimum staff requirements</strong>
+- For example, how many staff members will be required to continue operations within a given time frame?</p>
+<p><strong>Worker relocation workstation requirements</strong>
+- For example, face to face contact with public required</p>
+<p><font size="5"><strong>Cyber resilience BIA</strong></font></p>
+<p><a href="ROB%20TO%20PUT%20DOCUMENT%20LINK%20IN%20HERE">Pro-Forma - Cyber Resilience BIA</a></p>
 
             
           </main>

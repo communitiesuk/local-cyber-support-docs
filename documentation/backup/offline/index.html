@@ -112,47 +112,52 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
   </li>
 </ul>
 <ul>
@@ -205,7 +210,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +252,170 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="offline-backup">Offline backup</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - Offline Backup v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-offline-backup-best-practice">Overview of offline backup best practice</h1><p><font size="5"><strong>Objective</strong></font>
+Outline guidance and approach for the best practice implementation of offline backup and immutable backup options for all Local Authority Virtualised Council Information Systems.</p>
+<p>As a general observation, you would either implement offline or immutable backups, as there is no need for both in the same organisation.</p>
+<p>Both of these technologies are covered in this presentation pack.</p>
+<p><font size="5"><strong>Why do I need offline backups?</strong></font></p>
+
+<ul>
+<li><p>It is generally considered best practice within the field of backups to keep at least one copy of data in an ‘offline’ storage location. This is becoming increasingly important now that Cryptolocker Attacks are commonplace.</p></li>
+<li><p>The NCSC has seen numerous incidents where ransomware has not only encrypted the original data on-disk, but also the connected USB and network storage drives holding data backups. Incidents involving ransomware have also compromised connected cloud storage locations containing backups.</p></li>
+<li><p>The impact that this will have will mean your backups are effectively of no real use so a system recovery will be a lengthy process and expensive in terms of resource and lack of ability to function as a Local Authority.</p></li>
+<li><p>The purpose of an &lsquo;offline backup&rsquo; (sometimes called a &lsquo;cold backup&rsquo;) is to remain unaffected should any incident impact your live environment. You can do this by:</p>
+<p>Only connecting the backup to live systems when absolutely necessary</p>
+<p>Never having all backups connected at the same time (by ensuring at least one of your media locations is on removable devices or in an immutable location on your systems).</p></li>
+<li><p>The 3-2-1 rule is one to follow:</p>
+<p>3 Backups, 2 Locations, 1 Offline Copy</p>
+<p>Example - local backup at primary location, replica or 2nd backup location at DR Location and one offline backup</p></li>
+<li><p>With at least one backup offline at any given time, an incident cannot affect all of your backups simultaneously.</p></li>
+<li><p>It must be realised that restoration from an offline backup will take longer than normal but in that it will be happening because of a ransomware or crypto attack this additional time should be an accepted part of your disaster recovery procedure.</p></li>
+<li><p>Having a set of backups on Offline Media Storage will effectively act as an immutable copy of backup data (especially if you make the Tape Read Only (RO)). This will give you the ability to restore with confidence from a recent point in time backup.</p></li>
+<li><p>Having Backups completely offline will mean that an attack on your systems will not be able to corrupt the backups on this media.</p></li>
+<li><p>Refer to : https://www.ncsc.gov.uk/blog-post/offline-backups-in-an-online-world</p></li>
+</ul>
+<p><font size="5"><strong>Offline backup options</strong></font>
+There are three main offline backup technologies open to us.</p>
+
+<ul>
+<li><p>The primary type is Tape. Capacities per tape currently can go up to 30TB with typical compression rates. Autoloaders with multiple drives can vastly increase capacity and reduce time to backup. Tapes should be regularly removed and securely stored, ideally in a different location.</p></li>
+<li><p>Virtual Tape Libraries (VTL) are increasing in popularity but rely on reliable disk storage behind them, but these cannot be removed from site.</p></li>
+<li><p>Removable Disks. If your storage requirements for backups is at the lower end of the scale you may be able to use removable storage based on Hard Drives.</p></li>
+<li><p>The technology to select will be dependent on the current infrastructure and also the availability of personnel to change the removable media where required. There is no “one size fits all” solution.</p></li>
+</ul>
+<p><font size="5"><strong>Tape</strong></font></p>
+<p>With Physical tape there are multiple things to consider before deciding on a specific route to take.</p>
+<p><font size="4"><strong>Design considerations:</strong></font>
+- Size of data to be written to tape on each job.
+- If you are breaking down tape jobs per logical group of servers you may be able to use a single tape drive. With typical compression capacities per tape can go up to 30TB (Native maximum capacities of tapes are illustrated on a following slide).
+- Autoloaders with multiple drives can vastly increase capacity and reduce time to backup.
+- Location of the Tape System</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>The ideal location would be at the DR location linked to a physical backup server which is not domain joined
+</code></pre></div>
+<ul>
+<li><p>Tapes should be regularly removed and securely stored, ideally in a different location. Tapes should also be made Read Only (RO) before storage so they are not accidentally used.</p></li>
+<li><p>Regular tests of file and server restoration needs to happen to prove the backups are in a usable state.</p></li>
+<li><p>For critical server restoration, consider the recovery speed of the LTO technology that you are selecting. For example, LTO-8 can recovery faster than a LTO-7.</p></li>
+<li><p>Leading vendors for tape systems:</p>
+<p>Quantum     https://www.quantum.com/en/products/tape-storage/lto-tape-drives/</p>
+<p>HPE     https://www.hpe.com/uk/en/storage/storeever-tape-storage.html</p>
+<p>Dell        https://www.dell.com/mk/business/p/tape-backup-products</p>
+<p>Lenovo  https://www.lenovo.com/gb/en/data-center/enterprise-storage/-tape-storage/c/storage-tape</p>
+<p>Other Tape System Vendors are available.</p></li>
+</ul>
+<p><font size="5"><strong>Tape capacities</strong></font></p>
+<p>Currently LTO-8 is the largest capacity tape.</p>
+<p>LTO-9* currently is due to release in 2021. https://www.quantum.com/en/products/tape-storage/lto-9/</p>
+<p>Single Tape Capacities:</p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Technology</th>
+<th style="text-align: center">Raw (Native) TB</th>
+<th style="text-align: center">Best Compressed TB</th>
+</tr><tr>
+<td>LTO  5</td>
+<td style="text-align: center">1.5</td>
+<td style="text-align: center">3</td>
+</tr><tr>
+<td>LTO  6</td>
+<td style="text-align: center">2.5</td>
+<td style="text-align: center">6.25</td>
+</tr><tr>
+<td>LTO  7</td>
+<td style="text-align: center">6</td>
+<td style="text-align: center">15</td>
+</tr><tr>
+<td>LTO  8</td>
+<td style="text-align: center">12</td>
+<td style="text-align: center">30</td>
+</tr><tr>
+<td>LTO  9</td>
+<td style="text-align: center">18</td>
+<td style="text-align: center">45</td>
+</tr>
+        </table>
+      </div><p><font size="5"><strong>Tape backup techniques</strong></font></p>
+<p>Utilising Autoloaders will allow for a larger amount of data to be stored per backup job. The job time can be almost halved with dual drives.</p>
+<p>Backup to tape in a virtualised environment is usually made from the primary disk backup which is taken from the live system overnight, and the writing of the backup to tape(s) will happen during the day, and not impact on the live production environment. This technique is referred to as Disk to Disk to Tape.</p>
+<p><img src="../../../assets/backup/OFF01.png" /></p>
+<p><font size="5"><strong>Virtual Tape Library</strong></font></p>
+<p>With Virtual Tape Libraries (VTL) consideration should be given to the following points before deciding on whether this technology is a good fit for your organisation</p>
+<p><font size="4"><strong>Design Considerations:</strong></font></p>
+
+<ul>
+<li><p>Compatibility of a VTL option for your SAN Storage with your backup software. Not all SAN’s are suitable for VTL technologies.</p></li>
+<li><p>Available local storage space on which to ‘back the VTL onto’ as VTL’s use disk space to emulate tape cartridges.</p></li>
+<li><p>Is the VTL Storage connected to, or part of, your main SAN ? This is not ideal as if you lose your SAN you also lose your backups.</p></li>
+<li><p>Ability to ship the VTL Destination files offsite in a usable format, especially if a second location for your backup data is part of your DR plan.</p></li>
+</ul>
+<p><font size="3"><strong>VTL’s essentially act as autoloaders, therefore as with tape drives they will allow for a larger amount of data to be stored per backup job.</strong></font></p>
+<p><font size="3"><strong>Backup to VTL is very similar to regular tape in that it is usually made from the primary disk backup which is taken from the live system overnight, and the writing of the backup to VTL will happen during the day, and not impact on the live production environment. Despite the destination being virtual, this technique can also be referred to as Disk to Disk to (Virtual) Tape.</strong></font></p>
+<p><img src="../../../assets/backup/OFF02.png" /></p>
+<p><font size="5"><strong>Removable disk</strong></font></p>
+<p>When considering utilising removable disks, there are specific items to review before deciding on whether this technology is a good fit for your organisation.</p>
+<p><font size="4"><strong>Design considerations:</strong></font></p>
+
+<ul>
+<li><p>Size of data to be written to disk</p>
+<p>If you are backing up and retaining large amounts of data then you need the storage which provides the removable drive option to be able to handle large volumes of data. You may have to break your jobs down to manageable chunks and send to multiple drives for removal.</p></li>
+<li><p>How will you store the disks while they are offline ?</p></li>
+<li><p>How will you handle encrypting the drives so they are readable in the event of a disaster ?</p></li>
+</ul>
+<p><font size="5"><strong>Removable disc backup techniques</strong></font></p>
+<p>Backup to Removable Disks is very similar to Regular Tape in that it is usually made from the primary disk backup which is taken from the live system overnight, and the writing of the backup to Removable Disks will happen during the day, and not impact on the live production environment. Despite the destination being virtual, this technique can also be referred to as Disk to Disk to Disk.</p>
+<p><img src="../../../assets/backup/OFF03.png" /></p>
+<p><font size="5"><strong>Immutable storage</strong></font></p>
+<p>An immutable backup or storage means that your data is fixed, unchangeable and can never be deleted easily. This is particularly important when it comes to malware or ransomware. Also, if you need to retain records for a period of time and don&rsquo;t want them accidentally deleted or changed (such as financial records), immutable storage ensures that.</p>
+
+<ul>
+<li>Immutable Storage technologies can be connected live which makes them an attractive option since they are online to recover from. </li>
+</ul>
+<p><font size="5"><strong>Immutable storage options</strong></font></p>
+<p><font size="4"><strong>Primary Immutable options include:</strong></font> 
+- Cloud Based Immutable Storage</p>
+<p>This technology is increasing in popularity but costs will be variable as 
+you will pay for storage of the backups, along with transfers in/out.</p>
+
+<ul>
+<li>SAN Based Immutable Storage</li>
+</ul>
+<p>This is a technology whose features are dependant on the Vendor of your SANs. For instance NetApp have the ‘Snap Suite’ - where you can backup entire LUNs between NetApp Devices with SnapMirror, then ‘Vault’ off recovery points on the target SAN and make them immutable.</p>
+<p><font size="5"><strong>Cloud based storage example</strong></font></p>
+<p><font size="4"><strong>Cloud Based Targets</strong></font></p>
+
+<ul>
+<li><p>Such as Amazon Web Services S3 / Glacier / Deep Glacier</p></li>
+<li><p>By introducing this tech via an on-premise gateway you can send also immutable copies of data into offsite storage with long term retention periods. This does have data transit costs, along with storage costs at each layer.</p></li>
+<li><p>Veeam and other backup software providers have ‘Gateway’ products to interface with AWS / MS-Azure for backup storage technologies.</p></li>
+</ul>
+<p><img src="../../../assets/backup/OFF04.png" /></p>
+<p><font size="5"><strong>SAN based storage example</strong></font></p>
+<p>SAN Based Replication (Example is NetApp SnapVault)</p>
+<p><img src="../../../assets/backup/OFF05.png" /></p>
+<p>This technology allows for SAN based replication to have immutable copies at the DR site (Vaulted).</p>
+<p>It’s not offline as such but it is unchangeable (but will be removed as part of an ‘ageing out’ of the ‘Snaps’).</p>
+<p>Additional licensing over standard NetApp ones will be required.</p>
+<p><font size="5"><strong>Implementation</strong></font></p>
+<p><font size="4"><strong>How can I implement offline media?</strong></font></p>
+
+<ul>
+<li><p>Tape Autoloaders or Removable Disks can be added to backup servers as additional backup locations.</p></li>
+<li><p>VTL products will require sufficient additional storage to back the VTL software. They will be presented to the backups servers as additional backup locations.</p></li>
+<li><p>Cloud Storage Gateways can be added to backup servers to connect your on premise backup server to cloud storage providers (Amazon AWS Storage, Microsoft Azure Storage, etc).</p></li>
+<li><p>SAN Based Storage will require at the least additional licensing and will be dependent on the hardware vendor and the backup solution that is in place.</p></li>
+</ul>
+<p><font size="4"><strong>But what if I already replicate my fileshares as CIFS shares direct from my SAN?</strong></font></p>
+
+<ul>
+<li><p>By having an offline copy of the data will allow a restore if your data is compromised by an attack.</p></li>
+<li><p>Mapping CIFS shares within some Virtual Machines will facilitate a backup of these areas.</p></li>
+<li><p>Use technologies such as NetApp SnapVault to give you immutable copies or multiple read/write points away from your primary snapshot.</p></li>
+</ul>
+<p><font size="5"><strong>Overview schematic of an ideal configuration</strong></font></p>
+<p><img src="../../../assets/backup/OFF06.png" /></p>
+<p>Veeam has been used in this example as it is the most prevalent technology in use amongst the 29 Councils reviewed.</p>
+<p>Arcserve UDP would work in effectively the same manner. SAN Based Snapshot systems (NetApp, Nimble etc) would be different from the technologies illustrated here</p>
 
             
           </main>

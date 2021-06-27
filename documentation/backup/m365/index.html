@@ -112,47 +112,52 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
   </li>
 </ul>
 <ul>
@@ -205,7 +210,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +252,87 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="m365-backup">M365 backup</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - M365 Backup v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="backing-up-microsoft-365-guidance">Backing up Microsoft 365 : Guidance</h1><p><font size="5"><strong>Objective</strong></font></p>
+
+<ul>
+<li><p>Outline guidance and approach of considerations to be given to the implementation of backup technologies for Local Authority Microsoft 365 delivered services.</p></li>
+<li><p>Microsoft provide high availability for your data and the access to it, they are not responsible for keeping a backup history.</p></li>
+</ul>
+<p><font size="5"><strong>‘But surely Microsoft back this up for me ?’</strong></font></p>
+<p><strong>No, they don’t.</strong></p>
+
+<ul>
+<li><p>Microsoft provides powerful services within the Microsoft 365 platform– but a comprehensive backup of your Microsoft 365 data is not one of them.</p></li>
+<li><p>Microsoft offer limited recovery periods from deletion of your data, but if your data is compromised then so are the copies they keep. (Data retention periods vary and can be altered, but the maximum top level ‘recycle bin storage’ is approximately 30 days)</p></li>
+<li><p>With Microsoft 365, it is your data, you control it and it is your responsibility to protect it. 
+Of over 1,000 IT professionals surveyed, 81% experienced data loss in Microsoft 365, from simple user error to major data security threats. (Source: https://www.veeam.com/backup-microsoft-office-365.html)</p></li>
+</ul>
+<p><font size="5"><strong>MS SharePoint Online / OneDrive retention</strong></font></p>
+<p><img src="../../../assets/backup/M365-01.png" /></p>
+<p>As detailed earlier, Microsoft offer limited recovery periods from deletion of your data - and the first stage recycle bin is generally 30 days in scenarios as above.</p>
+<p><font size="5"><strong>Why do I need to backup Microsoft 365 data?</strong></font></p>
+
+<ul>
+<li><p>If users overwrite or lose data, it can be restored quickly.</p></li>
+<li><p>If users leave, you don’t need to maintain their mailboxes (or license them!)</p></li>
+<li><p>If ransomware corrupts any of your data, uninfected versions can be restored from backup which is not part of the M365 Tenancy</p>
+<p>This is true across your M365 Tenancy:</p>
+<p>Teams / Sharepoint Online / Exchange Online / OneDrive</p>
+<p>Traditional File Servers are increasingly being replaced by Sharepoint Online and OneDrive</p></li>
+<li><p>Teams file storage (along with chat history) is much overlooked as it is considered to be short term use only, but Teams File Shares are a logical place for commonly shared files to reside rather than in a traditional file structure</p>
+<p>Microsoft do not back up these File Shares</p></li>
+<li><p>Cover your business with regard to Legal Retention Periods and Industry Regulations on data retention.</p>
+<p>Microsoft Litigation Hold may not provide you with enough cover.</p>
+<p>If Litigation requires immediate access to user data, you have it.</p></li>
+<li><p>If employees (such as those who are about to leave or go through discipline) decide to hide or delete data, you’ve already safely backed it up.</p></li>
+<li><p>It’s another copy of your data in another location !</p></li>
+<li><p>Ask yourself:</p>
+<p>How often do we restore user files on a regular day ?</p>
+<p>Then ask, What if we couldn’t restore a M365 located user file?</p></li>
+</ul>
+<p><font size="5"><strong>How can I protect my data in Microsoft 365 ?</strong></font></p>
+<p><font size="4"><strong>Backups</strong></font></p>
+
+<ul>
+<li><p>Implement a 3rd Party product to take your M365 data and duplicate it in a disconnected location:</p>
+<p>Alternate Cloud Locations (not a definitive list)</p>
+<p>Veeam Cloud Services</p>
+<p>Amazon Web Services</p>
+<p>Local Storage at your location or your DR location</p></li>
+<li><p>Product set to use to do this</p>
+<p>Multiple vendors exist, but the leaders to consider are: Veeam, Arcserve, SkyKick, BackupVault, BackBlaze</p></li>
+</ul>
+<p><font size="4"><strong>Basics</strong></font></p>
+
+<ul>
+<li><p>Use MFA for logons. This will reduce the likelihood of accounts being compromised.</p></li>
+<li><p>Use Conditional Access Policies to satisfy security requirements, geographic location and device capabilities. This will aid in security.</p></li>
+</ul>
+<p><font size="5"><strong>Example : Veeam for Microsoft 365</strong></font></p>
+<p>Veeam offers a companion product to its core product which is exclusively for M365. It can take the contents of your M365 applications and send it to on-premise or cloud backup storage for storage, versioning and recovery at a very granular level.</p>
+<p><img src="../../../assets/backup/M365-02.png" /></p>
+<p>https://www.veeam.com/veeam_backup_microsoft_office_365_datasheet_ds.pdf</p>
+<p><font size="5"><strong>Example : SkyKick</strong></font></p>
+<p>SkyKick is a cloud based backup system for the Microsoft 365 Suite (Exchange Online, Sharepoint Online, OneDrive, Teams) which adds richer backup features to those which Microsoft provide. These will give you a much more granular set of recovery options.</p>
+<p>This image details the Exchange Element, however the options for Sharepoint/OneDrive and Teams are equally feature rich.</p>
+<p><img src="../../../assets/backup/M365-03.png" /></p>
+<p>https://www.skykick.com/office-365-backup/cloud-backup-suite-for-office-365/</p>
+<p><font size="5"><strong>Recovery times</strong></font></p>
+<p>Assuming your deleted data is still available in M365 for recovery, the recovery times from a 3rd party product such as Veeam365 or SkyKick is much shorter, as illustrated in this graphic from SkyKick.</p>
+<p><img src="../../../assets/backup/M365-04.png" /></p>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p>Microsoft do not provide backups, just availability.</p></li>
+<li><p>Microsoft Online ‘Recycle Bins’ hold deleted items for a short period of time (as low as 30 days for some 365 Offerings)</p></li>
+<li><p>Without additional backups, corrupt data will prove very difficult to recover from</p></li>
+<li><p>Protection from deliberate deletions are not covered by default with M365.</p></li>
+<li><p>More data is moving into M365 as organisations move away from traditional file servers, and by default in M365 the recovery points will not be sufficient to meet your BC/DR plan derived RPO’s</p></li>
+<li><p>Backing up data to outside of M365 will give a greater opportunity for recovery, and in a much shorter period of time, thus enabling you to meet your RTO</p></li>
+<li><p>Teams file storage is often overlooked, and backing it up will bring it into line with your regular file storage for RPO/RTO</p></li>
+<li><p>You can retain backups of former users without need to license the user in M365 for as long as the data may be required.</p></li>
+<li><p>You can store your backups locally onsite, or in another cloud provider</p></li>
+</ul>
 
             
           </main>

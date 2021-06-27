@@ -112,47 +112,52 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/m365/#m365-backup"><span>M365 backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rbac/#rbac-least-privilege"><span>RBAC least privilege</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#bcdr-plan"><span>BCDR plan</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#database-transaction-logs"><span>Database transaction logs</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/rto/#rto-rpo"><span>RTO/RPO</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#best-practice"><span>Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#bcdr-prep"><span>BCDR prep</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#database-maintenance-plans"><span>Database maintenance plans</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/backup/offline/#offline-backup"><span>Offline backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
   </li>
 </ul>
 <ul>
@@ -205,7 +210,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup-2"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +252,162 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="database-transaction-logs">Database transaction logs</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - Database TX Logs v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-database-transaction-logs-backups">Overview of database transaction logs backups</h1><p><font size="5"><strong>Objective</strong></font></p>
+
+<ul>
+<li>Outline guidance and approach of considerations to be given to database transaction log (TX Log) Backups which when combined with regular robust backups give you a much shorter database RPO/RTO and will go towards minimising potential data loss. </li>
+</ul>
+<p><font size="5"><strong>Disclaimer</strong></font></p>
+
+<ul>
+<li><p>This detail is provided as guidance only.</p></li>
+<li><p>Changes made to your database maintenance plans and your regular backup regime are made at your own risk.</p></li>
+<li><p>Test your policies on non-production databases first, before rolling out to your database estate at large.</p></li>
+<li><p>The detail given here is for Microsoft SQL server. Although the procedures here may vary between alternate SQL and database formats the principles are essentially the same.</p></li>
+</ul>
+<p><font size="5"><strong>What are transaction logs ?</strong></font></p>
+
+<ul>
+<li><p>Transaction logs (TX Logs) are a history of actions executed by a database management system</p></li>
+<li><p>Physically, the TX Log is a file listing changes to the database, stored in a stable storage format which can be played back into the database after a restore from the primary backup has been carried out.</p></li>
+</ul>
+<p><font size="5"><strong>Why use transaction log backups?</strong></font></p>
+
+<ul>
+<li><p>A transaction log backup allows you to restore a database to a particular point-in-time before the failure has occurred. A clearly defined RPO will drive the frequency of transaction log file backups.</p></li>
+<li><p>It is incremental, meaning that in order to restore a database to a certain point-in-time, all transaction log records are required to replay database changes up to that particular point-in-time.</p></li>
+<li><p>TX log backups enable mission critical databases to be restored to a point in between daily backups thus providing much better resilience.</p></li>
+<li><p>Minimises data loss - Transaction logging redoes/undoes transactions not written to disk or partial transactions following an outage.</p></li>
+<li><p>Transaction log backups aid in the event of a recent data corruption. They can be used to recover to a desired point in time post backup restoration before the aforementioned corruption occurred. This can save a lot of time by negating the requirement to re-enter a whole days worth of data. Instead it will put you in the position to only have to re-enter the data AFTER the issue had arisen.</p></li>
+<li><p>Transaction log backup frequency for databases should be considered when setting your Maximum Tolerable Period for Disruption (MTPD*) 
+in your change control for maintenance windows. (MTPD definition – term used to describe the time it would take for adverse impacts, which might arise as a result of not providing a product/service or performing an activity to become unacceptable)</p></li>
+<li><p>This backup frequency will also be driven by the RPO for each system</p></li>
+</ul>
+<p><font size="5"><strong>How a sequence of log backups works</strong></font></p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Time</th>
+<th style="text-align: center">Event</th>
+</tr><tr>
+<td>0800</td>
+<td style="text-align: center">Back up database</td>
+</tr><tr>
+<td>1200</td>
+<td style="text-align: center">Back up transaction log</td>
+</tr><tr>
+<td>1600</td>
+<td style="text-align: center">Back up transaction log</td>
+</tr><tr>
+<td>1800</td>
+<td style="text-align: center">Back up database</td>
+</tr><tr>
+<td>2000</td>
+<td style="text-align: center">Back up transaction log</td>
+</tr>
+        </table>
+      </div><p>The transaction log backup created at 2000 contains transaction log records from 4:00 PM through 8:00 PM - the time since the last Transaction Log Backup.</p>
+
+<ul>
+<li>Reference : https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/transaction-log-backups-sql-server?view=sql-server-ver15 </li>
+</ul>
+<p>In the timeframe here, if a failure were to occur at 2145 you have two recovery options. 
+Firstly create a “tail-log backup” of the currently active transaction log as of the point of failure. Source procedure: https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/back-up-the-transaction-log-when-the-database-is-damaged-sql-server?view=sql-server-ver15</p>
+<p>Options:</p>
+<p>1   <strong>Do not restore the 0800 full database backup</strong>. Instead, restore the more recent 1800 full database backup, and then apply the 2000 log backup and then the tail-log backup.</p>
+<p>2   <strong>Restore the 0800 full database backup</strong>, and then restore all four transaction log backups in sequence. This rolls forward all completed transactions up to 2145.</p>
+<p><font size="5"><strong>How often should I take a transaction log backup?</strong></font></p>
+
+<ul>
+<li><p>Taking a transaction log backup every 15 to 30 minutes might be enough for a typical database. If your business requires that you minimize work-loss exposure, consider taking log backups more frequently.</p></li>
+<li><p>Ask yourself: How many transactions can you afford to lose before you lose your business, or at least hurt its reputation?</p>
+<p>This in turn guides you to how often you should take a TX Log backup.</p></li>
+</ul>
+<p>Example : How many transactions take place on a database in an hour? If it is only one per hour and each transaction alone is not necessarily a critical change then doing a transaction log backup every seven or ten hours could be fine. In this scenario at most you would lose ten transactions in a worst case scenario. However, if hundreds or thousands of changes take place every few minutes then a more frequent transaction log backup is better to protect data.</p>
+<p><font size="5"><strong>Microsoft recommendations</strong></font>
+Reference : https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/transaction-log-backups-sql-server?view=sql-server-ver15</p>
+
+<ul>
+<li><p>If a transaction log is damaged, work that is performed since the most recent valid backup is lost. Therefore, we strongly recommend that you put your log files on fault-tolerant storage.</p></li>
+<li><p>If a database is damaged or you are about to restore the database, we recommend that you create a tail-log backup to enable you to restore the database to the current point in time.</p></li>
+<li><p>By default, every successful backup operation adds an entry in the SQL Server error log and in the system event log. If back up the log very frequently, these success messages accumulate quickly, resulting in huge error logs that can make finding other messages difficult. In such cases you can suppress these log entries by using trace flag 3226 if none of your scripts depend on those entries. For more information, see Trace Flags (Transact-SQL).</p></li>
+<li><p>Take frequent enough log backups to support your business requirements, specifically your tolerance for work loss such as might be caused by a damaged log storage.</p></li>
+<li><p>The appropriate frequency for taking log backups depends on your tolerance for work-loss exposure balanced by how many log backups you can store, manage, and, potentially, restore. Think about the required RTO and RPO when implementing your recovery strategy.</p></li>
+<li><p>Taking a log backup every 15 to 30 minutes might be enough. If your business requires that you minimize work-loss exposure, consider taking log backups more frequently. More frequent log backups have the added advantage of increasing the frequency of log truncation, resulting in smaller log files.</p></li>
+</ul>
+<p><font size="5"><strong>System Requirements</strong></font></p>
+
+<ul>
+<li><p>Each database you require transaction log backups for will require you set the ‘Recovery Model’ to be FULL.</p></li>
+<li><p>You will need sufficient disk space to cope with the transaction logs until they have been committed to the Database. It is space that will be well worth investing in if insufficient storage space is available. A Critical Database that can be recovered almost to the point of server failure is worth the storage expenditure.</p></li>
+<li><p>Ideally be able to ship the transaction log backups to another server in case of a total loss of the SQL server in question. The use of powershell or command line scripts scheduled to run at regular intervals is a convenient way to do this.</p></li>
+</ul>
+<p><font size="6"><strong>Guide to implementation on SQL</strong></font></p>
+
+<ul>
+<li>Step 1: Preparation</li>
+<li>Step 2: Create a Maintenance Plan for the Database </li>
+<li>Step 3: Test the Maintenance Plan</li>
+<li>Step 4: Ship Log Files off the Server</li>
+</ul>
+<p>Implementation on Oracle Databases will require following the guidance from your Oracle support team and is not covered further in this pack.</p>
+<p><font size="5"><strong>Step 1 : Preparation</strong></font></p>
+<p>Set the following items
+- Backup Location
+- Create a folder on a different location to the database ideally</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>Eg E:\TXLOG
+</code></pre></div>
+<ul>
+<li>Recovery Model</li>
+<li>Ensure Recovery Model is set to Full (see next slide) for each database.</li>
+<li>Ensure SQL Agent is running (with sufficient privileges)</li>
+</ul>
+<p><font size="4"><strong>Recovery Model</strong></font></p>
+<p>The required recovery model to utilise Transaction Log Backups is ‘Full’. You can check and change this on a Database by Database basis by opening the properties of a Database, Options page, Recovery Model. If not Full, change it to this.</p>
+<p><img src="../../../assets/backup/DBTX01.png" /></p>
+<p><font size="5"><strong>Step 2 : Create a maintenance plan</strong></font></p>
+<p>Create a maintenance plan for the databases you wish to group together (or create individual ones if so desired).</p>
+<p>SQL Management Studio</p>
+
+<ul>
+<li><p>Management</p>
+<p>R-Click ‘Maintenance Plans’ and select ‘Maintenance Plan Wizard’</p>
+<p>Name it logically, and set the schedule as decided (this can be changed)</p>
+<p>Select the required parts of the plan, at a minimum of Back Up Database (Transaction Log).</p>
+<p>On the Define Back Up Database (Transaction Log) Task select your required databases (or All User Databases or All Databases) - depending on your requirements.</p></li>
+</ul>
+<p><img src="../../../assets/backup/DBTX02.png" /></p>
+<p>Select ‘Create a sub-directory for each database’ - this makes locating backup files easier.</p>
+<p>On the Options tab set the expiry dates for the backups (else they will just keep going) and any other required settings you may want.</p>
+<p>Then Save the plan.</p>
+<p><img src="../../../assets/backup/DBTX03.png" /></p>
+<p><font size="5"><strong>Step 3 : Test the maintenance plan</strong></font></p>
+
+<ul>
+<li><p>Execute the Maintenance plan you created in Step 2 manually.</p></li>
+<li><p>Review the contents of the folder you targeted for the TX Log Backups</p></li>
+<li><p>Check the Log files</p></li>
+</ul>
+<p><font size="5"><strong>Step 4 : Ship Log Files off the Server</strong></font>
+(Optional but preferred)</p>
+<p>In the event of a total server loss, it would be beneficial to have the backup files copied off the server at regular intervals to facilitate a shorter RPO</p>
+
+<ul>
+<li><p>Create a script that copies the TX Log Backup Folder to an off server destination</p></li>
+<li><p>Schedule the script to run regularly throughout the day</p></li>
+<li><p>Check the operation of the file copies</p></li>
+</ul>
+<p><font size="5"><strong>Additional considerations</strong></font></p>
+<p>Backup the TX Log Backups!</p>
+
+<ul>
+<li>The primary TX Log backup destination should be backed up as part of the full SQL server backup.</li>
+</ul>
+<p>Regular testing!</p>
+
+<ul>
+<li>As part of your BC/DR planning regularly carry out a simulation of a SQL server recovery (in a sandbox environment) to test the efficacy of your procedures.</li>
+</ul>
 
             
           </main>
