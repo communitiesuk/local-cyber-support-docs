@@ -179,17 +179,17 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#mfa-best-practice"><span>MFA best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#conditional-access-policies-best-practice"><span>Conditional access policies best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/byod/#bring-your-own-device"><span>Bring your own device</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
@@ -247,10 +247,79 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="mfa-best-practice">MFA best practice</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/mfa/Local Digital CYBER - MFA Best Practice v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-mfa-best-practice">Overview of MFA best practice</h1><p><font size="5"><strong>Objective</strong></font></p>
+<p>Outline guidance and approach to best practice design features for the use of Multi Factor Authentication (MFA) options for use within Local Authority Information Systems.</p>
+<p><img src="../../../assets/mfa/MFA01.png" /></p>
+<p>MFA helps prevent attackers from accessing your systems even if they obtain your username and password.</p>
+<p>For example, if you create a multi-layered mechanism, an unauthorised user would have to defeat all layers to gain access</p>
+<p><font size="5">**How does Multi Factor Authentication work ?</p>
+<p>Multi Factor Authentication works on the principle of requiring more than one of these items:</p>
+
+<ul>
+<li>Something you have (such an authentication application on your phone)</li>
+<li>Something you know (such as your username and password)</li>
+<li>Something you are (such as fingerprint or iris recognition)</li>
+</ul>
+<p>For remote system access MFA is usually built up of 
+the first two items, but the authentication applications 
+can also require the third item.</p>
+<p><img src="../../../assets/mfa/MFA02.png" /></p>
+<p><font size="5"><strong>Best practices</strong></font></p>
+<p>Best practices for the usage of MFA are :-</p>
+
+<ul>
+<li>Protection of Online Administrative Accounts (Such as M365 Global Administrators)</li>
+<li>Protection of Internal Domain Privileged Accounts (Such as Domain Administrators, SAN Administrators, Backup Server Accounts)</li>
+<li>Protection of User Accounts for Remote Access</li>
+<li>Protection of Regular M365 User Accounts when not in ‘Whitelisted’ locations</li>
+<li>NCSC Guidance on MFA explicitly states that “All users, including administrators, should use multi-factor authentication when using Cloud and Internet-connected services. This is particularly important when authenticating to services that hold sensitive or private data.” and “Administrators should, wherever possible, be required to use multi-factor authentication” when using any service.</li>
+</ul>
+<p><font size="5"><strong>Why are these practices important?</strong></font></p>
+<p><strong>Using MFA for VPN Remote Access:</strong>
+- Stops unauthorised access if a stolen username and password is used.</p>
+<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>A VPN is, after all, a direct link into your network.
+</code></pre></div><p><strong>Using MFA on M365 Global Administrator Accounts :</strong>
+- A M365 Global Administrator Account is an incredibly important account, and if compromised you can find yourself locked out of your entire organisation. It should be treated as ‘The Keys to the Kingdom’ and protected with an extremely secure password, and <strong>at least</strong>one other form of Authentication.</p>
+<p><strong>Using MFA on On Premise Privileged User Accounts:</strong></p>
+
+<ul>
+<li>These accounts are extremely important and unauthorised usage can result in significant damage to internal systems. As with other items listed, requiring additional authentication will help protect the accounts even if a valid username and password are used to access key services such as Domain Controllers, Storage Systems, etc.</li>
+</ul>
+<p><strong>Using MFA on M365 User Accounts when not onsite:</strong></p>
+
+<ul>
+<li>By using a specific type of Conditional Access Policy you can require a user to use MFA when accessing their emails or Microsoft 365 located files when they are not connected to your local network, or trusted locations. This will reduce user impact by allowing them to connect with just usernames and passwords when working internally.</li>
+</ul>
+<p><font size="5"><strong>How to implement MFA</strong></font></p>
+
+<ul>
+<li><p>For Microsoft 365 Accounts the most common implementation model is to use the Microsoft Authenticator App on a users Mobile Device.</p>
+<p>This application is Free, and is designed to be integrated with M365</p></li>
+<li><p>For On Premise Domain accounts (privileged or not) you can use any number of MFA systems, some are Free, others are chargeable. Suitability should be assessed before selecting one.</p>
+<p>Options include but are not limited to Microsoft Authenticator App, Google Authenticator App, Cisco Duo, RSA.</p></li>
+<li><p>For Standalone Systems check with the system manufacturer for compatibility with MFA Solutions.</p></li>
+<li><p>Overview:</p>
+<p>https://www.microsoft.com/en-us/security/business/identity-access-management/mfa-multi-factor-authentication</p></li>
+<li><p>On Premise Options (No Integration with Azure AD)</p>
+<p>Manageengine ADSelfService Plus:</p>
+<p>https://www.manageengine.com/products/self-service-password/windows-logon-two-factor-authentication.html?lhs</p>
+<p>Cisco Duo:</p>
+<p>https://duo.com/blog/protecting-windows-servers-and-remote-desktops-with-duo</p></li>
+<li><p>Where Active Directory is Integrated into Azure AD (M365):</p>
+<p>Azure MFA</p>
+<p>https://docs.microsoft.com/en-GB/azure/active-directory/fundamentals/concept-fundamentals-mfa-get-started</p></li>
+</ul>
+<p><font size="5"><strong>Jump Servers, RBAC Integration &amp; MFA</strong></font></p>
+<p>Consider the use of Jump Servers with the relevant administration tools on them (eg Active Directory Management, SQL Management, Exchange Management, etc) as the servers to implement MFA onto.</p>
+<p>Your privileged users should use their MFA enabled privileged accounts to log onto these servers to carry out the administrative tasks, rather than going to the servers directly.</p>
+<p><font size="5"><strong>Final considerations*:</strong></font></p>
+
+<ul>
+<li>You will need to consider how administrators can gain access to the service if multi-factor authentication is unavailable. This could be caused by a service configuration or the loss of an authentication token. </li>
+<li>Creating an emergency (‘break glass’) account would give you the capability to log in to a server which has administrative accounts protected by MFA in the event of an MFA service failure. These accounts should have hyper-complex passwords and known only to a small number of high level administrators, ideally in a Password ‘Safe’ product, so the passwords are not easily viewed.</li>
+<li>Accounts such as an emergency or &lsquo;break glass&rsquo; accounts that use a single authentication factor should be the subject of increased protective monitoring so that its misuse can be easily detected.</li>
+</ul>
+<p>*https://www.ncsc.gov.uk/guidance/multi-factor-authentication-online-services</p>
 
             
           </main>

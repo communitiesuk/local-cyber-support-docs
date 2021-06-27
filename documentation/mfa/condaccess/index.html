@@ -179,17 +179,17 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#mfa-best-practice"><span>MFA best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#conditional-access-policies-best-practice"><span>Conditional access policies best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/mfa/byod/#bring-your-own-device"><span>Bring your own device</span></a>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
@@ -247,10 +247,71 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="conditional-access-policies-best-practice">Conditional access policies best practice</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/backup/Local Digital CYBER - CAP Best Practice v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="overview-of-conditional-access-policies-best-practice">Overview of conditional access policies best practice</h1><p><font size="5"><strong>Overview</strong></font></p>
+<p>Outline guidance and approach of considerations to be given to Conditional Access Policies (CAP’s) for all applicable Local Authority Information Systems.</p>
+<p>With Conditional Access, you can control the devices and apps that can connect to your email and company resources.</p>
+<p>Conditional Access policies at their simplest are “if-then” statements, if a user wants to access a resource, then they must complete an action.</p>
+
+<ul>
+<li>Example: A payroll manager wants to access the payroll application and is required to perform multi-factor authentication to access it.</li>
+</ul>
+<p>Conditional Access Policies are mainly used in conjunction with Azure AD (Microsoft 365 / Microsoft Azure) system usage.</p>
+<p>By using Conditional Access policies, you can apply the right access controls when needed to keep your organization secure and stay out of your user&rsquo;s way when not needed.</p>
+<p><font size="5"><strong>Why are CAPs important?</strong></font></p>
+<p>By their nature, Conditional Access Policies only allow access if certain conditions are met first.</p>
+<p>They add an extra layer of security and also can extend out to assist compliance in other areas (such as operating system versions and patching levels).</p>
+<p><font size="4"><strong>The benefits of deploying Conditional Access are:</strong></font></p>
+
+<ul>
+<li><strong>Increase productivity</strong>. Only interrupt users with a sign-in condition like MFA when one or more signals warrants it. </li>
+<li><strong>Control</strong>. Conditional Access policies allow you to control when users are prompted for MFA, when access is blocked, and when they must use a trusted device</li>
+</ul>
+<p><font size="5"><strong>Typical policies implemented</strong></font></p>
+<p>CAP implementation level will vary depending on whether or not you are using Azure AD Premium 2 or not, as some features depend on this licensing model.</p>
+<p>Ref : https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common</p>
+<p><font size="4"><strong>Typical Policies deployed:</strong></font>
+- Blocking Legacy Authentication</p>
+
+<ul>
+<li><p>Clients that don&rsquo;t use modern authentication (for example, an Office 2010 client)</p></li>
+<li><p>Any client that uses older mail protocols such as IMAP, SMTP, or POP3</p></li>
+<li><p>Requiring MFA</p></li>
+<li><p>Requiring a compliant device</p></li>
+<li><p>Blocking Access by Location</p></li>
+<li><p>Blocking Access except for Specific Applications</p></li>
+<li><p>Sign-in risk-based Conditional Access (Requires Azure AD Premium P2)</p></li>
+<li><p>User risk-based Conditional Access (Requires Azure AD Premium P2)</p></li>
+<li><p>Requiring trusted location for MFA Registration</p></li>
+<li><p>Requiring multi-factor authentication for users with administrative roles</p></li>
+</ul>
+<p><font size="5"><strong>Conditional access and Intune</strong></font>
+- If your organisation uses Intune with your Microsoft 365 configuration, you can leverage the combined features which includes Device Compliance and Mobile Application Management.
+- Conditional Access is an Azure Active Directory capability that is included with an Azure Active Directory Premium license.</p>
+
+<ul>
+<li>Intune enhances this capability by adding mobile device compliance and mobile app management to the solution.</li>
+</ul>
+<p><font size="3"><strong>There are two types of conditional access with Intune:</strong></font></p>
+
+<ul>
+<li><p>Device-based conditional access</p></li>
+<li><p>App-based conditional access.</p></li>
+</ul>
+<p><font size="3"><strong>You need to configure the related compliance policies to drive conditional access compliance at your organisation.</strong></font></p>
+<p><font size="3"><strong>Conditional access is commonly used to do things like allow or block access to Exchange, control access to the network, or integrate with a Mobile Threat Defence solution.</strong></font></p>
+<p><font size="4"><strong>Specific ways to use Conditional Access with Intune:</strong></font>
+- Device-based Conditional Access
+- Conditional Access for Exchange on-premises
+- Conditional Access based on network access control
+- Conditional Access based on device risk
+- Conditional Access for Windows PCs
+- Corporate-owned
+- Bring your own device (BYOD)
+- App-based Conditional Access</p>
+
+<ul>
+<li>Ref : https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access</li>
+</ul>
 
             
           </main>
