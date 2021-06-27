@@ -79,7 +79,7 @@
                       <ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#operating-systems-best-practice"><span>Operating Systems Best Practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
@@ -173,7 +173,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#password-and-best-practice"><span>Password and best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
@@ -247,8 +247,64 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="password-and-best-practice">Password and best practice</h1>
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQZenCEkHPSuSFpRFq-_mU_qKYIi0MAmSyeE73jRoJ8cDRbz7nS_a3Y_8hRuxVy_GjbWL21FqTYicjo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <h1 id="ad-and-password-best-practice">AD and Password Best Practice</h1><p><font size="5"><strong>Objective</strong></font></p>
+<p>Outline guidance and approach of considerations to be given to key elements of active directory.</p>
+<p>In particular, this pack covers the areas of password policies, M365 integration and domain controller placement.</p>
+<p><font size="5"><strong>Concepts for account security</strong></font></p>
+<p><font size="4"><strong>Key areas for consideration around password policies</strong></font></p>
+<p>Password Requirements</p>
+<p>Fine Grained Policies</p>
+<p>Password Auditing</p>
+<p><font size="4"><strong>Microsoft 365 Integration</strong></font></p>
+<p>Azure AD Connect Software</p>
+<p><font size="4"><strong>Active Directory Domain Controller Placement</strong></font></p>
+<p>Local Redundancy</p>
+<p>Geographical Redundancy</p>
+<p><font size="5"><strong>Why are these practices important?</strong></font></p>
+<p><font size="4"><strong>Password Policies:</strong></font></p>
+<p>The more secure the password and the more educated your users, the lower the risk of an account breach.</p>
+<p><font size="4"><strong>M365 Integration:</strong></font></p>
+<p>By having a second Azure AD Connector ready in staging mode will facilitate a speedy recovery from a failure of the primary Connector, and ensure the configuration is identical. Microsoft only allow for a single one per domain so staging mode is the best that is currently possible.</p>
+<p><font size="4"><strong>Domain Controller Placement:</strong></font></p>
+<p>By having Domain Controllers in multiple locations logon speeds and availability will improve as well as providing a DR site Directory for aiding in recovery.</p>
+<p><font size="5"><strong>Considerations for password policies</strong></font></p>
+<p>“But we already have password complexity set, is that not enough ?”</p>
+<p>The simple answer is - probably not</p>
+<p><font size="4"><strong>Password Requirements</strong></font></p>
+<p>Using the standard domain policy for all accounts can mean privileged accounts may not be as secure as they could be.</p>
+<p>Domains that have ‘evolved’ may still have a weak level of requirements as the policies are not automatically upgraded with stronger settings.</p>
+<p><font size="4"><strong>Fine Grained Policies</strong></font></p>
+<p>These are a great way to enforce a tiered level of security, and not over complicate non-privileged accounts</p>
+<p><font size="4"><strong>Password Auditing</strong></font></p>
+<p>Auditing passwords on a regular basis will help identify users who need education on the importance of account security. It will also identify any passwords that have not been changed in a long time.</p>
+<p><font size="5"><strong>Password policies</strong></font></p>
+<p><font size="4"><strong>Password Requirements</strong></font></p>
+<p>Maintain at least an 8-character minimum length requirement</p>
+<p>Don&rsquo;t require character composition requirements. For example, *&amp;(^%$ - but do require ‘special characters’ are used as part of the password</p>
+<p>Don&rsquo;t require mandatory periodic password resets for user accounts</p>
+<p>Don&rsquo;t use a single word, eg ‘password’ or a commonly-used phrase like ‘Iloveyou’</p>
+<p><font size="4"><strong>Fine grained policies</strong></font></p>
+<p>You can use fine-grained password policies to specify multiple password policies within a single domain and apply different restrictions for password and account lockout policies to different sets of users in a domain.</p>
+<p>For example, you can apply stricter settings to privileged accounts and less strict settings to the accounts of other users. In other cases, you might want to apply a special password policy for accounts whose passwords are synchronized with other data sources.</p>
+<p>You must use the Windows Server 2012 or newer version of Active Directory Administrative Center to administer fine-grained password policies through a graphical user interface.</p>
+<p><font size="4"><strong>Password auditing</strong></font></p>
+<p>Password security audits help you test the strength of your users&rsquo; passwords and your resiliency against password attacks. Not only can they help you uncover weak passwords, but they also provide an opportunity to educate your employees on proper password utilization.</p>
+<p><font size="5"><strong>Microsoft 365 integration</strong></font></p>
+<p>Having a second Azure AD Connector ready in staging mode will facilitate a speedy recovery from a failure of the primary connector, and ensure the configuration is identical. Microsoft only allow for a single one per domain so staging mode is the best that is currently possible.</p>
+<p>If the connector (or the server it runs on) fails, then the selected options at the point of installation of the software would not be carried out until the server was rebuilt. Primarily these would be password synchronisation related, and new account synchronisation.</p>
+<p><font size="4"><strong>Additional recommendations</strong></font></p>
+<p>Keep a documented set of the configuration settings elsewhere on your network</p>
+<p>Update your Azure AD Connect software on a regular basis to take advantage of enhancements in security and features</p>
+<p>Remember to update the standby staging server!</p>
+<p><font size="5"><strong>Domain controller placement</strong></font></p>
+<p>Microsoft advise that it is best practice to ensure the physical security of domain controllers in hub and satellite locations so that unauthorized personnel cannot access them, so consider this when selecting locations for off site domain controller placement.</p>
+<p><font size="5"><strong>Further considerations</strong></font></p>
+<p><font size="4"><strong>Multi Factor Authentication</strong></font></p>
+<p>This gives you additional security on accounts in case username/password combinations are breached by requiring a 3rd (or more) level of authentication (examples : authentication apps, tokens, biometrics)</p>
+<p><font size="4"><strong>Password Storage Products</strong></font></p>
+<p>There are plenty of password storage products on the market which keep your passwords securely, and you limit access to it with its own level of security. The passwords are not displayed, but you can copy them to use.</p>
+<p>Refer to the NCSC guidelines on using these systems:</p>
+<p>https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide</p>
 
             
           </main>
