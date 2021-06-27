@@ -96,12 +96,12 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#principal-security-concerns"><span>Principal security concerns</span></a>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas"><span>OpenVAS</span></a>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
   </li>
 </ul>
 <ul>
@@ -247,10 +247,63 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="openvas">OpenVAS</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/healthcheck/Local Digital CYBER - OpenVAS Guidance v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="openvas-guidance">OpenVAS guidance</h1><p><font size="5"><strong>Overview</strong></font></p>
+<p>Outline guidance and approach of considerations to be given to the implementation of OpenVAS software for all applicable Local Authority information systems.</p>
+<p>For further information on using Greenbone VMS (aka OpenVAS) please contact the Cyber Support Team at cybersupport@localdigital.gov.uk</p>
+<p><font size="5"><strong>What are vulnerability scans</strong></font></p>
+<p>Vulnerability scanning products identify potential vulnerabilities but do not exploit the vulnerabilities.</p>
+<p>Vulnerability scans are run to identify potential vulnerabilities in an IT environment.</p>
+<p>It is generally an automated process with the focus of finding potential and known vulnerabilities within your system.</p>
+<p>The focal points for scanning are devices such as firewalls, routers, switches, servers, operating systems and applications.</p>
+<p>It should be noted such scans are ineffective at finding zero-day exploits, <strong>but carrying out regular vulnerability scans is infinitely better than not doing so</strong>.</p>
+<p>Vulnerability scanning scope should be business-wide and requires automated tools to manage a high number of assets.</p>
+<p><font size="5"><strong>What is OpenVAS software ?</strong></font></p>
+<p><font size="4"><strong>Background:</strong></font>
+OpenVAS began under the name of GNessUs, as a fork of the previously open source Nessus scanning tool, after its developers Tenable Network Security changed it to a proprietary (closed source) license in October 2005.</p>
+<p>OpenVAS is a member project of Software in the Public Interest</p>
+<p>OpenVAS is currently known as Greenbone Vulnerability Management</p>
+<p><font size="4"><strong>Vulnerability Management</strong></font>
+Vulnerability management is the process of identifying, evaluating, treating, and reporting on security vulnerabilities in systems and the software that runs on them.</p>
+<p>Taking the results from a Vulnerability Scan and acting on them is vital for organisations to prioritise the remediation of potential threats.</p>
+<p><font size="5"><strong>How does OpenVAS Work ?</strong></font></p>
+<p><img src="../../../assets/healthcheck/OPENVAS01.png" /></p>
+<p>Once installed, the OpenVAS scanner and OSP scanner will carry out a series of vulnerability scans against the defined target systems. 
+This data is then collated by the vulnerability manager (Greenbone GVM) and presented to the user via a web interface.</p>
+<p><font size="5">**Why run vulnerability scans ?</p>
+<p>Running vulnerability testing scans on a regular basis will identify any security vulnerabilities in your network.</p>
+<p><font size="4"><strong>Reasons to run these regularly include (but are not limited to):</strong></font>
+- The simplest reason - prevention is better than cure !
+- Scan results will help prioritise where and how to spend time, money and resource on system enhancements
+- Reduce your exposure to known security threats  (Threats are discovered and exploited on almost a daily basis at present).
+- Peace of mind - Regularly running scans and acting on findings will hopefully allow you to believe you’ve done everything practicable to protect your assets.</p>
+<p><font size="5"><strong>How often to run a vulnerability scan?</strong></font></p>
+
+<ul>
+<li>There is no 100% correct answer. Estimates vary from weekly to annually !</li>
+<li>They represent a snapshot of the vulnerabilities at the time the scan was ran.</li>
+<li>The answer should be geared around how often you make system changes.</li>
+<li>Any new software, hardware or application should be considered a possible trigger to run a scan.</li>
+<li>Running them too often would give you little time to enact any required changes, and leaving long gaps between scans would leave you open to recently identified threats!</li>
+<li>Quarterly scans are a good starting point, and you can increase or decrease frequency based on your feedback. Ultimately, the decision should be based around your own circumstances and risk averseness.</li>
+</ul>
+<p><font size="5"><strong>Now what?</strong></font>
+The software will have identified vulnerabilities, so the next steps would be to:
+- Triage the issues found
+- Group them together
+- Remediate the issues in order of priority / severity
+- Integrate the fixes into your server build / server deployment planning so that future servers are not exposed in the same way.
+- Re-run the scans on a regular basis.
+- Scan&ndash;&gt;Remediate&ndash;&gt;Plan
+- <strong>Repeat !</strong></p>
+<p><font size="5"><strong>Installing OpenVAS</strong></font>
+- Download the Local Digital Cyber Prepared Software from :-
+- https://github.com/communitiesuk/cyber-openvas-vm
+- Installation Instructions are a part of this download
+- Test access</p>
+<p><font size="5"><strong>Vulnerability scanning product options</strong></font>
+- Many different Vulnerability Scanning tools exist, ranging from open source to commercial offerings. 
+- This document is built around an open source version of OpenVAS
+- Principles of vulnerability scanning are the same across the spectrum of tools available.</p>
 
             
           </main>
