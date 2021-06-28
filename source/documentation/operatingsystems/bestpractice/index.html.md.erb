@@ -59,13 +59,17 @@ Best practices for OS hardening include, but are not limited to the following or
 Best practices for OS Hardening include, but are not limited to*:
 
 **VM Settings:**
+
 - Configure the device boot order to prevent unauthorized booting from alternate media
 
 **User Account Security:**
+
 - Disable unwanted local usernames, and put complex passwords on those that remain
+
 - Use LAP Services for administration accounts
 
 **Network Configuration:**
+
 - Configure all network interfaces with the latest recommended settings from Microsoft, NCSC and trusted vendors.
 
 *For more comprehensive lists refer to:
@@ -78,10 +82,13 @@ https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/secur
 Best practices for OS hardening include, but are not limited to:
 
 **Registry Security Configuration:**
+
 - Follow the the latest recommended settings from Microsoft, NCSC and trusted vendors.
 
 **General Security Settings:**
+
 - Disable unneeded services
+
 - Remove unneeded Windows components
 
 **Audit Policy Settings**
@@ -89,24 +96,32 @@ Best practices for OS hardening include, but are not limited to:
 **Configure log shipping to SIEM for monitoring**
 
 **Software Security Guide:**
+
 - Ensure AV / AntiMalware software is running and kept up to date
 
-<font size="5">**Best practices: OS patching**</font>
+<font size="5">**Best practices: OS patching 
 
 Best practices for OS patching include but are not limited to:
 
 **Server operating systems:**
+
 - Utilise a product such as Microsoft WSUS to manage your patching process.
+
 - Post approval of patching apply to a test group of servers that are representative of your server estate.
+
 - Review server operation post patching and troubleshoot if necessary. When you are happy with the process, roll out in a tiered manner across your estate.
 
 **Hypervisor operating systems:**
+
 - For VMware configure VMware Update Manager, Baseline your systems and regularly update/patch as issued by VMware.
+
 - For Microsoft Hyper-V, patch servers as dictated by Microsoft and your Server Hardware Vendor.
 
 
 Best practices for OS Patching include but are not limited to:
+
 - As mentioned earlier you should apply approved patches to your 'Gold Image' template as part of this process. It is also recommended to update your Microsoft OS ISO's with newer builds as Microsoft make them available.
+
 - Regular automated implementation of security patches should be implemented at least monthly to desktops and servers (virtual and physical).
 
 <font size="5">**Best practices : OS upgrading**</font>
@@ -136,8 +151,11 @@ End user devices have additional security considerations over and above the OS b
 https://www.ncsc.gov.uk/collection/end-user-device-security/platform-specific-guidance
 
 As these devices are the primary items for your users to access your systems you should also consider the following:
+
 - Use of MDM Software (Mobile Device Management) to enforce security policies.
+
 - Use of (and regular update of) Anti-Virus and Anti-Malware Software
+
 - Regular education of your user base around safety and security online, with particular reference to 'Social Engineering' techniques and how to avoid falling foul of these.
 
 https://www.ncsc.gov.uk/collection/end-user-device-security/eud-overview/common-questions
@@ -180,17 +198,25 @@ Refer to :  https://docs.microsoft.com/en-us/lifecycle/products/
 <font size="5">**Threat exposure**</font>
 
 Continued operation use of unsupported OS means:
+
 - No further security patches issued by the vendor.
+
 - Existing vulnerabilities remain and are well known by hackers and criminals and therefore become a soft target.
+
 - AntiVirus software does not cover risk exposure of OS vulnerabilities.
 
 <font size="5">**Policies**</font>
 
 Where application software still is dependent on an unsupported operating system additional technical controls should be considered:
+
 - Run the application in compatibility mode on Windows 10
+
 - Virtualised containers, e.g. Docker
+
 - Place the affected workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks
+
 - Certain products may be able to have Extended Support Purchased (Such as Windows Server 2008R2)
+
 - Consider replacing the application
 
-Note: The above options should only be considered until the application can be upgraded or replaced and hosted on a supported OS. 
+Note: The above options should only be considered until the application can be upgraded or replaced and hosted on a supported OS.

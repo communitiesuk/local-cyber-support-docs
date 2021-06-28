@@ -20,114 +20,197 @@ The PSCs are categorised into focus areas identified below as those providing de
 
 IT Health Check and NCSC ACD excluded.
 
-
 <img src="../../../assets/healthcheck/PSC01.png" />
-
-
 
 <font size="5">**Principle Security Concerns**</font>
 
 <font size="4">**1. Backup**</font>
 
 <font size="3">**PSC-BU01**</font>
+
 Organisations Active Directory system state is not being backed up and severely limits the organisation’s ability to recover directory services.
+
 <font size="3">**PSC-BU02**</font>
+
 Backup traffic is communicated in cleartext protocols and sensitive information is vulnerable to eavesdropping.
+
 <font size="3">**PSC-BU03**</font>
+
 Backup traffic is channel encrypted which allows sub optimal cipher suites.
+
 <font size="3">**PSC-BU04**</font>
+
 Backups are stored unencrypted, potentially exposing sensitive information.
+
 <font size="3">**PSC-BU05**</font>
+
 Backups are stored using a weak encryption algorithm affording poor confidentiality protection.
+
 <font size="3">**PSC-BU06**</font>
-Backup servers are not leveraging latest build releases which may introduce known vulnerabilities.
+
+Backup servers are not leveraging latest build releases which may introduce known 
+vulnerabilities.
+
 <font size="3">**PSC-BU07**</font>
+
 Backup servers are sub-optimally configured exposing unused services.
+
 <font size="3">**PSC-BU08**</font>
-Backup server operating systems are not hardened in line with best practice – Centre for Internet Security (CIS) Level 2
+
+Backup server operating systems are not hardened in line with best practice – Centre for Internet 
+Security (CIS) Level 2
+
 <font size="3">**PSC-BU09**</font>
+
 Backup servers reside within the corporate Active Directory domain providing no defence against an escalated privilege lateral attack.
+
 <font size="3">**PSC-BU10**</font>
+
 Backups are stored on-network within the same authentication domain.
+
 <font size="3">**PSC-BU11**</font>
+
 Backup service accounts utilise weak and or non-complex password(s).
+
 <font size="3">**PSC-BU12**</font>
+
 Backup service account(s) credentials are locally cached on the backup server(s).
+
 <font size="3">**PSC-BU13**</font>
+
 Backup servers expose SMB service, increasing the attack surface for ransomware propagation.
+
 <font size="3">**PSC-BU14**</font>
+
 Administration of backup servers via remote desktop protocol is unrestricted from within the local area network.
 
 <font size="4">**2. Multi-Factor Authentication**</font>
 
 <font size="3">**PSC-MFA01**</font>
+
 Cloud based administration accounts aren't protected with MFA exposing potential attack areas.
+
 <font size="3">**PSC-MFA02**</font>
+
 External remote access leveraging user based authentication is only a single factor.
+
 <font size="3">**PSC-MFA03**</font>
+
 On-premise privileged user account access is provided via single factor authentication only.
 
 <font size="4">**3. Operating Systems**</font>
 
 <font size="3">**PSC-OS01**</font>
+
 Unsupported operating systems are present within the estate with known vulnerabilities.
+
 <font size="3">**PSC-OS02**</font>
+
 Supported operating systems are not patched within 14 days of vendor release.
+
 <font size="3">**PSC-OS03**</font>
+
 Unsupported systems have access to untrusted internet content.
+
 <font size="3">**PSC-OS04**</font>
+
 Vulnerable systems have exposed services which may provide a mechanism for an attacker to gain a foothold.
+
 <font size="3">**PSC-OS05**</font>
+
 Host based firewalls are not present and provide an increased attack surface.
+
 <font size="3">**PSC-OS06**</font>
+
 Antivirus / antimalware software is not present on target systems, increasing likelihood of successful malicious software insertion.
+
 <font size="3">**PSC-OS07**</font>
 Cached administrator credentials are present on systems increasing likelihood of successful privilege escalation attacks. 
+
 <font size="3">**PSC-OS08**</font>
+
 Desktop operating systems are not hardened in line with best practice – Centre for Internet Security (CIS) Level 2.
+
 <font size="3">**PSC-OS09**</font>
+
 Application whitelisting is not in place across critical systems to prevent known malicious code from executing.
+
 <font size="3">**PSC-OS10**</font>
+
 Host-based firewall rulesets are overly permissive providing little efficacy in filtering non-essential traffic.
+
 <font size="3">**PSC-OS11**</font>
+
 Mobile and tablet operating systems are not running a vendor supported release in receipt of security updates.
+
 <font size="3">**PSC-OS12**</font>
+
 Mobile devices are not subject to mobile device management technical governance.
+
 <font size="3">**PSC-OS13**</font>
+
 Mobile devices are not secured in accordance with NCSC guidance.
+
 <font size="3">**PSC-OS14**</font>
+
 Server operating systems are not hardened in line with best practice – Centre for Internet Security (CIS) Level 2.
 
 <font size="4">**4. Active Directory**</font>
 
 <font size="3">**PSC-AD01**</font>
+
 Domain controllers are insufficiently hardened in accordance with industry best practice (CIS benchmark level 2) .
+
 <font size="3">**PSC-AD02**</font>
+
 Coarse grained privileged user account permissions provide a large account base with logon privileges to domain controllers.
+
 <font size="3">**PSC-AD03**</font>
+
 Complex passwords are not in place for privileged user accounts with domain wide permissions.
+
 <font size="3">**PSC-AD04**</font>
+
 Local administrator accounts may be standardised throughout server estate and therefore more susceptible to attack upon one being compromised.
+
 <font size="3">**PSC-AD05**</font>
+
 Standard user accounts are utilising passwords susceptible to brute force attacks.
+
 <font size="3">**PSC-AD06**</font>
+
 Accounts are susceptible to continuous login attempts with throttling / lockout controls being absent.
 
 <font size="4">**5. Logging**</font>
 
 <font size="3">**PAS-LOG01**</font>
+
 Privileged user account logon success / failure is not centrally logged and alerted upon.
+
 <font size="3">**PAS-LOG02**</font>
+
 User MFA authentication failures are not logged / alerted upon, resulting in nefarious activity potentially going undetected.
+
 <font size="3">**PAS-LOG03**</font>
+
 Cloud service logs are isolated and not ingested into a central system for analysis and alerting.
+
 <font size="3">**PAS-LOG04**</font>
+
 No alerting is configured within the central logging / SIEM solution to trigger event investigation and triage.
+
 <font size="3">**PAS-LOG05**</font>
+
 Lack of event correlation rules limit alerting and detection of potential nefarious activity.
+
 <font size="3">**PAS-LOG06**</font>
+
 Logs are susceptible to compromise / tampering as a consequence of weak RBAC controls
+
 <font size="3">**PAS-LOG07**</font>
+
 Log retention is less than 6 months potentially limiting historical analysis and investigative capability.
+
 <font size="3">**PAS-LOG08**</font>
+
 Backup job success / failure is not centrally logged and alerted upon.
