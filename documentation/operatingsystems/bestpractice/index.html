@@ -288,38 +288,65 @@
 <li><p>It is also recommended to update your Microsoft OS ISO&rsquo;s with newer builds as Microsoft make them available.</p></li>
 </ul>
 <p>Best practices for OS Hardening include, but are not limited to*:</p>
-<p><strong>VM Settings:</strong>
-- Configure the device boot order to prevent unauthorized booting from alternate media</p>
-<p><strong>User Account Security:</strong>
-- Disable unwanted local usernames, and put complex passwords on those that remain
-- Use LAP Services for administration accounts</p>
-<p><strong>Network Configuration:</strong>
-- Configure all network interfaces with the latest recommended settings from Microsoft, NCSC and trusted vendors.</p>
+<p><strong>VM Settings:</strong></p>
+
+<ul>
+<li>Configure the device boot order to prevent unauthorized booting from alternate media</li>
+</ul>
+<p><strong>User Account Security:</strong></p>
+
+<ul>
+<li><p>Disable unwanted local usernames, and put complex passwords on those that remain</p></li>
+<li><p>Use LAP Services for administration accounts</p></li>
+</ul>
+<p><strong>Network Configuration:</strong></p>
+
+<ul>
+<li>Configure all network interfaces with the latest recommended settings from Microsoft, NCSC and trusted vendors.</li>
+</ul>
 <p>*For more comprehensive lists refer to:</p>
 <p>https://www.netwrix.com/windows_server_hardening_checklist.html</p>
 <p>https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/secure-configuration</p>
 <p>Best practices for OS hardening include, but are not limited to:</p>
-<p><strong>Registry Security Configuration:</strong>
-- Follow the the latest recommended settings from Microsoft, NCSC and trusted vendors.</p>
-<p><strong>General Security Settings:</strong>
-- Disable unneeded services
-- Remove unneeded Windows components</p>
+<p><strong>Registry Security Configuration:</strong></p>
+
+<ul>
+<li>Follow the the latest recommended settings from Microsoft, NCSC and trusted vendors.</li>
+</ul>
+<p><strong>General Security Settings:</strong></p>
+
+<ul>
+<li><p>Disable unneeded services</p></li>
+<li><p>Remove unneeded Windows components</p></li>
+</ul>
 <p><strong>Audit Policy Settings</strong></p>
 <p><strong>Configure log shipping to SIEM for monitoring</strong></p>
-<p><strong>Software Security Guide:</strong>
-- Ensure AV / AntiMalware software is running and kept up to date</p>
-<p><font size="5"><strong>Best practices: OS patching</strong></font></p>
+<p><strong>Software Security Guide:</strong></p>
+
+<ul>
+<li>Ensure AV / AntiMalware software is running and kept up to date</li>
+</ul>
+<p><font size="5">**Best practices: OS patching</p>
 <p>Best practices for OS patching include but are not limited to:</p>
-<p><strong>Server operating systems:</strong>
-- Utilise a product such as Microsoft WSUS to manage your patching process.
-- Post approval of patching apply to a test group of servers that are representative of your server estate.
-- Review server operation post patching and troubleshoot if necessary. When you are happy with the process, roll out in a tiered manner across your estate.</p>
-<p><strong>Hypervisor operating systems:</strong>
-- For VMware configure VMware Update Manager, Baseline your systems and regularly update/patch as issued by VMware.
-- For Microsoft Hyper-V, patch servers as dictated by Microsoft and your Server Hardware Vendor.</p>
-<p>Best practices for OS Patching include but are not limited to:
-- As mentioned earlier you should apply approved patches to your &lsquo;Gold Image&rsquo; template as part of this process. It is also recommended to update your Microsoft OS ISO&rsquo;s with newer builds as Microsoft make them available.
-- Regular automated implementation of security patches should be implemented at least monthly to desktops and servers (virtual and physical).</p>
+<p><strong>Server operating systems:</strong></p>
+
+<ul>
+<li><p>Utilise a product such as Microsoft WSUS to manage your patching process.</p></li>
+<li><p>Post approval of patching apply to a test group of servers that are representative of your server estate.</p></li>
+<li><p>Review server operation post patching and troubleshoot if necessary. When you are happy with the process, roll out in a tiered manner across your estate.</p></li>
+</ul>
+<p><strong>Hypervisor operating systems:</strong></p>
+
+<ul>
+<li><p>For VMware configure VMware Update Manager, Baseline your systems and regularly update/patch as issued by VMware.</p></li>
+<li><p>For Microsoft Hyper-V, patch servers as dictated by Microsoft and your Server Hardware Vendor.</p></li>
+</ul>
+<p>Best practices for OS Patching include but are not limited to:</p>
+
+<ul>
+<li><p>As mentioned earlier you should apply approved patches to your &lsquo;Gold Image&rsquo; template as part of this process. It is also recommended to update your Microsoft OS ISO&rsquo;s with newer builds as Microsoft make them available.</p></li>
+<li><p>Regular automated implementation of security patches should be implemented at least monthly to desktops and servers (virtual and physical).</p></li>
+</ul>
 <p><font size="5"><strong>Best practices : OS upgrading</strong></font></p>
 <p>Best practices for OS upgrading include but are not limited to:
 - Aim for &lsquo;N/N-1&rsquo; policy on server use</p>
@@ -338,10 +365,13 @@
 <p><font size="5"><strong>Endpoint additional security considerations</strong></font></p>
 <p>End user devices have additional security considerations over and above the OS being in support and regularly patched. These affect Windows 10, Android and iOS devices. Refer to :</p>
 <p>https://www.ncsc.gov.uk/collection/end-user-device-security/platform-specific-guidance</p>
-<p>As these devices are the primary items for your users to access your systems you should also consider the following:
-- Use of MDM Software (Mobile Device Management) to enforce security policies.
-- Use of (and regular update of) Anti-Virus and Anti-Malware Software
-- Regular education of your user base around safety and security online, with particular reference to &lsquo;Social Engineering&rsquo; techniques and how to avoid falling foul of these.</p>
+<p>As these devices are the primary items for your users to access your systems you should also consider the following:</p>
+
+<ul>
+<li><p>Use of MDM Software (Mobile Device Management) to enforce security policies.</p></li>
+<li><p>Use of (and regular update of) Anti-Virus and Anti-Malware Software</p></li>
+<li><p>Regular education of your user base around safety and security online, with particular reference to &lsquo;Social Engineering&rsquo; techniques and how to avoid falling foul of these.</p></li>
+</ul>
 <p>https://www.ncsc.gov.uk/collection/end-user-device-security/eud-overview/common-questions</p>
 <p><font size="5"><strong>What to do next:</strong></font>
 - Carry out an IT Health Check (ITHC) at least annually and consider any recommendations from it on your server and hypervisor estate (along with your deployment template VMs).</p>
@@ -365,17 +395,23 @@
 <p><img src="../../../assets/operatingsystems/OSBP01.png" /></p>
 <p>Refer to :  https://docs.microsoft.com/en-us/lifecycle/products/</p>
 <p><font size="5"><strong>Threat exposure</strong></font></p>
-<p>Continued operation use of unsupported OS means:
-- No further security patches issued by the vendor.
-- Existing vulnerabilities remain and are well known by hackers and criminals and therefore become a soft target.
-- AntiVirus software does not cover risk exposure of OS vulnerabilities.</p>
+<p>Continued operation use of unsupported OS means:</p>
+
+<ul>
+<li><p>No further security patches issued by the vendor.</p></li>
+<li><p>Existing vulnerabilities remain and are well known by hackers and criminals and therefore become a soft target.</p></li>
+<li><p>AntiVirus software does not cover risk exposure of OS vulnerabilities.</p></li>
+</ul>
 <p><font size="5"><strong>Policies</strong></font></p>
-<p>Where application software still is dependent on an unsupported operating system additional technical controls should be considered:
-- Run the application in compatibility mode on Windows 10
-- Virtualised containers, e.g. Docker
-- Place the affected workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks
-- Certain products may be able to have Extended Support Purchased (Such as Windows Server 2008R2)
-- Consider replacing the application</p>
+<p>Where application software still is dependent on an unsupported operating system additional technical controls should be considered:</p>
+
+<ul>
+<li><p>Run the application in compatibility mode on Windows 10</p></li>
+<li><p>Virtualised containers, e.g. Docker</p></li>
+<li><p>Place the affected workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks</p></li>
+<li><p>Certain products may be able to have Extended Support Purchased (Such as Windows Server 2008R2)</p></li>
+<li><p>Consider replacing the application</p></li>
+</ul>
 <p>Note: The above options should only be considered until the application can be upgraded or replaced and hosted on a supported OS.</p>
 
             
