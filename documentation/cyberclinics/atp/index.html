@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>ATP - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/atp/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="ATP - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/atp/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="ATP" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/atp/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#overview-of-fine-grained-password-policy-implementation"><span>Overview of fine grained password policy implementation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy"><span>Logging Made Easy</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and Identity Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#cyber-clinic"><span>Cyber Clinic</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-toolkit"><span>Active Directory Toolkit</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas"><span>Open VAS</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/exchange/#exchange-on-premise"><span>Exchange On Premise</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="cyber-clinic">Cyber Clinic</h1><p><font size="5"><strong>Microsoft 365 Advanced Threat Protection : Overview</strong></font></p>
+<p>*Please note that the slido poll results shown later are from the clinic which took place on Friday 21st May 2021</p>
+<p><font size="5"><strong>SLIDO 1</strong></font></p>
+<p><font size="4"><strong>Which M365 licensing model do you predominantly use? (29 Votes in total)</strong></font></p>
+<p>E3 - 93%</p>
+<p>E5 - 7%</p>
+<p><font size="5"><strong>Description</strong></font></p>
+<p><strong>Advanced threat protection (ATP)</strong> refers to a category of security solutions that defend against sophisticated malware or hacking-based attacks targeting sensitive data. 
+Advanced threat protection solutions can be available as software or as managed services.</p>
+<p>Microsoft provide a range of ATP services which integrate into  M365 / Azure / On Prem environments.</p>
+
+<ul>
+<li>Note : Information contained in this detail on M365 features and costs regarding Microsoft references were correct as of May 2021.</li>
+</ul>
+<p><font size="5"><strong>Microsoft Defender ATP : Approach</strong></font></p>
+<p><img src="../../../assets/cyberclinics/ATP01.png" /></p>
+<p>Microsoft 365 provides a holistic approach to security, helping you to protect identities, data, applications, and devices across on-premises, cloud, and mobile</p>
+<p><font size="5"><strong>What does Microsoft ATP give me ?</strong></font></p>
+
+<ul>
+<li><p><strong>Microsoft Defender ATP is not an antivirus (AV) product.</strong></p></li>
+<li><p>Microsoft Defender ATP is a post-breach solution that compliments Microsoft Defender AV.</p></li>
+<li><p>Microsoft Defender for Identity monitors and protects user identities and credentials</p></li>
+<li><p>Microsoft Defender for Office 365 helps protect against advanced threats like business email compromise and credential phishing. Automatically investigate and remediate attacks.</p></li>
+<li><p>Microsoft Defender AV provides anti-malware and anti-virus capabilities for the Windows 10 OS.</p></li>
+</ul>
+<p><font size="4"><strong>Together they give a holistic protection for your organisation</strong></font></p>
+<p><font size="5"><strong>Threat Protection as part of Microsoft 365</strong></font></p>
+<p><font size="4"><strong>Microsoft Advanced Threat Protection comes in many ‘flavours’</strong></font></p>
+
+<ul>
+<li><p>Threat Protection forms part of the E5 license plan.</p></li>
+<li><p>E3 can be added to with the E5 Security Add-on.</p></li>
+</ul>
+<p><strong>The components that are part of E5 / E5 Security are:</strong></p>
+
+<ul>
+<li><p>Microsoft Defender AV and Device Guard (also part of E3)</p></li>
+<li><p>Microsoft 365 Defender</p></li>
+<li><p>Microsoft Defender for Endpoint</p></li>
+<li><p>Microsoft Defender for Office 365</p></li>
+<li><p>Microsoft Defender for Identity</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/ATP02.png" /></p>
+<p>For a full comparison of features download a table from: 
+https://go.microsoft.com/fwlink/?linkid=2139145</p>
+<p><font size="5"><strong>Microsoft 365 E5 Security Add-on</strong></font></p>
+<p>Microsoft 365 E5 Security is an add on product for most* business M365 plans, and it includes:</p>
+<p><font size="4"><strong>Azure AD Premium P2</strong></font></p>
+<p><font size="4"><strong>Office 365 Advanced Threat Protection P2, (which includes:)</strong></font></p>
+
+<ul>
+<li><p>Office 365 ATP Plan 2**</p></li>
+<li><p>Office 365 Threat Intelligence</p></li>
+<li><p>Microsoft Cloud App Security</p></li>
+<li><p>Microsoft Defender for Identity (Azure ATP)</p></li>
+<li><p>Microsoft Defender ATP</p></li>
+</ul>
+<p><strong>Retail</strong> cost is approximately £9.05/user/month, which when added to E3 is a lot less than an E5 license !</p>
+
+<ul>
+<li><p>*E3 is the primary license model this is aimed at. However others are supported. 
+Contact your Microsoft Partner for further information.</p></li>
+<li><p>**Documented on the Microsoft 365 Enterprise table of features</p></li>
+</ul>
+<p><font size="5"><strong>SLIDO 2</strong></font></p>
+<p><font size="4"><strong>Do you own any of these premium add ons? (24 Votes in total)</strong></font></p>
+<p>E5 Security Add-On - 17%</p>
+<p>E5 Compliance Add-On - 4%</p>
+<p>E3 EM+S - 46%</p>
+<p>E5 EM+S - 4%</p>
+<p>Azure AD P1 - 75%</p>
+<p>Azure AD P2 - 25%</p>
+<p><font size="5"><strong>SLIDO 3</strong></font></p>
+<p><font size="4"><strong>Which areas of Microsoft ATP were you aware of before today? (30 Votes in total)</strong></font></p>
+<p>Microsoft Defender ATP - 77%</p>
+<p>Microsoft Defender for Identity (Azure ATP) - 50%</p>
+<p>Microsoft Defender for Office 365 - 63%</p>
+<p>Microsoft Defender AV - 73%</p>
+<p><font size="5"><strong>Things to consider for Microsoft ATP</strong></font></p>
+
+<ul>
+<li><p>Now i know what you are thinking - it can’t all be good can it ?</p></li>
+<li><p>Well you are right. In a large estate the biggest downside is without a doubt <strong>cost.</strong></p></li>
+<li><p>Almost all of the features that would attract you to the ATP/Defender services are add-on licensing unless you have E5. And E5 is not inexpensive.</p></li>
+<li><p><strong>Detection.</strong> With reference to Defender AV, as with any AV product, there is no 100% guarantee of detection, but the outbreak and containment features when it is integrated into the other product sets are a plus point.</p></li>
+<li><p>Microsoft Defender AV is pattern-based, so it can only detect zero-day exploits if they have already been included in the security intelligence updates.</p></li>
+<li><p>In general the <strong>biggest threat to security are end users</strong>, so if you don’t educate them regularly on security risks and how to avoid them it doesn’t matter how good your ATP system is.</p></li>
+<li><p><strong>When you implement the MS Threat Protection and keep it up to date, and keep monitoring it, it will give you a good overview of your estate from a security perspective.</strong></p></li>
+</ul>
+<p><font size="5"><strong>Microsoft ATP - Component Pieces:</strong></font></p>
+<p>The ‘Threat Protection’ included in the E5 / E5 Security license plans are built up of the following:</p>
+
+<ul>
+<li><p><strong>Microsoft Defender ATP</strong> - unifies your incident response process by integrating key capabilities across Microsoft Defender for Endpoint, Microsoft Defender for Office 365, Microsoft Cloud App Security, and Microsoft Defender for Identity. This unified experience adds powerful features you can access in the Microsoft 365 security center.</p></li>
+<li><p><strong>Microsoft Defender for Identity</strong> - used as part of your Microsoft 365 tenancy</p></li>
+<li><p><strong>Microsoft Defender AV (Endpoint)</strong>- used on Windows 10 endpoints to provide anti-malware and anti-virus capabilities.</p></li>
+<li><p><strong>Microsoft Defender for Office 365</strong> - a cloud-based email filtering service that helps protect your organization against unknown malware and viruses by providing robust zero-day protection, and includes features to safeguard your organization from harmful links in real time.</p></li>
+</ul>
+<p>Note : Microsoft Defender AV and Device Guard are also part of E3.</p>
+<p><font size="5"><strong>Doesn’t Microsoft Exchange Online have protection ?</strong></font></p>
+<p>Well, sort of&hellip;</p>
+
+<ul>
+<li><p>** Exchange Online Protection** is present which prevents broad, volume-based, known attacks. EOP is included in all Microsoft 365 organizations with Exchange Online mailboxes.</p></li>
+<li><p>** Microsoft Defender for Office 365 P1** is the next level to go to, which protects email and collaboration from zero-day malware, phish, and business email compromise.</p></li>
+<li><p>** Microsoft Defender for Office 365 P2** is the current top level of protection which adds post-breach investigation, hunting, and response, as well as automation, and simulation (for training). This is included as part of E5 / E5 Security.</p></li>
+<li><p>Ref: https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/overview</p></li>
+<li><p>EOP can also be used in a standalone scenario - it provides cloud-based email protection for your on-premises Exchange organization or for any other on-premises SMTP email solution.</p></li>
+<li><p>It also can be deployed in a hybrid deployment - it can be configured to protect your email environment and control mail routing when you have a mix of on-premises and cloud mailboxes.</p></li>
+<li><p>If you have Defender for Office 365 Plan 1, it is a relatively small uplift in cost to move to Plan 2.</p></li>
+</ul>
+<p><font size="5"><strong>Each level builds on the last</strong></font></p>
+<p><img src="../../../assets/cyberclinics/ATP03.png" /></p>
+
+<ul>
+<li><p>The core of Office 365 security is EOP protection.</p></li>
+<li><p>Microsoft Defender for Office 365 P1 contains EOP in it.</p></li>
+<li><p>Defender for Office 365 P2 contains P1 and EOP.</p></li>
+<li><p>The structure is cumulative.</p></li>
+<li><p>That&rsquo;s why, when configuring this product, you should start with EOP and work to Defender for Office 365.</p></li>
+</ul>
+<p><font size="5"><strong>The Threat Protection Suite Components</strong></font></p>
+<p><font size="4"><strong>Windows Defender ATP</strong></font></p>
+
+<ul>
+<li><p>Windows Defender ATP integrates with Defender for Identity to detect and protect against malicious activity, but on your endpoint devices (Windows 10).</p></li>
+<li><p>It leverages technologies such as Windows Defender Antivirus, AppLocker, and Windows Defender Device Guard.</p></li>
+<li><p>It detects sophisticated cyber-attacks by providing intelligent protection by leveraging Azure based behaviour attack detection.</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/ATP04.png" /></p>
+
+<ul>
+<li>Image Source : https://www.proserveit.com/blog/advanced-threat-protection-3-atps-of-microsoft </li>
+</ul>
+<p><font size="3"><strong>Windows Defender ATP features</strong></font></p>
+
+<ul>
+<li><p><strong>Next-Gen Threat Protection:</strong> Windows Defender ATP has next-gen threat protection and post-breach detection built right into the Windows 10 Operating System, so you don’t need to worry about installing a new agent.</p></li>
+<li><p>Windows Defender ATP adapts to changing threats, can deploy new defenses, and can orchestrate any remediation that is required.</p></li>
+<li><p><strong>Smart &amp; Connected Threat Protection:</strong> Windows Defender ATP uses the power of the Cloud, behaviour analytics, and machine learning to provide you with smart and connected threat protection.</p></li>
+<li><p><strong>Faster Detection and Response:</strong> With Windows Defender ATP’s comprehensive monitoring tools, you can detect any abnormalities and respond to any attacks much faster.</p></li>
+<li><p><strong>Recommendations</strong>: Windows Defender ATP lets you track your overall security posture and gives you recommendations on how to further reduce your organization’s attack surface.</p></li>
+<li><p>It also give you access to Historical Data - Windows Defender ATP enables you to search and explore up to six months of historical data across your endpoints in an instant.</p></li>
+</ul>
+<p><font size="4"><strong>Microsoft Defender for Identity</strong></font></p>
+
+<ul>
+<li><p><strong>Microsoft Defender for Identity</strong> (Previously known as Azure ATP) is a cloud-based security solution that leverages your on-premises Active Directory signals to identify, detect, and investigate advanced threats, compromised identities, and malicious insider actions directed at your organization</p></li>
+<li><p>Defender for Identity enables SecOp analysts and security professionals struggling to detect advanced attacks in hybrid environments to:</p></li>
+<li><p>Monitor users, entity behavior, and activities with learning-based analytics</p></li>
+<li><p>Protect user identities and credentials stored in Active Directory</p></li>
+<li><p>Identify and investigate suspicious user activities and advanced attacks throughout the kill chain</p></li>
+<li><p>Provide clear incident information on a simple timeline for fast triage</p></li>
+<li><p>Ref : https://docs.microsoft.com/en-us/defender-for-identity/what-is</p></li>
+</ul>
+<p><font size="4"><strong>Defender for Office 365</strong></font></p>
+
+<ul>
+<li><p>Defender for Office 365 ATP protects your email, files, and Office 365 applications against potential attacks such as unsafe attachments, malicious links and credential phishing attempts.</p></li>
+<li><p>It can automatically investigate and remediate attacks.</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/ATP05.png" /></p>
+
+<ul>
+<li><p>Image Source : https://www.nakivo.com/microsoft-office-365-backup/microsoft-office-365-advanced-threat-protection-overview/</p></li>
+<li><p>Microsoft Defender for Office 365 P2 will give you this protection, and builds on both P1 and Exchange Online Protection (EOP).</p></li>
+</ul>
+<p><font size="4"><strong>Why use Defender for Office ?</strong></font></p>
+
+<ul>
+<li><p>Real-Time Protection from Sophisticated Attacks: Office 365 ATP protects your mailboxes, online storage, files, and other applications you’re using against any new, sophisticated attacks in real time.</p></li>
+<li><p>Protection Against Unsafe Attachments: Using Safe Attachments, Office 365 ATP protects against unsafe attachments and provides you with a malware-free, cleaner inbox.</p></li>
+<li><p>Visibility into Potential Targets: Office 365 ATP lets you see who might be targeted in your organization, and what kinds of attacks you might be facing.</p></li>
+<li><p>Unsafe Link Blocking: Office 365 ATP blocks users from clicking on unsafe links. If a link they click on is unsafe, the user is either informed that the site’s been blocked, or warned not to visit it.</p></li>
+<li><p>URL Trace Capabilities: Office 365 ATP provides URL trace capabilities that lets you track what individual has clicked malicious links in the messages they’ve received.</p></li>
+<li><p>Ref: https://www.microsoft.com/en-us/security/business/threat-protection/office-365-defender</p></li>
+</ul>
+<p><font size="5"><strong>Comparison with 3rd Party Products</strong></font></p>
+
+<ul>
+<li><p>You may have your own 3rd party products integrated into your system, such as a separate mail filter for inbound (and outbound) mailflow checking and analysis, localised AV protection and malware protection.</p></li>
+<li><p>Defender AV vs ‘Paid for’ AV protection. The cost saving may facilitate the purchase of the E5 Security add-on.</p></li>
+<li><p>Does a 3rd party ATP product compare favourably with the Microsoft Threat Protection Suite ?
+The Gartner Magic Quadrant puts the MS offering in a very good position</p></li>
+<li><p>Integrating all the protection elements together into a Microsoft ATP based solution may be worth considering as it will give a centralised point of management.</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/ATP06.png" /></p>
+
+<ul>
+<li>As you can see in this Gartner ‘Magic Quadrant’ image, Microsoft are in a very good position in the industry for their Threat Protection offerings.</li>
+</ul>
+<p><font size="5"><strong>SLIDO 4</strong></font></p>
+<p><font size="4"><strong>What would be a barrier to you implementing further ATP / Defender products (or 3rd party ones) within your organisation? (31 Votes in total)</strong></font></p>
+<p>Cost - 87%</p>
+<p>Leadership &lsquo;Buy-In&rsquo; - 48%</p>
+<p>Perceived Complexity - 29%</p>
+<p>User Understanding - 13%</p>
+<p>Other - 13%</p>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p>This was a very high level overview of the offering for Threat Protection from Microsoft for their M365 suite and your Windows 10 Estate.</p></li>
+<li><p>The intention is to give you some ‘food for thought’ about your approach to threat protection and outbreak containment.</p></li>
+<li><p>Remember you are not just buying the license add on or upgrading your current licensing, you will also need to configure the product. For this we advise you to work with your Microsoft Partner (or Microsoft 365 Support themselves).</p></li>
+<li><p>From a personal perspective I would also recommend that you consider a 3rd party email filtering system for inbound email before it hits your M365 Exchange Online (or On premise Exchange!). Consider it ‘belt and braces’ !</p></li>
+</ul>
+<p><font size="5"><strong>Further Reading</strong></font></p>
+<p>Aside from Microsoft, please review these 3rd party websites for some alternative views on guidance around ATP’s capabilities.</p>
+<p>Engage with your local IT MSP Organisation for how to implement within your organisation.</p>
+<p>https://msexperttalk.com/azure-advanced-threat-protection-deployment/</p>
+<p>https://www.chorus.co/resources/news/what-is-microsoft-defender-advanced-threat-protection-atp</p>
+<p>https://www.proserveit.com/blog/advanced-threat-protection-3-atps-of-microsoft</p>
+<p>https://www.nakivo.com/microsoft-office-365-backup/microsoft-office-365-advanced-threat-protection-overview/</p>
+<p><font size="5"><strong>Appendices</strong></font></p>
+
+<ol>
+<li><p>Microsoft Defender for Identity is available as part of Enterprise Mobility + Security 5 suite (EMS E5), and as a standalone license.</p></li>
+<li><p>Microsoft Defender for Office 365 Plan 2 is included in Office 365 E5, Office 365 A5, Microsoft 365 E5 Security, and Microsoft 365 E5 as specified here: https://docs.microsoft.com/microsoft-365/security/office-365-security/office-365-atp.</p></li>
+<li><p>Defender for Office 365 Plan 1 is included in Microsoft 365 Business Premium.</p></li>
+<li><p>Microsoft Defender for Endpoint requires one of the following Microsoft volume licensing offers: Windows 10 E5/A5, Microsoft 365 E5 (which includes Win10 E5)/A5, Microsoft E5/A5 Security, Microsoft Defender for Endpoint</p></li>
+</ol>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/accessibility/">Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>
