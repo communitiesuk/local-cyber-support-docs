@@ -129,17 +129,22 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy"><span>Logging Made Easy</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy-lme"><span>Logging Made Easy (LME)</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and Identity Protection</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and identity protection</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#cyber-clinic"><span>Cyber Clinic</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#microsoft-365-advanced-threat-protection"><span>Microsoft 365 Advanced Threat Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/m365backup/#backing-up-microsoft-365-why-bother"><span>Backing up Microsoft 365 : Why Bother?</span></a>
   </li>
 </ul>
 <ul>
@@ -154,7 +159,12 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas"><span>Open VAS</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/#use-of-mfa-for-on-premise-privileged-accounts"><span>Use of MFA for on premise privileged accounts</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas-vulnerability-scanning"><span>Open VAS vulnerability scanning</span></a>
   </li>
 </ul>
 <ul>
@@ -164,7 +174,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#why-should-we-have-offline-backups"><span>Why should we have offline backups ?</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
@@ -252,10 +262,182 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="conditional-access-policies">Conditional Access Policies</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/cyberclinics/Cyber clinic - MHCLG - ConditionalAccess v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="conditional-access-policies">Conditional Access Policies</h1><p>*Please note that the slido poll results shown later are from the clinic which took place on Friday 18th July 2021</p>
+<p><font size="5"><strong>Agenda</strong></font></p>
+<p>Conditional Access Policies</p>
+
+<ul>
+<li><p>What are Conditional Access Policies</p></li>
+<li><p>Why are Conditional Access Policies important</p></li>
+<li><p>Benefits &amp; Considerations</p></li>
+<li><p>Typical Policy Implementations</p></li>
+<li><p>Subscription Level Information</p></li>
+<li><p>Interaction with Intune</p></li>
+<li><p>Further Information</p></li>
+</ul>
+<p><font size="5"><strong>SLIDO 1</strong></font></p>
+<p><font size="5"><strong>Do you use Conditional Access policies (25 votes in total)</strong></font></p>
+<p>Yes - Corporate Devices = 80%</p>
+<p>Yes - BYOD 28%</p>
+<p>No - 16%</p>
+<p><font size="5"><strong>What are Conditional Access Policies ?</strong></font></p>
+
+<ul>
+<li><p>Conditional Access policies at their simplest are “if-then” statements, if a user wants to access a resource, then they must complete an action.</p></li>
+<li><p>Azure Active Directory (Azure AD) Conditional Access analyses ‘signals’ such as user, device, and location to automate decisions and enforce organizational access policies for resource. You can use</p></li>
+<li><p>Conditional Access policies to apply access controls like Multi-Factor Authentication (MFA).</p></li>
+<li><p>Conditional Access policies allow you to prompt users for MFA when needed for security, and stay out of users’ way when not needed.</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/CAPS01.png" /></p>
+<p><font size="5"><strong>Why are CAPs important</strong></font></p>
+<p>In essence - with Conditional Access, you can control the devices and apps that can connect to your email and company resources.</p>
+<p>By their nature, CAP’s only allow access if certain conditions are met first.</p>
+<p>They add an extra layer of security and also can extend out to assist compliance in other areas (such as operating system versions and patching levels).</p>
+<p><strong>Conditional Access is an Azure Active Directory capability that is included with an Azure Active Directory Premium license.</strong></p>
+<p><font size="5"><strong>Benefits of deploying Conditional Access</strong></font></p>
+
+<ul>
+<li><p><strong>Increase productivity.</strong> Only interrupt users with a sign-in condition like MFA when one or more signals warrants it. Conditional Access policies allow you to control when users are prompted for MFA, when access is blocked, and when they must use a trusted device.</p></li>
+<li><p><strong>Manage risk.</strong> Automating risk assessment with policy conditions means risky sign-ins are at once identified and remediated or blocked. Coupling Conditional Access with Identity Protection, which detects anomalies and suspicious events, allows you to target when access to resources is blocked or gated.</p></li>
+<li><p><strong>Address compliance and governance.</strong> Conditional Access enables you to audit access to applications, present terms of use for consent, and restrict access based on compliance policies.</p></li>
+<li><p><strong>Manage cost.</strong> Moving access policies to Azure AD reduces the reliance on custom or on-premises solutions for Conditional Access, and their infrastructure costs.</p></li>
+<li><p><strong>Control.</strong> Conditional Access policies allow you to control when users are prompted for MFA, when access is blocked, and when they must use a trusted device</p></li>
+</ul>
+<p>Refer to https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/overview for more information on CAP</p>
+<p><font size="5"><strong>SLIDO 2</strong></font></p>
+<p><font size="5"><strong>What is the reason why you are not able to implement CAP’s ? (27 votes in total)</strong></font></p>
+<p>Cost Implications - 4%</p>
+<p>Perceived complexity - 7%</p>
+<p>No need for them - 0%</p>
+<p>We already use them - 89%</p>
+<p><font size="5"><strong>Considerations</strong></font></p>
+<p>Before deploying Conditional Access Policies there are certain things you should consider:</p>
+
+<ul>
+<li><p>What you want to achieve.</p>
+<p>Clearly define what you want to do</p>
+<p>Define the policies to achieve this</p></li>
+<li><p>Licensing implications
+    CAP implementation level will vary depending on what version / combination of Microsoft 365 Services you are running. Some conditional access features are part of Microsoft 365 Business packages, more features run with Azure AD Premium P1. 
+    To fully leverage CAP Azure AD Premium P2 is required.</p></li>
+</ul>
+<p>Ref:</p>
+<p>https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/plan-conditional-access</p>
+<p>https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-policy-common</p>
+<p><font size="5"><strong>Typical policies implemented</strong></font></p>
+
+<ul>
+<li><p>Blocking Access by Location</p></li>
+<li><p>Blocking risky sign-in behaviors</p></li>
+<li><p>Blocking Legacy Authentication</p></li>
+<li><p>Clients that don&rsquo;t use modern authentication (for example, an Office 2010 client).</p></li>
+<li><p>Any client that uses older mail protocols such as IMAP, SMTP, or POP3.</p></li>
+<li><p>Requiring MFA</p></li>
+<li><p>Requiring a compliant device</p></li>
+<li><p>Blocking Access except for Specific Applications</p></li>
+<li><p>Requiring organization-managed devices for specific applications</p></li>
+<li><p>Sign-in risk-based Conditional Access (Requires Azure AD Premium P2)</p></li>
+<li><p>User risk-based Conditional Access (Requires Azure AD Premium P2)</p></li>
+<li><p>Requiring trusted location for MFA Registration</p></li>
+<li><p>Requiring multi-factor authentication for users with administrative roles</p></li>
+</ul>
+<p><font size="5"><strong>Base CAP Policies</strong></font></p>
+<p>Azure Active Directory (AD) Conditional Access policies are available with Microsoft 365 Business subscriptions. Even with a regular Azure AD, four Conditional Access preview policies are available. With a qualifying Azure subscription, you can create your own Conditional Access Policies (recommended)</p>
+
+<ul>
+<li><p>Blocking Legacy Authentication - this policy blocks access to: clients that don&rsquo;t use modern authentication (for example, an Office 2010 client), and any client that uses older mail protocols such as IMAP, SMTP, or POP3.</p></li>
+<li><p>Requiring MFA for Admins - this policy requires the mandatory use of MFA for some administrative roles</p></li>
+<li><p><strong>End user protection</strong> - this policy enables the use of MFA for users (the user must complete the MFA registration via the Microsoft Authenticator app within 14 days after the first login)</p></li>
+<li><p><strong>Require MFA for service management</strong> - this policy gives you the MFA requirement for users to sign in to services based on the Azure Resource Manager API (Azure Portal, Azure CLI, PowerShell)</p></li>
+</ul>
+<p><font size="5"><strong>SLIDO 3</strong></font></p>
+<p><font size="5"><strong>What areas would you like to use CAP for ? (27 votes in total)</strong></font></p>
+<p>Geographical Security - 56%</p>
+<p>MFA - 67%</p>
+<p>Compliant Devices - 59%</p>
+<p>Blocking Legacy Authentications - 56%</p>
+<p>Administative Logons - 56%</p>
+<p>Other/All - 44%</p>
+<p><font size="5"><strong>Conditional Access and Intune</strong></font></p>
+<p><strong>This section gives a high level overview of the interaction between CAP and Intune.</strong></p>
+
+<ul>
+<li><p>If your organisation uses Intune with your Microsoft 365 configuration, you can leverage the combined features which includes Device Compliance and Mobile Application Management.</p></li>
+<li><p>Conditional Access is an Azure Active Directory capability that is included with an Azure Active Directory Premium license. 
+    Intune enhances this capability by adding mobile device compliance and mobile app management to the solution.</p></li>
+</ul>
+<p>https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access</p>
+<p>There are two types of conditional access with Intune:</p>
+
+<ul>
+<li><p>Device-based conditional access</p></li>
+<li><p>App-based conditional access.</p></li>
+</ul>
+<p>You need to configure the related compliance policies to drive conditional access compliance at your organisation.</p>
+<p>Conditional access is commonly used to do things like allow or block access to Exchange, control access to the network, or integrate with a Mobile Threat Defence solution.</p>
+<p>https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access</p>
+<p>Specific ways to use Conditional Access with Intune:</p>
+
+<ul>
+<li><p>Device-based Conditional Access</p></li>
+<li><p>Conditional Access for Exchange on-premises</p></li>
+<li><p>Conditional Access based on network access control</p></li>
+<li><p>Conditional Access based on device risk</p></li>
+<li><p>Conditional Access for Windows PCs</p>
+<p>Corporate-owned</p>
+<p>Bring your own device (BYOD)</p></li>
+<li><p>App-based Conditional Access</p></li>
+</ul>
+<p>https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access-intune-common-ways-use</p>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p>Conditional Access Policies at their simplest are “if-then” statements, if a user wants to access a resource, then they must complete an action.</p></li>
+<li><p>They add an extra layer of security and also can extend out to assist compliance in other areas</p></li>
+<li><p>such as operating system versions and patching levels.</p></li>
+<li><p>Conditional Access Policies can assist in giving increases in productivity, they assist in managing risk, help you work towards enforcing your compliance and governance, can help you control costs by removing reliance in on-premise systems, and they give you a better control of how access is granted.</p></li>
+<li><p>A number of base CAP’s are already present in your M365 Console, but expanding out with Azure AD Premium License will allow you to implement their best practices.</p></li>
+<li><p>Using with Intune as part of a device management strategy will further secure your network.</p></li>
+</ul>
+<p><font size="5"><strong>Microsoft Guide Videos</strong></font></p>
+<p>Microsoft have produced a series of video guides on how to work with Conditional Access:</p>
+<p>There are several available, but a good starting point would be the following:</p>
+<p>What is Conditional Access : https://www.youtube.com/watch?v=ffMAw2IVO7A</p>
+<p>How to deploy Conditional Access : https://www.youtube.com/watch?v=c_izIRNJNuk</p>
+<p>How to roll out Conditional Access : https://www.youtube.com/watch?v=0_Fze7Zpyvc</p>
+<p><font size="5"><strong>Questions from the Clinic (18/6/21)</strong></font>
+The following questions were raised during the clinic on 18th June and the answers below were included in the response to all attendees.</p>
+<p><strong>Q1.</strong> Any tips for Hybrid AAD joining Windows 2012R2 servers? We have had issues with our CA Policies as some servers are not AAD hybrid joined.</p>
+<p><strong>A1.</strong> Windows 2012 / R2 servers on Azure AD - there are a few 3rd party websites with details on this, but we would recommend migration to 2016/2019 in the current environment. Windows 2012 R2 does support only joining existing OnPremise AD. https://www.rebeladmin.com/2017/12/step-step-guide-connect-level-devices-azure-ad-hybrid-environment/
+https://community.spiceworks.com/topic/2081613-is-there-a-way-to-join-a-server-2012-r2-system-to-an-azure-ad</p>
+<p><strong>Q2.</strong> Has anyone else come across the Good, Better, Best guide for unmanaged devices document for O365 produced by Microsoft and NCSC?</p>
+<p><strong>A2.</strong> https://cloudblogs.microsoft.com/industry-blog/en-gb/government/2021/04/14/updated-office-365-security-and-compliance-guidance-for-the-uk-public-sector/</p>
+<p><strong>Q3</strong> If someone has multiple policies applied to them, how are they resolved? Do the policies merge resulting in the most restrictive settings?</p>
+<p><strong>A3.</strong> CA policies aren’t applied in any particular order. All matching policies apply and the resulting access controls required by the policies will be merged.</p>
+<p>https://github.com/MicrosoftDocs/azure-docs/issues/22097</p>
+<p>https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/32320459-to-introduces-priorities-for-azure-ad-conditional</p>
+<p><font size="5"><strong>Appendix</strong></font></p>
+<p><font size="4"><strong>The following gives an overview of how to build a simple CAP</strong></font></p>
+<p><font size="5"><strong>Creating a Conditional Access Policy</strong></font></p>
+<p>This is a very basic guide in taking the first steps to creating a CAP.</p>
+<p>Log into your tenant as an administrator and go to the Security &gt; Conditional Access Policies section, then navigate to the Conditional Access ‘blade’</p>
+<p><img src="../../../assets/cyberclinics/CAPS02.png" /></p>
+<p>Then when in the ‘Conditional Access - Policies’ blade click on the ‘+ New policy’</p>
+<p><img src="../../../assets/cyberclinics/CAPS03.png" /></p>
+<p>Name your policy.</p>
+<p>Now in the Assignments section of the panes, you now need to specify the conditions for applying the policy.</p>
+<p>Proceed to set the scope of the application by selecting users and/or groups. These can be all users in Azure AD or specific groups/users. Exceptions can be specified separately.</p>
+<p><img src="../../../assets/cyberclinics/CAPS04.png" /></p>
+<p>In the Cloud Apps Assignment pane, select apps that you have previously registered with Azure AD (none, one or more are acceptable)</p>
+<p><img src="../../../assets/cyberclinics/CAPS05.png" /></p>
+<p>On the Conditions pane, you can now specify the ‘conditions’ which are needed to be satisfied to grant (or refuse) access.</p>
+<p>Note : Sign in risk requires an Azure AD Premium <strong>P2</strong> license.</p>
+<p><img src="../../../assets/cyberclinics/CAPS06.png" /></p>
+<p>In the Device platforms pane, specify which OS platform the policy is to apply to (or exclude)</p>
+<p>The Locations pane allows you to select from the predefined (by yourself) list of trusted IP addresses.</p>
+<p><img src="../../../assets/cyberclinics/CAPS07.png" /></p>
+<p>In the Grant pane, you can select whether to block or allow (grant) access requests, or require additional security measures.</p>
+<p><img src="../../../assets/cyberclinics/CAPS08.png" /></p>
 
             
           </main>

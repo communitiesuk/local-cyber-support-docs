@@ -129,17 +129,22 @@
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy"><span>Logging Made Easy</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy-lme"><span>Logging Made Easy (LME)</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and Identity Protection</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and identity protection</span></a>
   </li>
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#cyber-clinic"><span>Cyber Clinic</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#microsoft-365-advanced-threat-protection"><span>Microsoft 365 Advanced Threat Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/m365backup/#backing-up-microsoft-365-why-bother"><span>Backing up Microsoft 365 : Why Bother?</span></a>
   </li>
 </ul>
 <ul>
@@ -154,7 +159,12 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas"><span>Open VAS</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/#use-of-mfa-for-on-premise-privileged-accounts"><span>Use of MFA for on premise privileged accounts</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas-vulnerability-scanning"><span>Open VAS vulnerability scanning</span></a>
   </li>
 </ul>
 <ul>
@@ -164,7 +174,7 @@
 </ul>
 <ul>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#offline-backup"><span>Offline Backup</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#why-should-we-have-offline-backups"><span>Why should we have offline backups ?</span></a>
   </li>
 </ul>
 </li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
@@ -252,10 +262,143 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="passwords-and-identity-protection">Passwords and Identity Protection</h1><p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
-    <embed src="../../../assets/cyberclinics/Cyber Clinic - MHCLG - Passwords and Identity Protection v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
-    </embed>
-</object></p>
+            <h1 id="passwords-and-identity-protection">Passwords and identity protection</h1><p><font size="5"><strong>Agenda</strong></font></p>
+<p>Passwords</p>
+
+<ul>
+<li><p>Overview</p></li>
+<li><p>Corporate Policies</p></li>
+<li><p>Domain Password Policies</p></li>
+<li><p>Fine Grained Password Policies</p></li>
+<li><p>Different accounts ? Different passwords !</p></li>
+<li><p>MFA interaction</p></li>
+<li><p>Social engineering</p></li>
+<li><p>The future</p></li>
+<li><p>Tools</p></li>
+<li><p>Summary</p></li>
+</ul>
+<p><font size="5"><strong>Overview</strong></font></p>
+<p>This information is intended to show ways to enhance your on-line protection including an overview around the use of passwords, their complexity and usage as well as using MFA and managing Social Engineering situations.</p>
+<p><font size="5"><strong>Corporate policy</strong></font></p>
+<p>Consideration should be given to ensuring your Employee Policies are updated with system password detail.</p>
+
+<ul>
+<li><p>Ensure that your HR personnel procedures and employee training cover the use of passwords and includes statements such as ‘you must not re-use your passwords for corporate systems on any personal accounts’ or ‘never use your corporate email address for personal circumstances’.
+Failure to adhere to the policies should result in reprimanding of users.</p></li>
+<li><p>Cyber Essentials Plus requirements should be adhered to.</p></li>
+</ul>
+<p>https://www.ncsc.gov.uk/collection/passwords/updating-your-approach</p>
+
+<ul>
+<li>Password auditing software should be used along with checking when passwords were last changed. Tools are available to facilitate this.</li>
+</ul>
+<p><font size="5"><strong>Default domain password policies</strong></font></p>
+<p><font size="4"><strong>Default Domain Policy Settings</strong></font></p>
+
+<ul>
+<li><p>By default your domain password policy will apply to all users - privileged accounts included.</p></li>
+<li><p>We strongly recommend that you set a higher strength password to privileged accounts, but without using Fine Grained password policies this would not be mandatory.</p></li>
+</ul>
+<p><font size="4"><strong>Strength</strong></font></p>
+
+<ul>
+<li><p>Higher strength passwords (for privileged accounts) should be ‘hyper complex’ - so 16 Characters and over, a mix of uppercase and lowercase characters, numbers, special characters.</p></li>
+<li><p>There are many schools of thought on password complexity, but your aim should be to get passwords as strong as possible without requiring users to have these passwords saved or written down in order to use them !</p></li>
+<li><p>Follow NCSC guidance if you are unsure whether you feel that your passwords are secure enough</p></li>
+</ul>
+<p><font size="5"><strong>Different account ? Different password !</strong></font></p>
+
+<ul>
+<li><p>If you have implemented RBAC in the correct manner, <strong>your users with the requirement to have privileged access will have multiple accounts.</strong></p></li>
+<li><p>Users need educating to ensure they have different passwords on each of these accounts</p></li>
+<li><p>Fine Grained Policies should assist in enforcing this rule.</p></li>
+<li><p>Aggregated Accounts : For smaller teams aggregating roles from your RBAC design will facilitate a more secure configuration as users who perform multiple roles will be required to sign out/in less frequently.</p></li>
+<li><p>Never re-use passwords from your corporate systems in your personal life (either from your email account or websites you visit).</p></li>
+<li><p>Never use your corporate email address for non work related sites</p></li>
+</ul>
+<p><font size="5"><strong>Fine Grained Password Policies</strong></font></p>
+
+<ul>
+<li><p>Fine-grained password policies allow you to specify multiple password policies within a single domain. The apply different restrictions for password and account lockout policies to different sets of users in a domain based on group membership.</p></li>
+<li><p>Ensure your Active Directory is set up in a logical manner, with users being members of only the role groups that they need to be.</p></li>
+<li><p><strong>By using fine grained password policies you enhance your security requirements for the user groups for privileged system access that are likely to be the primary targets which could be compromised in any malicious attack which may occur.</strong></p></li>
+<li><p>Further detail on Fine Grained Policies are in the MHCLG Fine Grained Policy Pack : https://communitiesuk.github.io/local-cyber-support-docs/</p></li>
+</ul>
+<p><em><strong>NOTE-ROB PLEASE CAN YOU INSERT THE CORRECT HYPERLINK ABOVE</strong></em></p>
+<p><font size="5"><strong>MFA Interaction</strong></font></p>
+<p>By introducing Multi Factor Authentication across your estate you will be able to further protect your accounts.</p>
+<p>Multi Factor Authentication works on the principle of requiring more than one of these items:</p>
+
+<ul>
+<li><p>Something you have (such an authentication application on your phone)</p></li>
+<li><p>Something you know (such as your username and password)</p></li>
+<li><p>Something you are (such as fingerprint or iris recognition)</p></li>
+</ul>
+<p>Protect your privileged on premise accounts with MFA, and any M365/Cloud based accounts must have MFA enabled.</p>
+<p><font size="5"><strong>Social Engineering</strong></font></p>
+<p>One of the leading causes of unauthorised account access is that the passwords have been ‘cracked’ after the account owner was unwittingly targeted with social engineering.</p>
+<p><strong>So what is ‘social engineering’ ?</strong></p>
+<p>Social engineering is asking leading questions to someone about something that may seem random&hellip;</p>
+<p><strong>In the simplest terms, refer to this image</strong></p>
+<p><img src="../../../assets/cyberclinics/PIP01.png" /></p>
+<p>Many older password reset questions are based on questions like this, along with the classic ‘Mothers Maiden Name’ or ‘First School’.</p>
+<p>If you answer questions like this on social media, you are giving away potential passwords or clues which can lead hackers to your actual system passwords.</p>
+<p><font size="5"><strong>The Future</strong></font></p>
+<p><font size="4"><strong>Identity Protection &amp; Management</strong></font></p>
+
+<ul>
+<li>The future of user identities lies in cloud integration. Look at Microsoft Azure AD Identity Protection.</li>
+</ul>
+<p><font size="4"><strong>Passwordless (honestly !)</strong></font></p>
+
+<ul>
+<li>This is an authentication method in which a user can log in to a computer system without the entering a password or any other knowledge-based secret. </li>
+</ul>
+<p>Passwordless authentication relies on a cryptographic key pair – a private and a public key</p>
+<p><font size="4"><strong>More use of biometrics</strong></font></p>
+
+<ul>
+<li>This can pair with the passwordless technology, so user logins can be made by fingerprint / iris / facial recognition.</li>
+</ul>
+<p><font size="4"><strong>More MFA</strong></font></p>
+
+<ul>
+<li>Extend any MFA that you have in place to make it a required part of your end users log-in process. </li>
+</ul>
+<p>This will increase your security and it will reduce the impact of a cyber attack.</p>
+<p><font size="3"><strong>Preparing now by implementing Fine Grained Policies, MFA and good practice guidelines will make the adoption of these technologies in the future easier as the foundations will be in place.</strong></font></p>
+<p><font size="5"><strong>Tools &amp; Information</strong></font></p>
+
+<ul>
+<li><p>These sites are two very useful examples to educate users about:</p></li>
+<li><p><strong>How secure is my password</strong> - on this website you can retype a password and it will give you an indication of how secure it is, and how long it could take to crack it.</p></li>
+</ul>
+<p>https://howsecureismypassword.net/</p>
+
+<ul>
+<li><strong>Have I been pwned</strong> - this is a credible website where you can enter and email address of mobile phone number to see if it has been involved in any data breaches. If a breach is highlighted, change the password of the email account and also at any site where you may have registered it. </li>
+</ul>
+<p>https://haveibeenpwned.com/</p>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p>Change internal policies to require users to not re-use personal passwords for corporate systems, and vice-versa</p></li>
+<li><p>Implement Fine Grained Password Policies where applicable</p></li>
+<li><p>Regularly carry out password complexity audits</p></li>
+<li><p>Implement MFA where appropriate</p></li>
+<li><p>Educate users on the dangers of social engineering</p></li>
+<li><p>Look towards implementing new security technologies as they become viable for your organisation</p></li>
+<li><p>If in doubt - Trust no-one !</p></li>
+</ul>
+<p><font size="5"><strong>VERY IMPORTANT !</strong></font></p>
+<p><span style="color:red"></p>
+
+<ul>
+<li><p>DO  NOT USE YOUR CORPORATE EMAIL ADDRESS FOR NON APPROVED WEBSITES</p></li>
+<li><p>DO NOT RE-USE YOUR CORPORATE PASSWORD FOR ANY PUBLIC WEBSITE</p></li>
+<li><p>THINK BEFORE DIVULGING DETAILS !</p></li>
+</ul>
+<p></span></p>
 
             
           </main>
