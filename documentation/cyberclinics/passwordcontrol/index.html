@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Cyber Security - Password Control - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="Cyber Security - Password Control - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="Cyber Security - Password Control" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+<ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#overview-of-fine-grained-password-policy-implementation"><span>Overview of fine grained password policy implementation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy-lme"><span>Logging Made Easy (LME)</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and identity protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#microsoft-365-advanced-threat-protection"><span>Microsoft 365 Advanced Threat Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/#cyber-security-password-control"><span>Cyber Security - Password Control</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/m365backup/#backing-up-microsoft-365-why-bother"><span>Backing up Microsoft 365 : Why Bother?</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-toolkit"><span>Active Directory Toolkit</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/#use-of-mfa-for-on-premise-privileged-accounts"><span>Use of MFA for on premise privileged accounts</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas-vulnerability-scanning"><span>Open VAS vulnerability scanning</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/exchange/#exchange-on-premise"><span>Exchange On Premise</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#why-should-we-have-offline-backups"><span>Why should we have offline backups ?</span></a>
+  </li>
+</ul>
+</li></ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="cyber-security-password-control">Cyber Security - Password Control</h1><p><font size="5"><strong>Disclaimer</strong></font></p>
+<p><strong>This detail is provided as guidance only.</strong></p>
+
+<ul>
+<li><p>Changes made to your Active Directory are made at your own risk.</p></li>
+<li><p>Test any / all of the concepts presented here on demo accounts / machines first and ensure they are working in the way that you desire before rolling out across your domain.</p></li>
+<li><p>Software products are presented as suggestions only, and are not endorsements.</p></li>
+</ul>
+<p><font size="5"><strong>Password Policies : High Level</strong></font></p>
+<p><font size="4"><strong>Domain Based</strong></font></p>
+
+<ul>
+<li><p>The Default Domain policy includes a good foundation for your minimum password strength settings.</p></li>
+<li><p>However these are the not the solution if you wish to enhance security on a subset of users, as all users are affected by the settings here.</p></li>
+</ul>
+<p><font size="4"><strong>Fine Grained Password Policies</strong></font></p>
+
+<ul>
+<li>Control the level of security applied to users based on their group membership</li>
+</ul>
+<p><font size="4"><strong>LAPS (Local Administrator Password Solution)</strong></font></p>
+
+<ul>
+<li><p>The perfect tool for enhancing password protection on end user devices</p></li>
+<li><p>Also ideal for use on member servers (non-DC’s)</p></li>
+</ul>
+<p><font size="5"><strong>Domain Based Password Policies</strong></font></p>
+<p>At a high level, the default domain password policy should be used to set the MINIMUM level of security across your user account base.</p>
+
+<ul>
+<li><p>Maintain at least an 8-character minimum length requirement</p></li>
+<li><p>Don&rsquo;t require too short a time for mandatory periodic password resets for user accounts</p></li>
+<li><p>Don&rsquo;t use a single word, eg ‘password’ or a commonly-used phrase like ‘Iloveyou’, or passwords that have been used previously</p></li>
+<li><p>Educate your users to not re-use their organization passwords for non-work related purposes</p></li>
+<li><p><strong>Check NCSC for their latest guidance</strong></p></li>
+</ul>
+<p><font size="5"><strong>Fine Grained Password Policies</strong></font></p>
+<p>Fine Grained Policies have been covered by us in many of our sessions, and for a good reason. They are an incredibly good way of allowing multiple levels of password complexity at the same time, for no additional software cost.</p>
+
+<ul>
+<li><p>Fine-grained password policies give you the ability to force a unique password policy to a specific group of users in your Active Directory.</p></li>
+<li><p>The main reason to use these policies is to set stronger password policies onto the (ideally RBAC) groups of privileged user accounts without forcing the entire user base to have to conform to the much more stringent requirements of a privileged account.</p></li>
+<li><p>By using fine grained password policies you enhance your security for the user groups for privileged system access that are likely to be the primary targets which could be compromised in any malicious attack which may occur.</p></li>
+</ul>
+<p><font size="5"><strong>Secure your endpoint Administrator accounts with LAPS</strong></font></p>
+<p>Microsoft&rsquo;s &ldquo;Local Administrator Password Solution&rdquo; (LAPS) provides management of local administrator account passwords for domain-joined computers.</p>
+<p><img src="../../../assets/cyberclinics/PwdCtrl01.png" /></p>
+<p>Passwords are randomized and stored in Active Directory (AD), protected by ACLs, so only eligible users can read it or request its reset.</p>
+<p><font size="5"><strong>What is LAPS</strong></font></p>
+
+<ul>
+<li><p>Microsoft Local Administrator Password Solution (LAPS) is a password manager that utilizes Active Directory to manage and rotate passwords for local Administrator accounts across all of your Windows endpoints.</p></li>
+<li><p>LAPS is a great mitigation tool against lateral movement and privilege escalation, by forcing all local Administrator accounts to have unique, complex passwords, so an attacker compromising one local Administrator account can’t move laterally to other endpoints and accounts that may share that same password.</p></li>
+<li><p>A benefit, compared to other password managers, is that LAPS does not require additional computers, or application servers, to manage these passwords.</p></li>
+<li><p>The management of these passwords is done entirely through Active Directory components.</p></li>
+</ul>
+<p><font size="5"><strong>Benefit of LAPS</strong></font></p>
+
+<ul>
+<li><p>Normally you would use a privileged account to access a workstation remotely, but this type of access can protected by using LAPS.</p></li>
+<li><p>If your privileged account has no direct access or privileges on other machines it can’t be easily exploited if it were hacked. However this does not protect you in all attack types but it definitely adds another layer of protection in your environment.</p></li>
+<li><p>The configuration is relatively straightforward, and a link to a 3rd party site is listed below, along with the Microsoft download link.</p></li>
+<li><p>LAPS download link : https://www.microsoft.com/en-us/download/details.aspx?id=46899</p></li>
+<li><p>LAPS installation guide : https://www.recastsoftware.com/resources/overview-of-microsoft-laps-local-administrator-password-solution/</p></li>
+</ul>
+<p><font size="5"><strong>Password Auditing</strong></font></p>
+<p><font size="4"><strong>Why Audit Passwords ?</strong></font></p>
+
+<ul>
+<li><p>Auditing passwords on a regular basis will help identify users who need education on the importance of account security. It will also identify any passwords that have not been changed in a long time.</p></li>
+<li><p>Auditing passwords examines the security of your network by attempting to break into the network. It tries common attacks on accounts in order to exploit weak passwords.</p></li>
+<li><p>Password security audits help you test the strength of your users&rsquo; passwords and your resiliency against password attacks. Not only can they help you uncover weak passwords, but they also provide an opportunity to educate your employees on proper password utilisation.</p></li>
+</ul>
+<p><font size="4"><strong>Why Audit Password Strength ?</strong></font></p>
+
+<ul>
+<li><p>By running a ‘Weak Password’ report the software you choose will generate a detailed list of user accounts with weak domain passwords by comparing them against a list of vulnerable and commonly used passwords. Admins can then force these users to change their passwords the next time they log on.</p></li>
+<li><p>Using an effective password auditing tool to monitor user password changes and find users who have weak passwords for their corporate accounts is just  the first thing that you need to do. The next thing is enforcing the use of strong(er) passwords.</p></li>
+</ul>
+<p><font size="5"><strong>Why passwords need to be secure</strong></font></p>
+
+<ul>
+<li><p>Weak passwords are the most dangerous thing for the organisation that a user can have, and yet using a stronger, secure password is the simplest thing to do.</p></li>
+<li><p>Hackers use a range of measures to gather information, the most common of which is to use social engineering to get information which may well be the link to getting into your accounts.</p></li>
+<li><p>Most early password reset systems asked questions such as ‘Mother’s maiden name’ or ‘favourite colour’ and the like.</p></li>
+<li><p>Now think about the last time you saw a post on social media saying something like ‘what was your first car’.</p></li>
+<li><p><strong>Bingo - you’ve just supplied a key piece of personal information which can be used against you.</strong></p></li>
+</ul>
+<p><font size="4"><strong>Remember This ?</strong></font></p>
+<p><img src="../../../assets/cyberclinics/PwdCtrl02.png" /></p>
+
+<ul>
+<li><p>People inherently use passwords they can remember (example: names of pets, partners, kids etc), so if your users insist on using these, they should make them secure with the use of special characters and numbers at the very least - and make sure they are long.</p></li>
+<li><p>By auditing your user base passwords to uncover weak, unsecure passwords you will reduce your chances of having these accounts compromised by a large percentage.</p></li>
+<li><p>This can be further secured by implementing Multi Factor Authentication and further again by using Conditional Access Policies where applicable.</p></li>
+</ul>
+<p><font size="5"><strong>Password Auditing Software</strong></font></p>
+
+<ul>
+<li><p>There are many Free Options Available, but for an example here is a popular one:</p></li>
+<li><p>Specops Password Auditor</p></li>
+<li><p>https://specopssoft.com/product/specops-password-auditor/</p></li>
+<li><p>Premium Options. Again, many options exist here, a good example of which is:</p></li>
+<li><p>ManageEngine AD SelfService Plus</p></li>
+<li><p>https://www.manageengine.com/products/self-service-password/active-directory-password-audit.html</p></li>
+<li><p>ManageEngine ADAudit Plus</p></li>
+<li><p>https://www.manageengine.com/products/active-directory-audit</p></li>
+</ul>
+<p><font size="5"><strong>KeyFeature Comparison - Specops v Manage Engine</strong></font></p>
+<div class="table-container">
+        <table>
+          <tr>
+<th>Feature</th>
+<th style="text-align: center">SpecOps Password Auditor</th>
+<th style="text-align: center">ManageEngine ADSelfService Plus</th>
+</tr><tr>
+<td>Get Password Reports (Weak Passwords)</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: center">Yes</td>
+</tr><tr>
+<td>AD Account Audit (password vulnerability, admin account detail, stale/inactive accounts)</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: center">Yes</td>
+</tr><tr>
+<td>Password Self Service</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">Yes</td>
+</tr><tr>
+<td>Password Policy Enforcer</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">Yes</td>
+</tr><tr>
+<td>SSO / Password Synchroniser</td>
+<td style="text-align: center"></td>
+<td style="text-align: center">Yes</td>
+</tr>
+        </table>
+      </div>
+<ul>
+<li><p>These are just some highlighted features. We advise that you look at the detailed specifications for any free or premium products that you may be considering</p></li>
+<li><p>Manage Engine ADSelfService Plus is a subscription product, but is free for up to 50 users.</p></li>
+<li><p>Contact Manage Engine for a quotation for your organisation as pricing is dependent on user count.</p></li>
+</ul>
+<p><font size="5"><strong>Integration with MFA &amp; CAPS</strong></font></p>
+
+<ul>
+<li><p>By integrating a robust password policy, regular audits of password security with Multi Factor Authentication (and where possible, Conditional access policies) you will make your system as secure as possible with current technologies.</p></li>
+<li><p><strong>Remember to educate users on Social Engineering, and how to be on guard against phishing emails !</strong></p></li>
+<li><p>Some users may not like MFA being enforced, however there is no reason at all why this cannot be implemented in a user friendly manner - MS Authenticator or Cisco Duo have very intuitive interfaces on their mobile device apps which are speedy and secure.</p></li>
+<li><p><strong>MFA and Conditional Access are the price we must pay to secure our networks in the modern world of having the ability to work from anywhere at any time.</strong></p></li>
+</ul>
+<p><font size="5"><strong>Multi Factor Authentication : High Level</strong></font></p>
+<p><font size="4"><strong>Multi Factor Authentication works on the principle of requiring more than one of these items:</strong></font></p>
+
+<ul>
+<li><p>Something you have (such an authentication application on your phone)</p></li>
+<li><p>Something you know (such as your username and password)</p></li>
+<li><p>Something you are (Biometrics such as fingerprint or iris recognition)</p></li>
+<li><p>For remote system access MFA is usually built up of the first two items, but the authentication applications can also require the third item.</p></li>
+</ul>
+<p><img src="../../../assets/cyberclinics/PwdCtrl03.png" /></p>
+
+<ul>
+<li><p>By adding MFA to a complex password you will drastically reduce the chances of the  account being compromised !</p></li>
+<li><p>This can further be reduced by implementing Conditional Access Policies.</p></li>
+</ul>
+<p><font size="5"><strong>Conditional Access Policies : High Level</strong></font></p>
+
+<ul>
+<li><p>We have covered Conditional Access Policies (CAP’s) in a few of our other clinics, and they are very useful tools to have in your organisations fight against cyber attacks, and also to relax security requirements in appropriate places.</p></li>
+<li><p>Popular ones to use for the protection of accounts are :-</p></li>
+<li><p>Geographical Location - ie if your users are in the UK, ban logins from outside of the UK.</p></li>
+<li><p>Impossible Travel - if you log in in London at 0900 GMT, and someone tries your credentials in Moscow at 0915 GMT, it will block the login.
+Site Specific. If you require MFA on your Microsoft 365 logins, why not consider a policy that if you are on your internal LAN for MFA not to be required ?</p></li>
+<li><p>This should help pacify some of your users who consider MFA to be unnecessary !</p></li>
+</ul>
+<p><font size="5"><strong>The future of authentication</strong></font></p>
+
+<ul>
+<li><p>The two main product types that will be at the heart of future authentication are Biometrics and Passwordless Authentication.</p></li>
+<li><p>Biometrics: By utilising things such as fingerprint or facial recognition, authentication can be granted without typing in a password (and equally importantly) a username</p></li>
+<li><p>Passwordless: A passwordless approach is not a replacement for passwords, but a complement to them, and more importantly, a critical security improvement.</p></li>
+<li><p>Currently Passwordless authentication can be delivered via Single Sign On (SSO), Enterprise Password Management and Multi Factor Authentication.</p></li>
+<li><p>When looking at improving or completely changing the way that you deliver your end user authentication experience it is advised that you review the current NCSC advice.</p></li>
+</ul>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p><strong>Educate Users on why password security is important</strong></p></li>
+<li><p>Implement a good robust password policy for all domain users</p></li>
+<li><p>Configure Fine Grained Password Policies to apply stronger passwords for higher privileged accounts</p></li>
+<li><p>Install Password Auditing Software, regularly conduct scans and remediate issues</p></li>
+<li><p>Implement Multi Factor Authentication to secure all accounts, especially Cloud based and public facing user accounts</p></li>
+<li><p>Implement Conditional Access Policies to reduce your attack surface and to give easier access under the correct conditions.</p></li>
+</ul>
+<p><font size="5"><strong>Appendices</strong></font></p>
+<p><font size="4"><strong>Password advice</strong></font></p>
+
+<ul>
+<li><p>Use upper- and lowercase letters, special characters, and numbers. Never use only numbers. Such passwords can be cracked quickly.</p></li>
+<li><p>Misspell words or create acronyms from a quote or a sentence. For example, ASCII is an acronym for American Standard Code for Information Interchange that can also be used as part of a password.</p></li>
+<li><p>Use punctuation characters to separate words or acronyms.</p></li>
+<li><p>Change passwords every 6 to 12 months or immediately if they’re suspected of being compromised. Anything more frequent introduces an inconvenience that serves only to create more vulnerabilities.</p></li>
+<li><p>Use different passwords for each system. This is especially important for network infrastructure hosts, such as servers, firewalls, and routers. It’s okay to use similar passwords — just make them slightly different for each type of system, such as SummerInTheSouth-Win7 for Windows systems and Linux+SummerInTheSouth for Linux systems.</p></li>
+<li><p>Use variable-length passwords. This trick can throw off attackers because they won’t know the required minimum or maximum length of passwords and must try all password length combinations.</p></li>
+<li><p>Don’t use common slang words or words that are in a dictionary.</p></li>
+<li><p>Don’t rely completely on similar-looking characters, such as 3 instead of E, 5 instead of S, or ! instead of 1. Password-cracking programs can check for this.</p></li>
+<li><p>Don’t reuse the same password within at least four to five password changes.</p></li>
+<li><p>Use password-protected screen savers. Unlocked screens are a great way for systems to be compromised even if their hard drives are encrypted.</p></li>
+<li><p>Don’t share passwords. To each his or her own!</p></li>
+<li><p>Avoid storing user passwords in an unsecured central location, such as an unprotected spreadsheet on a hard drive. This is an invitation for disaster. Use Password Safe or a similar program to store user passwords.</p></li>
+</ul>
+<p><font size="4"><strong>Password Storage Software</strong></font></p>
+
+<ul>
+<li><p>There are plenty of password storage products on the market which keep your passwords securely, and you limit access to it with its own level of security. The passwords are not displayed, but you can copy them to use.</p></li>
+<li><p>Refer to the NCSC guidelines on using these systems:</p></li>
+<li><p>https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide</p></li>
+</ul>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/accessibility/">Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>
