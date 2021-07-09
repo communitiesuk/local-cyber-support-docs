@@ -1,0 +1,133 @@
+---
+title: Overview of Endpoint Device Security Elements
+weight: 30
+hide_in_navigation: false
+---
+
+# Overview of Endpoint Device Security Elements
+
+<font size="5">**Objective**</font>
+
+The objective for this artefact is to provide outline guidance and approach to best practice for Endpoint devices. This document is a starting point for procedures.
+
+The scope of this document is for any end user device - be it Laptop PC, Desktop PC, Tablet or Mobile Phone. The principles apply to all device types.
+
+This includes (but is not limited to):
+
+* AV Protection
+
+* Corporate Security Policies
+
+* Data Storage Policies
+
+* BYOD Policies
+
+* MFA
+
+<font size="5">**Anti-Virus Software**</font>
+
+* Managed (Corporate) Anti-Virus Software must be installed (and kept up to date) on any device that connects to the corporate network and/or accesses corporate data -  be it on premise or cloud based.
+
+* Anti-Malware software must be implemented and kept up to date. 
+
+* All email should be filtered through a managed AV system before it reaches the Endpoint device.
+
+<font size="5">**Corporate Security Policies**</font>
+
+* Any device that connects to the corporate network and/or cloud based information belonging to the organisation must comply with the regulations that are set out for the access and use of said information.
+
+* End users to receive regular reminders on how to spot phishing emails.
+
+* Corporate devices will have centralised policies applied which will keep the endpoint devices up to date and subject to the remediation from the ITHC reports.
+
+* All devices (BYOD or Corporate) must have drive encryption turned on to protect corporate information in the event of device loss (to theft or negligence).
+
+<font size="5">**Data Storage Policies**</font>
+
+* **Non approved locations must not be used for corporate purposes.** They are not subject to the organisations information protection rules, and may not be on secure platforms.
+
+* Copying data from approved corporate locations to local machine storage (or non approved cloud storage) must not happen. All control of the data is lost when this occurs. 
+
+* **Both of the above points can lead to a breach of the DPA 2018 (formerly GDPR) - this could leave the organisation open to substantial financial penalties.**
+
+* It should be noted regarding the use of Google Sync that "Support of Google synchronisation has been shown to be subject to issues of Data Exfiltration from malicious browser extensions and must not be used”. By using a device outside of the control and management of the IT Department the integrity of the user's device cannot be trusted. (Source : https://www.zdnet.com/article/google-chrome-syncing-features-can-be-abused-for-c-c-and-data-exfiltration/)
+
+<font size="5">**Risks of data loss (through theft or negligence)**</font>
+
+* If data is lost from negligence or theft it can lead to exposure of confidential information. 
+
+* If customer data or employee records are compromised, the Information Commissioner’s Office may levy fines of up £500,000 against your company for failing to comply with the Data Protection Act - The most serious of data protection violations can result in a maximum fine of 20 million Euros (equivalent in sterling) or 4% of the total annual worldwide turnover in the preceding financial year, whichever is higher.
+
+* The financial consequences are compounded if affected individuals decide to take legal action against your business.
+Individuals can also be fined along with the business !
+
+
+* If data is not stored where it is approved to be stored, then unnecessary risks are introduced, and you are ignoring your organisations information governance rules !
+
+<font size="5">**BYOD Policies**</font>
+
+* With use of own equipment (BYOD) - Security is the most serious concern surrounding BYOD.
+
+* When users bring their own devices to work, there is always an increased threat that confidential data may be lost. 
+
+* Corporate devices must always be the preference for use on the corporate environment when they are provided unless there is a business case where BYOD would be justified.
+
+* Privacy of both the employees and companies can be made vulnerable by BYOD policies that don’t have bulletproof security in place. 
+
+* When you introduce BYOD into an organisation and corporate applications are installed on it (eg Email), the lines of support are blurred as the device is owned by the end user and the data the user is wanting to access is owned by the organisation.
+
+* Data access is the next issue. If an unprotected device (and all Own User Devices that are not subject to IT Department Policies and Procedures) is connected to the corporate network this presents an opportunity for malicious traffic to pass from the BYOD to the LAN. 
+
+* Devices that are not protected by corporate security measures (AV, AntiMalware, Application Approval etc) should be treated as if they are insecure and a risk.
+
+* A clear policy needs defining for the use of BYOD on your corporate network, marking out the responsibilities and expectations of both parties, along with any potential outcomes (eg - can IT remotely erase the device in the event of loss/theft).
+
+
+<font size="5">**NCSC Guidance on MFA**</font>
+
+NCSC Guidance on MFA explicitly states that **“All users, including administrators, should use multi-factor authentication when using Cloud and Internet-connected services.”**
+
+This is particularly important when authenticating to services that hold sensitive or private data.” and “Administrators should, wherever possible, be required to use multi-factor authentication” when using any service.
+
+<font size="5">**Multi Factor Authentication**</font>
+
+* Corporate systems (Cloud and on premise) MUST be protected with MFA wherever possible. The very small trade off of convenience for increased security should not even be questioned.  By not using MFA the risk of credential theft is vastly increased and data can be stolen or infected far easier. Conditional Access Policies are also in place for a reason.
+
+* Using MFA for VPN Remote Access: This stops unauthorised access if a stolen username and password is used. A VPN is, after all, a direct link into your network.
+
+* Using MFA on M365 User Accounts: All access to M365 should be through an account which has MFA enabled on it. An account without MFA is simpler to compromise, and if the account has Global Administrator rights then the potential for disaster is huge. 
+
+
+* An example of how easy it is to access an account that does not have MFA is that recently a user who didn’t want MFA protection had his mailbox targeted and the contents extracted and deleted…because his only protection was a password that was hacked (as he had used it on another website which had a data breach). 
+
+* **MFA WOULD have prevented this.**
+
+<font size="5">**Multi Factor Authentication and CAP**</font>
+
+<font size="4">**Using Conditional Access Policies on M365 MFA Protected Accounts:**</font>
+
+* **In order to minimise interruptions** when your users are within an approved location, a specific type of Conditional Access Policy can be applied which  detects the location and allows access without MFA being invoked.
+
+* Further CAP’s can be created to give the organisation further protection against attack such as ‘Impossible Travel’ and ‘Geographical Restrictions’ which act against overseas attacks.
+
+* CAP’s can be applied to BYOD devices along with Corporate Devices.
+
+<font size="5">**Summary**</font>
+
+* **MFA and Conditional Access are the price we must pay to secure our networks in the modern world of having the ability to work from anywhere at any time.**
+
+* BYOD has its place in the modern world but user devices must at a minimum adhere to (ideally exceed) the standards and controls that corporate devices are under.
+
+* All devices must be compliant with the standards of the organisation (OS version, minimum patching requirements). 
+
+* AV MUST be installed and kept up to date
+
+* All data must be stored securely and in an approved location when away from corporate premises. Only approved locations must be used.
+
+* Endpoint devices must be encrypted (BYOD and Corporate)
+
+
+<font size="4">**The IT Department work hard to implement, maintain and enhance the policies that keep the IT Systems safe for the entire organisation and the services it provides.**</font>
+
+<font size="4">**Any weakening of these policies seriously compromises the safety and security of the systems on which everyone relies.**</font>
+ 
