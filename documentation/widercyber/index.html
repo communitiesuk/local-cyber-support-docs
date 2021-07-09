@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Exchange On Premise - MHCLG Technical Documentation Library</title>
+    <title>Wider Cyber Focus Areas - MHCLG Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/exchange/">
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Exchange On Premise - MHCLG Technical Documentation Library" />
-      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/exchange/" />
+      <meta name="twitter:title" content="Wider Cyber Focus Areas - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
-      <meta property="og:title" content="Exchange On Premise" />
+      <meta property="og:title" content="Wider Cyber Focus Areas" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/exchange/" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/" />
 
     
   </head>
@@ -273,108 +273,7 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="exchange-on-premise">Exchange On Premise</h1><p><font size="5"><strong>Overview</strong></font></p>
-
-<ul>
-<li><p>Previously, Microsoft Hybrid migrations to Exchange Online required you to keep an Exchange server on premise.</p></li>
-<li><p>Removing it would leave you with an unsupported system.</p></li>
-<li><p>However, the stance on this is altering as Microsoft are now moving away from on premise email systems. - For most configurations Microsoft are still recommending that you keep at least one Exchange Server on premise if you require synchronisation services.</p></li>
-</ul>
-<p>*Please note that the slido poll results shown later are from the clinic which took place on Friday 14th May 2021</p>
-<p><font size="5"><strong>SLIDO 1</strong></font></p>
-<p><font size="4"><strong>What version of MS Exchange Server are you running on premise ? (57 Votes in total)</strong></font></p>
-<p>2010 - 16%</p>
-<p>2013 - 33%</p>
-<p>2016 - 51%</p>
-<p>2019 - 18%</p>
-<p>None - 0%</p>
-<p><font size="5"><strong>SLIDO 2</strong></font></p>
-<p><font size="4"><strong>Other than Microsoft Requirements, what are you using your on premise Exchange Server for ? (59 Votes in total)</strong></font></p>
-<p>SMTP Relay - 73%</p>
-<p>Legacy Application Integration - 42%</p>
-<p>Local Mailboxes Not Migrated - 31%</p>
-<p>Other Reasons  - 17%</p>
-<p>All of the Above - 17%</p>
-<p><font size="5"><strong>How to secure your on premise Exchange</strong></font></p>
-
-<ul>
-<li><p>Ensure it is running the latest version of Exchange Server 2016 (highest CU etc) - Exchange Server 2019 can also be used but requires a full license</p></li>
-<li><p>A free hybrid only license for Exchange 2016 is available as part of Exchange</p></li>
-<li><p>Online services if you are running earlier versions so no license cost is involved.</p></li>
-<li><p>Regularly patch the host server OS and Exchange software</p></li>
-<li><p>Secure the transit between the Exchange Server and Microsoft Servers (e.g only allowing traffic to/from approved sources through perimeter firewalls)</p></li>
-<li><p>Lock traffic to/from Exchange server to only go to approved Microsoft Servers</p></li>
-<li><p>Tidy up publicly published DNS records that are no longer required</p></li>
-</ul>
-<p><font size="5"><strong>SLIDO 3</strong></font></p>
-<p><font size="4"><strong>How often do you check for updates and patch your Exchange Server Application ? (59 Votes in total)</strong></font></p>
-<p>Monthly - 81%</p>
-<p>Quarterly - 12%</p>
-<p>When I Get Around To It - 7%</p>
-<p>It&rsquo;s Working - Why Patch It - 0%</p>
-<p><font size="5"><strong>Microsoft Scenarios</strong></font></p>
-<p><font size="4"><strong>Microsoft Scenario 1</strong></font></p>
-<p><font size="3"><strong>Issue:</strong></font>
-My organization has been running in a hybrid configuration and I have all of my mailboxes in Exchange Online. I do not need to manage my users from on-premises and no longer have a need for directory synchronization or password synchronization.</p>
-<p><font size="3"><strong>Solution:</strong></font>
-Since all of the users will be managed in Microsoft 365 or Office 365, and there are no additional directory synchronization requirements, you can safely disable directory synchronization and remove Exchange from the on-premises environment.</p>
-<p><img src="../../../assets/cyberclinics/EOP01.png" /></p>
-<p><font size="4"><strong>Microsoft Scenario 2</strong></font></p>
-<p><font size="3"><strong>Issue:</strong></font>
-My organization has been running in a hybrid configuration for about a year now and have finally moved my last mailbox to the cloud.</p>
-<p>I plan to keep Active Directory Federation Services (AD FS) for user authentication of my Exchange Online mailboxes. (This scenario would apply to any customer that is planning on keeping directory synchronisation).</p>
-<p>Reasons to keep directory synchronisation in place are manyfold. The primary reason would be SSO with Azure Services.</p>
-<p><font size="3"><strong>Desired State:</strong></font></p>
-<p><img src="../../../assets/cyberclinics/EOP02.png" /></p>
-<p><font size="3"><strong>Solution:</strong></font></p>
-<p>Since it is planned to keep AD FS, they will also have to keep directory synchronisation since it is a prerequisite.</p>
-<p>Because of that, they cannot fully remove the Exchange servers from the on-premises environment. However, they can decommission most of the Exchange servers, but leave at least one of servers behind for user management.</p>
-<p>Keep in mind that the servers that are left running can be run on virtual machines since the workload is almost completely shifted to Exchange Online.</p>
-<p><font size="3"><strong>Achievable State:</strong></font></p>
-<p><img src="../../../assets/cyberclinics/EOP03.png" /></p>
-<p>If you choose to remove ADFS from your infrastructure, Azure AD Connect will synchronize your on-premises credentials with the cloud.</p>
-<p>Each service will authenticate users independently:</p>
-<p>Microsoft 365 identity services will manage online requests.</p>
-<p>Active directory will manage the internal authentication.</p>
-<p>If you don&rsquo;t have any on-premises mailbox(es), you can safely decommission most of your exchange server(s), leaving one or more for user management purposes - because the source of authority is still defined as on-premises.</p>
-<p><font size="4"><strong>Microsoft scenario 3</strong></font></p>
-<p><font size="3"><strong>Issue:</strong></font></p>
-<p>I want to remove my Exchange servers on-premises after moving all of my mailboxes to Exchange Online.</p>
-<p>However, we discovered that we are using Exchange for other purposes, such as for a Simple Mail Transfer Protocol (SMTP) relay for an application or for access to public folders.</p>
-<p>If you have a need for Exchange servers on-premises to meet the current needs of your organization, it may not be in your best interest to remove the on-premises servers.</p>
-<p><font size="3"><strong>Solution:</strong></font></p>
-<p><strong>We recommend against removing Exchange and the hybrid configuration at this point.</strong></p>
-<p>If you were to even start the process by pointing the Autodiscover Records to Exchange Online, you would immediately break some features like hybrid public folder access.</p>
-<p>You could change the MX record to point to Exchange Online Protection if it is not already, you could even remove some of the on-premises Exchange servers</p>
-<p>However, you would need to keep enough in place to handle the remaining hybrid functions.</p>
-<p>Usually, this would lead to a very small on-premises footprint.</p>
-<p><font size="5"><strong>SLIDO 4</strong></font></p>
-<p><font size="4"><strong>What Directory Synchronisation are you using ? (59 Votes in total)</strong></font></p>
-<p>Azure AD Connect - 81%</p>
-<p>ADFS - 17%</p>
-<p>Legacy (DirSync etc) - 0%</p>
-<p>None - 2%</p>
-<p><font size="5"><strong>The Future</strong></font></p>
-<p>As we stand, Microsoft are scheduled to retire Exchange Server 2016 and 2019 from extended support on the same date (14 Oct 2025).</p>
-<p>On this basis the general assumption is they will have given us a way to retire the Hybrid on premise Exchange server before this date.</p>
-<p><font size="5"><strong>Summary</strong></font></p>
-<p>If you have a Hybrid Exchange configuration you MUST keep at least one Exchange Server present onsite.</p>
-<p>Unless you are wanting to host mailboxes on it you can use the FREE Exchange Server 2016 Hybrid license key - it is provided with Exchange Online for this reason.</p>
-<p>If you have no requirement for directory synchronisation between on premise AD and Azure AD you can get rid of any remaining on premise Exchange Servers, but remember they may be doing more than just host mailboxes (local relays, management, etc).</p>
-<p>If all your mailboxes and mailflow is M365 based - lock down your local firewall and Exchange server to only communicate with M365. This will reduce any potential attack surface.</p>
-<p><font size="5"><strong>Further Reading</strong></font></p>
-<p>Here are some recommendations for further research into Exchange hybrid configurations, with particular reference to the need for an on premise server, and when it is not needed.</p>
-<p><font size="4"><strong>Exchange Server hybrid deployments:</strong></font></p>
-<p>https://docs.microsoft.com/en-us/exchange/exchange-hybrid</p>
-<p><font size="4"><strong>How and when to decommission your on-premises Exchange Server in a hybrid deployment:</strong></font></p>
-<p>https://docs.microsoft.com/en-us/exchange/decommission-on-premises-exchange</p>
-<p>https://practical365.com/how-to-decommission-an-exchange-server-after-office-365-migration/</p>
-<p><font size="4"><strong>Directory Synchronisation</strong></font></p>
-<p>https://docs.microsoft.com/en-us/microsoft-365/enterprise/plan-for-directory-synchronization?view=o365-worldwide</p>
-<p><font size="4"><strong>Appendices</strong></font></p>
-<p>On-premise Exchange Server</p>
-<p>Although Exchange 2010SP3 and above are currently in scope of support for the on premise Exchange Hybrid Connection Server, Microsoft provides a license for Exchange Server 2016 Standard (Hybrid) as part of Exchange Online configurations (NOT Exchange 2019 though).</p>
-<p>This license does not allow for the hosting of user mailboxes and is strictly for Exchange Online Hybrid Connectivity and Management.</p>
+            <h1 id="wider-cyber-focus-areas">Wider Cyber Focus Areas</h1><p>Wider Cyber Focus Areas documentation folder</p>
 
             
           </main>
