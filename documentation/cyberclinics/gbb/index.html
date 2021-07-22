@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Good Better Best - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/gbb/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="Good Better Best - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/gbb/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="Good Better Best" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/gbb/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+<ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#overview-of-fine-grained-password-policy-implementation"><span>Overview of fine grained password policy implementation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/widercyber/"><span>Wider Cyber Focus Areas</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/widercyber/endpointsecurity/#overview-of-endpoint-device-security-elements"><span>Overview of Endpoint Device Security Elements</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy-lme"><span>Logging Made Easy (LME)</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and identity protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#microsoft-365-advanced-threat-protection"><span>Microsoft 365 Advanced Threat Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/#cyber-security-password-control"><span>Cyber Security - Password Control</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/m365backup/#backing-up-microsoft-365-why-bother"><span>Backing up Microsoft 365 : Why Bother?</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-toolkit"><span>Active Directory Toolkit</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/gbb/#cyber-security-good-better-best"><span>Cyber Security - Good, Better, Best.</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/#use-of-mfa-for-on-premise-privileged-accounts"><span>Use of MFA for on premise privileged accounts</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas-vulnerability-scanning"><span>Open VAS vulnerability scanning</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/exchange/#exchange-on-premise"><span>Exchange On Premise</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#why-should-we-have-offline-backups"><span>Why should we have offline backups ?</span></a>
+  </li>
+</ul>
+</li></ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="cyber-security-good-better-best">Cyber Security - Good, Better, Best.</h1><p><font size="5"><strong>Agenda</strong></font></p>
+
+<ul>
+<li><p>Overview</p></li>
+<li><p>Review of what is considered to be a good, a better and the best approaches to cyber security in the following areas.</p>
+
+<ul>
+<li>Backup</li>
+<li>Multi Factor Authentication</li>
+<li>Active Directory</li>
+<li>Supported OS’s</li>
+</ul></li>
+</ul>
+<p><font size="5"><strong>Overview</strong></font></p>
+<p>In this clinic we will review the primary aspects of Cyber Security that we have covered in our work with our group of Local Authorities and give recommendations for the ‘Good, Better and Best’ options for each section of consideration.</p>
+<p>We are not covering (in detail) ACD, Logging or ITHC as these areas are, in the main, binary and their configurations have already been defined by NCSC. We have however included them as Appendices, for your information.</p>
+<p>All of what follows has been included either in previous, (individual) clinics or cyber artefacts we have produced and distributed. They are our thoughts and suggestions which you are more than welcome to disagree with and/or suggest a different approach.</p>
+<p><font size="5"><strong>Backup</strong></font></p>
+<p>This section is outline guidance, principles and approach to enable a clear backup and restore standard for all Local Authority council information systems.</p>
+<p><font size="4"><strong>Key Backup Principles:</strong></font></p>
+
+<ul>
+<li><p>The aim of a reliable backup is to minimise the downtime and data loss in the event of a system attack or failure of site / hardware, along with day to day restorations.</p></li>
+<li><p><strong>Have Offline Backups.</strong></p></li>
+</ul>
+<p>The purpose of an &lsquo;offline backup&rsquo; (sometimes called a &lsquo;cold backup&rsquo;) is to remain unaffected should any incident impact your live environment. You can do this by:</p>
+
+<ul>
+<li><p>Only connecting the backup to live systems when absolutely necessary</p></li>
+<li><p>Never having all backups connected at the same time (by ensuring at least one of your media locations is on removable devices or in an immutable location on your systems).</p></li>
+<li><p>The 3-2-1 rule is one to follow: <strong>3 Backups, 2 Locations, 1 Offline Copy</strong></p>
+<p>Example - local backup at primary location, replica or 2nd backup location at DR Location and one offline backup</p></li>
+<li><p><strong>With at least one backup offline at any given time, an incident cannot affect all of your backups simultaneously.</strong></p></li>
+</ul>
+<p><font size="4"><strong>Backup: Good</strong></font></p>
+
+<ul>
+<li><p>Establish a regular backup cycle, for example:</p>
+
+<ul>
+<li>Weekly Full backup</li>
+<li>Daily Incremental backup</li>
+<li>Full database &amp; transaction log backup as an approach particularly to satisfy RTO/RPO requirements</li>
+</ul></li>
+<li><p>Backup services should not be domain joined. Doing so increases risk of backup corruption in the event of cyber attacks.</p></li>
+<li><p>Backup copies must be periodically be tested for recovery capability, including File and Application recovery.</p></li>
+<li><p>Use of a proven offline method of storage such as Tape. Capacities per tape currently can go up to 30TB with typical compression rates. Autoloaders with multiple drives can vastly increase capacity and reduce time to backup.</p></li>
+<li><p>Tapes / Removable Media should be regularly removed and securely stored, ideally in a different location.</p></li>
+<li><p>Microsoft 365 (and Google Workspace) must be backed up if you are 
+storing data in these services.</p></li>
+<li><p>Retention periods for all data types (inc email) need to be defined, in line with GDPR, legal and council requirements.</p></li>
+<li><p>Access to backup process (onsite &amp; offsite servers) are controlled via admin rights</p></li>
+<li><p>Backup media copies must be stored with a short description that includes the following information: Backup date / Resource name / type of backup method (Full/Incremental/Differential)</p></li>
+<li><p>Active Directory state backups should be made by a non-domain joined server and stored offsite.</p></li>
+<li><p>All backup data storage are recommended to be encrypted with AES-256 symmetric encryption algorithm or higher.</p></li>
+</ul>
+<p><font size="4"><strong>Backup: Better</strong></font></p>
+<p>All detail from ‘Good’ Backup plus:</p>
+
+<ul>
+<li><p>Regular Server Recovery Testing are to be carried out</p></li>
+<li><p>Access to backups to be controlled using RBAC.</p></li>
+<li><p>Backup products and technologies must ensure that backups are retained for a pre-defined period of time before overwriting or purging.</p></li>
+<li><p>Any request for stored data recovery must be approved by an authorised person nominated by a Director/Manager in the appropriate department.</p></li>
+<li><p>Backup tape copies (or removable drives) are to be environmentally-protected and access-controlled from the location of originating information asset.</p></li>
+<li><p>All backup data transit over unencrypted lines to be encrypted with AES-256 symmetric encryption algorithm or higher.</p></li>
+<li><p>DR Backups are to be made to an off site location (or the cloud) and are within an isolated domain</p></li>
+<li><p>Restores are to be tested regularly, as are BC &amp; DR tests plus a Ransomware exercise is carried out annually (e.g. Exercise in a box)</p></li>
+<li><p>Backup alerting is to be enabled, captured centrally and proactively acted upon</p></li>
+<li><p>Consideration for immutable storage should be given to the use of Virtual Tape Libraries (VTL’s). They are increasing in popularity but rely on reliable disk storage behind them. Downside is these cannot be removed from site. The VTL Backups should be made immutable on completion of the backup job.</p></li>
+<li><p>If the use of Removable Disks is chosen,these should be transferred to a secure storage facility on a regular basis.</p></li>
+</ul>
+<p><font size="4"><strong>Backup: Best</strong></font></p>
+<p>All detail from ‘Good &amp; Better’ Backup plus:</p>
+
+<ul>
+<li><p>Offline Backups / Immutable Backups to be a critical and audited part of your system.</p></li>
+<li><p>Regular site recovery testing (full DR test) to be carried out</p></li>
+<li><p>RBAC / Least Privileged Access Models implemented on Backup/Recovery Accounts.</p></li>
+<li><p>MFA protected accounts to be implemented for Backup Device Access</p></li>
+<li><p>Procedures must be developed for the handling and storage of information in order to prevent 
+unauthorised disclosure, misuse, or loss.</p></li>
+<li><p>A record of physical and logical movements of backup data must be maintained.</p></li>
+<li><p>Confidentially, integrity and availability of backup data, must be protected. (therefore it must have been assessed and documented to start with)</p></li>
+<li><p>Ownership of data should be part of the backup/recovery documentation, with defined responsibilities and exceptions to the standard process should be approved by the data owner.</p></li>
+<li><p>Full system images to be captured monthly, and ideally made immutable.</p></li>
+<li><p>Data is backed up according to business criticality and rate of change of the data.</p></li>
+<li><p>Backup frequency that supports the RTO &amp; RPO figures must be set in BC/DR plans.</p></li>
+<li><p>Backup documentation available to support recovery activities. Offline copies to be made available in the event of a system failure.</p></li>
+<li><p>Cloud based systems (Such as Microsoft 365 and Google G-Suite) must also be included in offline backups (or made immutable.)</p></li>
+</ul>
+<p><font size="5"><strong>Overview schematic of an ideal configuration</strong></font></p>
+<p>In this scenario your offline backups are written to the Tape Autoloader. Other alternatives are Virtual Tape Libraries, Removable drives and immutable storage devices</p>
+<p><img src="../../../assets/cyberclinics/GBB01.png" /></p>
+<p>Veeam has been used in this example as it is the most prevalent technology in use amongst the 29 Councils reviewed.</p>
+<p>Arcserve UDP would work in effectively the same manner. SAN Based Snapshot systems (NetApp, Nimble etc) would be different from the technologies illustrated here</p>
+<p><font size="5"><strong>MFA</strong></font></p>
+<p>This section is outline guidance, principles and approach for Multi Factor Authentication for all Local Authority council information systems.</p>
+<p><font size="4"><strong>MFA: Good</strong></font></p>
+
+<ul>
+<li><p>The objective of MFA is key to the prevention of account security. If the credentials have been lost/stolen (or lost in a breach) then you are at risk of an attack.</p></li>
+<li><p><strong>Using MFA on M365 Global Administrator Accounts is a must :</strong></p>
+
+<ul>
+<li>A M365 Global Administrator Account is an incredibly important account, and if compromised you can find yourself locked out of your entire organisation. It should be treated as ‘The Keys to the Kingdom’ and protected with an extremely secure password, and at least one other form of Authentication.</li>
+</ul></li>
+<li><p>MFA to be enabled for All Users for M365 Services (MS Authenticator or Text)</p></li>
+<li><p>Conditional Access Policies implemented to cover issues such as geolocation access, e.g. blocking access from outside the UK, Impossible travel as a minimum</p></li>
+<li><p>Using MFA for VPN Remote Access:</p>
+
+<ul>
+<li>Stops unauthorised access if a stolen username and password is used.</li>
+<li>A VPN is, after all, a direct link into your network</li>
+</ul></li>
+<li><p>RDP External access by users over internet also must be protected by MFA</p></li>
+</ul>
+<p><font size="4"><strong>MFA: Better</strong></font></p>
+<p>All detail from ‘Good’ MFA plus:</p>
+
+<ul>
+<li><p>Privileged SaaS administration accounts are protected by MFA</p></li>
+<li><p>Protection of Internal Domain Privileged Accounts (Such as Domain Administrators, SAN Administrators, Backup Server Accounts) by MFA</p></li>
+<li><p>Implementing Conditional Access Policies to not require the use of MFA on M365 User Accounts when onsite:</p>
+
+<ul>
+<li>By using a specific type of CAP you can configure a user to not require MFA when accessing their emails or Microsoft 365 located files when they are connected to your local network, or a trusted location. If you are not in a trusted location then MFA will be required.</li>
+<li>This will reduce user impact by allowing them to connect with just usernames and passwords when working internally</li>
+</ul></li>
+</ul>
+<p><font size="4"><strong>MFA: Best</strong></font></p>
+<p>All detail from ‘Good &amp; Better’ MFA plus:</p>
+
+<ul>
+<li><p>A tiered trust model for mobile BYOD has been established with the implementation of CAPs to manage access across the domain.</p></li>
+<li><p><strong>Jump Servers</strong> deployed with the relevant administration tools on them (eg Active Directory Management, SQL Management, Exchange Management, etc) as the servers to implement MFA onto.</p></li>
+<li><p>Your privileged users must use their MFA enabled privileged accounts to log onto these servers to carry out the administrative tasks, rather than going to the servers directly.</p></li>
+</ul>
+<p><font size="5"><strong>Active Directory</strong></font></p>
+<p>This section is outline guidance, principles and approach for Active Directory Configurations and Password Policies for all Local Authority council information systems.</p>
+<p><font size="4"><strong>Active Directory: Good</strong></font></p>
+
+<ul>
+<li><p>Password Requirements</p>
+
+<ul>
+<li>Higher levels of security have been deployed as part of the Default Domain Policy.
+
+<ul>
+<li>Using the standard domain policy for all accounts can mean privileged accounts may not be as secure as they could be.</li>
+<li>Domains that have ‘evolved’ may still have a weak level of requirements as the policies are not automatically upgraded with stronger settings.</li>
+</ul></li>
+</ul></li>
+<li><p>Have locally and geographically diverse Active Directory Domain Controllers.</p></li>
+<li><p>Ensure Active Directory Backup and Recovery Backs up the AD configuration and directory services on a regular basis.</p></li>
+<li><p>Keep up to date in addressing Active Directory vulnerabilities to maintain security</p></li>
+<li><p>Implement a secure Password policy on all user accounts and service accounts</p></li>
+<li><p>Different accounts for user level access and privileged access.</p></li>
+<li><p>Hyper-V host servers should not be domain joined</p></li>
+</ul>
+<p><font size="4"><strong>Active Directory: Better</strong></font></p>
+<p>All detail from ‘Good’ Active Directory plus:</p>
+
+<ul>
+<li><p>Implemented Fine Grained Policies</p>
+
+<ul>
+<li>These are a great way to enforce a tiered level of security, and not over complicate non-privileged accounts</li>
+</ul></li>
+<li><p>Adoption of the Microsoft Active Directory administrative tier model</p></li>
+<li><p>Review and Amend Default Security Settings to eliminate known vulnerabilities, e.g. Ensure credentials stored are encrypted.</p></li>
+<li><p>Use of RBAC to ensure separation of privileges, so there is tighter auditability between roles and to help prevent lateral movement in the event an account is compromised;</p></li>
+<li><p>Implement Principles of Least Privilege in AD Roles and Groups to ensure that employees have only the minimal level of access they need to perform their roles.</p></li>
+<li><p>Remember - Permissions should be applied to Groups, <strong>not users.</strong></p></li>
+<li><p>Control AD Administration Privileges and Limit Domain User Accounts to only provide administrative privileges and superuser access to those who absolutely need this access to perform their roles;</p></li>
+<li><p>Use Password policy manager tool on all accounts</p></li>
+<li><p>Enforce Group Policy to prevent Domain Admin cached credentials.</p></li>
+<li><p>Secure the Network boundaries by prohibiting specific traffic (e.g. SMB, RDP)</p></li>
+<li><p>For Microsoft 365 Directory Synchronisation, the use of a second Azure AD Connect Service in staging mode is recommended.</p></li>
+<li><p><strong>The best access method for server administration is from a Jump Server.</strong></p></li>
+<li><p>Consider the use of dedicated Privileged Access Workstations (PAWs) for server Administration.</p></li>
+</ul>
+<p>Ideally these machines should be blocked from having internet connectivity.</p>
+<p><font size="4"><strong>Active Directory: Best</strong></font></p>
+<p>All detail from ‘Good &amp; Better’ Active Directory plus:</p>
+
+<ul>
+<li><p>Implement Password Auditing</p>
+
+<ul>
+<li>Auditing passwords on a regular basis will help identify users who need education on the importance of account security. </li>
+</ul></li>
+<li><p>Implement Auditing and alerting on failure to capture any rogue access attempts.</p></li>
+<li><p>Administrative level users must not have email or internet connectivity.</p></li>
+<li><p>Place Domain Management Servers (DC’s etc) in their own VLAN to segment access</p></li>
+<li><p>Use Real-Time Windows Auditing and Alerting and ensure reporting of unusual access attempts.</p></li>
+<li><p>Produce regular management reporting, summarising activities, audited events and alert and all service improvement.</p></li>
+<li><p>Have specific workstations for downloading software updates from the internet and a sheep dip or equivalent process to ratify contents where possible.</p></li>
+<li><p>If RDP is required, then MFA must be implemented for it.</p></li>
+</ul>
+<p><font size="5"><strong>Password Policies</strong></font></p>
+<p><strong>Good Password Requirements include:</strong></p>
+
+<ul>
+<li><p>Maintain at least an 8-character minimum length requirement</p></li>
+<li><p>Don&rsquo;t require character composition requirements. For example, *&amp;(^%$ - but do require ‘special characters’ are used as part of the password</p></li>
+<li><p>Check NCSC for their latest guidance.</p></li>
+</ul>
+<p><strong>Better Password Requirements include:</strong></p>
+
+<ul>
+<li><p>Don&rsquo;t require too short a time for mandatory periodic password resets for user accounts</p></li>
+<li><p>Don&rsquo;t use a single word, eg ‘password’ or a commonly-used phrase like ‘Iloveyou’, or passwords that have been used previously.</p></li>
+<li><p>Implement Fine Grained Password Policies to enforce multiple password levels in the same Active Directory</p></li>
+</ul>
+<p><strong>Best Password requirements include:</strong></p>
+
+<ul>
+<li><p>Guidance to administrators : Ban common passwords, to keep the most vulnerable passwords out of your system</p></li>
+<li><p>Guidance for end users : Make passwords hard to guess, even by those who know a lot about you, such as the names and birthdays of your friends and family, your favorite bands, and phrases you like to use. Encourage long passwords, an idea is to use a password based on multiple words all in one string with no spacing, with complex characters (eg !*%$@) and numbers.</p></li>
+<li><p>Educate your users to not re-use their organization passwords for non-work related purposes</p></li>
+</ul>
+<p>Review the latest guidance from the NCSC at: https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip5-password-collection</p>
+<p><font size="5"><strong>Operating Systems</strong></font></p>
+<p>This section is outline guidance, principles and approach for Operating Systems for all Local Authority council information systems.</p>
+<p><font size="4"><strong>Operating System Expiry Dates of Note:</strong></font></p>
+<p><img src="../../../assets/cyberclinics/GBB02.png" /></p>
+<p><font size="4"><strong>Operating Systems: Good</strong></font></p>
+
+<ul>
+<li><p>No unsupported Operating Systems (hypervisor, desktop &amp; server) are deployed</p>
+
+<ul>
+<li><em>This is forthcoming NCSC Guidance, as well as being best practice.</em></li>
+</ul></li>
+<li><p>Have a clearly defined roadmap in place covering O/S updates</p></li>
+<li><p>Ensure all servers have latest patches applied before deployment handover</p></li>
+<li><p>Regularly checking of your workstations and servers for vulnerabilities, and remediate as per your ITHC plan.</p></li>
+<li><p>Keep your hypervisor servers at the highest level of support / operation that your hardware allows.</p>
+
+<ul>
+<li>Refer to the server manufacturer and cross-check with the hypervisor vendor (VMware or Microsoft) Hardware Compatibility List (HCL)</li>
+</ul></li>
+<li><p>All SQL Databases need to be in current support from Microsoft (not extended)</p>
+
+<ul>
+<li>Other Database systems to be in current support from their vendor 
+(eg Oracle, MySQL) </li>
+</ul></li>
+</ul>
+<p><font size="4"><strong>Operating Systems: Better</strong></font></p>
+<p>All detail from ‘Good’ Operating Systems plus:</p>
+
+<ul>
+<li><p>All Operating Systems (desktop &amp; server) must be running at version N or N-1</p>
+
+<ul>
+<li>This means you must only be running the current and last previous OS</li>
+</ul></li>
+<li><p>Always have a strategy for the upgrading of:</p>
+
+<ul>
+<li>Server operating systems</li>
+<li>Server applications (including your backup software !)</li>
+<li>Hypervisors</li>
+</ul></li>
+<li><p>Your patching policy must be robust and includes testing updates on a subset of machines before deployment to the production environment occurs.</p></li>
+<li><p>Employ a robust strategy for OS Hardening:</p>
+
+<ul>
+<li>By implementing server hardening you effectively ‘plug’ unnecessary ‘holes’ in the server security by disabling or removing unnecessary software, as well as blocking vulnerable ports and unrequired services.</li>
+</ul></li>
+</ul>
+<p><font size="4"><strong>Operating Systems: Best</strong></font></p>
+<p>All detail from ‘Good &amp; Better’ Operating Systems plus:</p>
+
+<ul>
+<li><p>Local Authorities should have a strategy and process for maintaining operating system versions and patch levels.</p></li>
+<li><p>Application product roadmaps should be maintained to enable the LA to understand the full service software stack product and product end of life (including Operating Systems.)</p></li>
+<li><p>Continuous improvement !</p></li>
+</ul>
+<p><font size="5"><strong>Summary</strong></font></p>
+
+<ul>
+<li><p><strong>Aim to be at ‘Best’ wherever possible.</strong></p></li>
+<li><p>Key Backup point : Regular, Reliable Offline or Immutable Backups are the most important thing that you can have</p></li>
+<li><p>Key MFA point : Secure all access with MFA wherever possible. The future of security is very much centred around Identity.</p></li>
+<li><p>Key AD point : Strong password policies, with Fine Grained Policies in use.</p></li>
+<li><p>Key OS point : Implement a robust N/N-1 policy for Operating Systems and regularly patch your servers and applications.</p></li>
+</ul>
+<p><font size="5"><strong>Appendices</strong></font></p>
+
+<ul>
+<li><p>In the sections that follow some high level guidance is laid out for your consideration.</p></li>
+<li><p>The areas are:</p>
+
+<ul>
+<li>Active Cyber Defence</li>
+<li>IT Health Checks</li>
+<li>Logging</li>
+</ul></li>
+<li><p>Also included are some additional detail in appendices for some of the sections covered in the clinic presentation</p></li>
+</ul>
+<p><font size="5"><strong>Active Cyber Defence</strong></font></p>
+<p>Requirements for ACD to be optimal should include :</p>
+
+<ul>
+<li><p>Onboard all External IP’s to the Early Warning Service</p></li>
+<li><p>Implement Change Control</p></li>
+<li><p>Onboard all Public Websites to ACD WebCheck</p></li>
+<li><p>Onboard to ACD PDNS</p></li>
+<li><p>Onboard to ACD Mail Check</p></li>
+<li><p>Implement and Regularly Check DKIM and SPF records</p></li>
+<li><p>Implement DMARC Reject setting (go via Quarantine if DMARC not used yet)</p></li>
+<li><p>Implement Logging Made Easy (or a reputable SIEM product)</p></li>
+<li><p>Sign up to and Implement ‘Regular Exercise In A Box’ preparedness tests</p></li>
+</ul>
+<p><font size="5"><strong>IT Health Checks</strong></font></p>
+<p>Requirements for ITHC to be optimal should include :</p>
+
+<ul>
+<li><p>Regular IT Health Checks with a relevant Expanded Scope</p></li>
+<li><p>Principle Security Concerns to be identified and addressed</p></li>
+<li><p>Corrective Action Plans to be drawn up and followed ASAP and to address ALL findings, not just Critical/High ones</p></li>
+<li><p>Regular Vulnerability Scanning to be carried out.</p></li>
+<li><p>Event Chaining to be implemented</p></li>
+</ul>
+<p><font size="5"><strong>Logging</strong></font></p>
+<p>Requirements for Logging to be optimal should include :</p>
+
+<ul>
+<li><p>Implement a Centralised Logging Solution</p></li>
+<li><p>Decide on the required data capture</p></li>
+<li><p>Decide on the required retention periods</p></li>
+<li><p>Decide on Alerting and Triaging of the alerts</p></li>
+</ul>
+<p><font size="5"><strong>Backup Additional Detail</strong></font></p>
+<p><strong>How can I implement offline media?</strong></p>
+
+<ul>
+<li><p>Tape Autoloaders or Removable Disks can be added to backup servers as additional backup locations.</p></li>
+<li><p>VTL products will require sufficient additional storage to back the VTL software. They will be presented to the backups servers as additional backup locations.</p></li>
+<li><p>Cloud Storage Gateways can be added to backup servers to connect your on premise backup server to cloud storage providers (Amazon AWS Storage, Microsoft Azure Storage, etc).</p></li>
+<li><p>SAN Based Storage will require at the least additional licensing and will be dependent on the hardware vendor and the backup solution that is in place.</p></li>
+</ul>
+<p><font size="5"><strong>Operating Systems Additional Detail</strong></font></p>
+<p>Where application software still is dependent on an unsupported operating system <strong>(and there are no supported alternatives available in the short term)</strong> additional technical controls should be considered:</p>
+
+<ul>
+<li><p>Run the application in compatibility mode on Windows 10</p></li>
+<li><p>Virtualised containers, e.g. Docker</p></li>
+<li><p>Or have workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks</p></li>
+<li><p>Consider replacing application</p></li>
+</ul>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/accessibility/">Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>
