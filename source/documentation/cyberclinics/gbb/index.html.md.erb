@@ -1,0 +1,464 @@
+---
+title: Good Better Best
+weight: 30
+hide_in_navigation: false
+---
+
+# Cyber Security - Good, Better, Best.
+
+<font size="5">**Agenda**</font>
+
+* Overview
+
+* Review of what is considered to be a good, a better and the best approaches to cyber security in the following areas.
+
+    * Backup
+
+    * Multi Factor Authentication
+
+    * Active Directory
+
+    * Supported OS’s
+
+<font size="5">**Overview**</font>
+
+In this clinic we will review the primary aspects of Cyber Security that we have covered in our work with our group of Local Authorities and give recommendations for the ‘Good, Better and Best’ options for each section of consideration.
+
+We are not covering (in detail) ACD, Logging or ITHC as these areas are, in the main, binary and their configurations have already been defined by NCSC. We have however included them as Appendices, for your information. 
+
+All of what follows has been included either in previous, (individual) clinics or cyber artefacts we have produced and distributed. They are our thoughts and suggestions which you are more than welcome to disagree with and/or suggest a different approach. 
+
+<font size="5">**Backup**</font>
+
+This section is outline guidance, principles and approach to enable a clear backup and restore standard for all Local Authority council information systems.
+
+<font size="4">**Key Backup Principles:**</font>
+
+* The aim of a reliable backup is to minimise the downtime and data loss in the event of a system attack or failure of site / hardware, along with day to day restorations.
+
+* **Have Offline Backups.**
+
+The purpose of an 'offline backup' (sometimes called a 'cold backup') is to remain unaffected should any incident impact your live environment. You can do this by:
+
+- Only connecting the backup to live systems when absolutely necessary
+
+- Never having all backups connected at the same time (by ensuring at least one of your media locations is on removable devices or in an immutable location on your systems). 
+
+* The 3-2-1 rule is one to follow: **3 Backups, 2 Locations, 1 Offline Copy**
+
+    Example - local backup at primary location, replica or 2nd backup location at DR Location and one offline backup
+
+* **With at least one backup offline at any given time, an incident cannot affect all of your backups simultaneously.**
+
+<font size="4">**Backup: Good**</font>
+
+* Establish a regular backup cycle, for example:
+
+    - Weekly Full backup
+
+    - Daily Incremental backup
+
+    - Full database & transaction log backup as an approach particularly to satisfy RTO/RPO requirements
+    
+* Backup services should not be domain joined. Doing so increases risk of backup corruption in the event of cyber attacks.
+
+* Backup copies must be periodically be tested for recovery capability, including File and Application recovery.
+
+* Use of a proven offline method of storage such as Tape. Capacities per tape currently can go up to 30TB with typical compression rates. Autoloaders with multiple drives can vastly increase capacity and reduce time to backup. 
+
+* Tapes / Removable Media should be regularly removed and securely stored, ideally in a different location.
+
+* Microsoft 365 (and Google Workspace) must be backed up if you are 
+storing data in these services.
+
+* Retention periods for all data types (inc email) need to be defined, in line with GDPR, legal and council requirements.
+
+* Access to backup process (onsite & offsite servers) are controlled via admin rights
+
+* Backup media copies must be stored with a short description that includes the following information: Backup date / Resource name / type of backup method (Full/Incremental/Differential)
+
+* Active Directory state backups should be made by a non-domain joined server and stored offsite.
+
+* All backup data storage are recommended to be encrypted with AES-256 symmetric encryption algorithm or higher.
+
+<font size="4">**Backup: Better**</font>
+
+All detail from ‘Good’ Backup plus:
+
+* Regular Server Recovery Testing are to be carried out
+
+* Access to backups to be controlled using RBAC.
+
+* Backup products and technologies must ensure that backups are retained for a pre-defined period of time before overwriting or purging.
+
+* Any request for stored data recovery must be approved by an authorised person nominated by a Director/Manager in the appropriate department.
+
+* Backup tape copies (or removable drives) are to be environmentally-protected and access-controlled from the location of originating information asset.
+
+* All backup data transit over unencrypted lines to be encrypted with AES-256 symmetric encryption algorithm or higher.
+
+* DR Backups are to be made to an off site location (or the cloud) and are within an isolated domain
+
+* Restores are to be tested regularly, as are BC & DR tests plus a Ransomware exercise is carried out annually (e.g. Exercise in a box)
+
+* Backup alerting is to be enabled, captured centrally and proactively acted upon
+
+* Consideration for immutable storage should be given to the use of Virtual Tape Libraries (VTL’s). They are increasing in popularity but rely on reliable disk storage behind them. Downside is these cannot be removed from site. The VTL Backups should be made immutable on completion of the backup job.
+
+* If the use of Removable Disks is chosen,these should be transferred to a secure storage facility on a regular basis.
+
+<font size="4">**Backup: Best**</font>
+
+All detail from ‘Good & Better’ Backup plus:
+
+* Offline Backups / Immutable Backups to be a critical and audited part of your system.
+
+* Regular site recovery testing (full DR test) to be carried out
+
+* RBAC / Least Privileged Access Models implemented on Backup/Recovery Accounts.
+
+* MFA protected accounts to be implemented for Backup Device Access
+
+* Procedures must be developed for the handling and storage of information in order to prevent 
+unauthorised disclosure, misuse, or loss.
+
+* A record of physical and logical movements of backup data must be maintained.
+
+* Confidentially, integrity and availability of backup data, must be protected. (therefore it must have been assessed and documented to start with)
+
+* Ownership of data should be part of the backup/recovery documentation, with defined responsibilities and exceptions to the standard process should be approved by the data owner.
+
+* Full system images to be captured monthly, and ideally made immutable.
+
+* Data is backed up according to business criticality and rate of change of the data.
+
+* Backup frequency that supports the RTO & RPO figures must be set in BC/DR plans.
+
+* Backup documentation available to support recovery activities. Offline copies to be made available in the event of a system failure.
+
+* Cloud based systems (Such as Microsoft 365 and Google G-Suite) must also be included in offline backups (or made immutable.)
+
+<font size="5">**Overview schematic of an ideal configuration**</font>
+
+In this scenario your offline backups are written to the Tape Autoloader. Other alternatives are Virtual Tape Libraries, Removable drives and immutable storage devices
+
+<img src="../../../assets/cyberclinics/GBB01.png" />
+
+
+Veeam has been used in this example as it is the most prevalent technology in use amongst the 29 Councils reviewed.
+
+Arcserve UDP would work in effectively the same manner. SAN Based Snapshot systems (NetApp, Nimble etc) would be different from the technologies illustrated here
+
+<font size="5">**MFA**</font>
+
+This section is outline guidance, principles and approach for Multi Factor Authentication for all Local Authority council information systems.
+
+<font size="4">**MFA: Good**</font>
+
+* The objective of MFA is key to the prevention of account security. If the credentials have been lost/stolen (or lost in a breach) then you are at risk of an attack.
+
+* **Using MFA on M365 Global Administrator Accounts is a must :**
+    - A M365 Global Administrator Account is an incredibly important account, and if compromised you can find yourself locked out of your entire organisation. It should be treated as ‘The Keys to the Kingdom’ and protected with an extremely secure password, and at least one other form of Authentication.
+
+* MFA to be enabled for All Users for M365 Services (MS Authenticator or Text)
+
+* Conditional Access Policies implemented to cover issues such as geolocation access, e.g. blocking access from outside the UK, Impossible travel as a minimum
+* Using MFA for VPN Remote Access:
+    - Stops unauthorised access if a stolen username and password is used.
+    - A VPN is, after all, a direct link into your network
+* RDP External access by users over internet also must be protected by MFA
+
+<font size="4">**MFA: Better**</font>
+
+All detail from ‘Good’ MFA plus:
+
+* Privileged SaaS administration accounts are protected by MFA
+
+* Protection of Internal Domain Privileged Accounts (Such as Domain Administrators, SAN Administrators, Backup Server Accounts) by MFA
+
+* Implementing Conditional Access Policies to not require the use of MFA on M365 User Accounts when onsite:
+
+    - By using a specific type of CAP you can configure a user to not require MFA when accessing their emails or Microsoft 365 located files when they are connected to your local network, or a trusted location. If you are not in a trusted location then MFA will be required.
+
+    - This will reduce user impact by allowing them to connect with just usernames and passwords when working internally
+    
+<font size="4">**MFA: Best**</font>
+
+All detail from ‘Good & Better’ MFA plus:
+
+* A tiered trust model for mobile BYOD has been established with the implementation of CAPs to manage access across the domain.
+
+* **Jump Servers** deployed with the relevant administration tools on them (eg Active Directory Management, SQL Management, Exchange Management, etc) as the servers to implement MFA onto.
+
+* Your privileged users must use their MFA enabled privileged accounts to log onto these servers to carry out the administrative tasks, rather than going to the servers directly.
+
+<font size="5">**Active Directory**</font>
+
+This section is outline guidance, principles and approach for Active Directory Configurations and Password Policies for all Local Authority council information systems.
+
+<font size="4">**Active Directory: Good**</font>
+
+* Password Requirements
+    - Higher levels of security have been deployed as part of the Default Domain Policy.
+        - Using the standard domain policy for all accounts can mean privileged accounts may not be as secure as they could be.
+        - Domains that have ‘evolved’ may still have a weak level of requirements as the policies are not automatically upgraded with stronger settings.
+
+* Have locally and geographically diverse Active Directory Domain Controllers.
+
+* Ensure Active Directory Backup and Recovery Backs up the AD configuration and directory services on a regular basis.
+
+* Keep up to date in addressing Active Directory vulnerabilities to maintain security 
+
+* Implement a secure Password policy on all user accounts and service accounts
+
+* Different accounts for user level access and privileged access. 
+
+* Hyper-V host servers should not be domain joined
+
+<font size="4">**Active Directory: Better**</font>
+
+All detail from ‘Good’ Active Directory plus:
+
+* Implemented Fine Grained Policies
+
+    - These are a great way to enforce a tiered level of security, and not over complicate non-privileged accounts
+
+* Adoption of the Microsoft Active Directory administrative tier model
+
+* Review and Amend Default Security Settings to eliminate known vulnerabilities, e.g. Ensure credentials stored are encrypted.
+
+* Use of RBAC to ensure separation of privileges, so there is tighter auditability between roles and to help prevent lateral movement in the event an account is compromised;
+
+* Implement Principles of Least Privilege in AD Roles and Groups to ensure that employees have only the minimal level of access they need to perform their roles. 
+
+* Remember - Permissions should be applied to Groups, **not users.**
+
+* Control AD Administration Privileges and Limit Domain User Accounts to only provide administrative privileges and superuser access to those who absolutely need this access to perform their roles;
+
+* Use Password policy manager tool on all accounts
+
+* Enforce Group Policy to prevent Domain Admin cached credentials.
+
+* Secure the Network boundaries by prohibiting specific traffic (e.g. SMB, RDP)
+
+* For Microsoft 365 Directory Synchronisation, the use of a second Azure AD Connect Service in staging mode is recommended.
+
+* **The best access method for server administration is from a Jump Server.**
+
+* Consider the use of dedicated Privileged Access Workstations (PAWs) for server Administration. 
+
+Ideally these machines should be blocked from having internet connectivity.
+
+<font size="4">**Active Directory: Best**</font>
+
+All detail from ‘Good & Better’ Active Directory plus:
+
+* Implement Password Auditing
+    - Auditing passwords on a regular basis will help identify users who need education on the importance of account security. 
+
+* Implement Auditing and alerting on failure to capture any rogue access attempts.
+
+* Administrative level users must not have email or internet connectivity.
+
+* Place Domain Management Servers (DC’s etc) in their own VLAN to segment access
+
+* Use Real-Time Windows Auditing and Alerting and ensure reporting of unusual access attempts. 
+
+* Produce regular management reporting, summarising activities, audited events and alert and all service improvement.
+
+* Have specific workstations for downloading software updates from the internet and a sheep dip or equivalent process to ratify contents where possible.
+
+* If RDP is required, then MFA must be implemented for it.
+
+<font size="5">**Password Policies**</font>
+
+**Good Password Requirements include:**
+
+* Maintain at least an 8-character minimum length requirement 
+
+* Don't require character composition requirements. For example, *&(^%$ - but do require ‘special characters’ are used as part of the password
+
+* Check NCSC for their latest guidance.
+
+**Better Password Requirements include:**
+
+* Don't require too short a time for mandatory periodic password resets for user accounts
+
+* Don't use a single word, eg ‘password’ or a commonly-used phrase like ‘Iloveyou’, or passwords that have been used previously.
+
+* Implement Fine Grained Password Policies to enforce multiple password levels in the same Active Directory
+
+**Best Password requirements include:**
+
+* Guidance to administrators : Ban common passwords, to keep the most vulnerable passwords out of your system
+
+* Guidance for end users : Make passwords hard to guess, even by those who know a lot about you, such as the names and birthdays of your friends and family, your favorite bands, and phrases you like to use. Encourage long passwords, an idea is to use a password based on multiple words all in one string with no spacing, with complex characters (eg !*%$@) and numbers.
+
+* Educate your users to not re-use their organization passwords for non-work related purposes
+
+Review the latest guidance from the NCSC at: https://www.ncsc.gov.uk/collection/passwords/updating-your-approach#tip5-password-collection
+
+<font size="5">**Operating Systems**</font>
+
+This section is outline guidance, principles and approach for Operating Systems for all Local Authority council information systems.
+
+<font size="4">**Operating System Expiry Dates of Note:**</font>
+
+<img src="../../../assets/cyberclinics/GBB02.png" />
+
+<font size="4">**Operating Systems: Good**</font>
+
+* No unsupported Operating Systems (hypervisor, desktop & server) are deployed
+
+    - *This is forthcoming NCSC Guidance, as well as being best practice.*
+
+* Have a clearly defined roadmap in place covering O/S updates
+
+* Ensure all servers have latest patches applied before deployment handover
+
+* Regularly checking of your workstations and servers for vulnerabilities, and remediate as per your ITHC plan.
+
+* Keep your hypervisor servers at the highest level of support / operation that your hardware allows.
+
+    - Refer to the server manufacturer and cross-check with the hypervisor vendor (VMware or Microsoft) Hardware Compatibility List (HCL)
+
+* All SQL Databases need to be in current support from Microsoft (not extended)
+
+    - Other Database systems to be in current support from their vendor 
+(eg Oracle, MySQL) 
+
+<font size="4">**Operating Systems: Better**</font>
+
+All detail from ‘Good’ Operating Systems plus:
+
+* All Operating Systems (desktop & server) must be running at version N or N-1
+
+    - This means you must only be running the current and last previous OS
+
+* Always have a strategy for the upgrading of:
+
+    - Server operating systems
+
+    - Server applications (including your backup software !)
+
+    - Hypervisors
+
+* Your patching policy must be robust and includes testing updates on a subset of machines before deployment to the production environment occurs.
+
+* Employ a robust strategy for OS Hardening:
+
+    - By implementing server hardening you effectively ‘plug’ unnecessary ‘holes’ in the server security by disabling or removing unnecessary software, as well as blocking vulnerable ports and unrequired services.
+
+<font size="4">**Operating Systems: Best**</font>
+
+All detail from ‘Good & Better’ Operating Systems plus:
+
+* Local Authorities should have a strategy and process for maintaining operating system versions and patch levels.
+
+* Application product roadmaps should be maintained to enable the LA to understand the full service software stack product and product end of life (including Operating Systems.)
+
+* Continuous improvement !
+
+<font size="5">**Summary**</font>
+
+* **Aim to be at ‘Best’ wherever possible.**
+
+* Key Backup point : Regular, Reliable Offline or Immutable Backups are the most important thing that you can have
+
+* Key MFA point : Secure all access with MFA wherever possible. The future of security is very much centred around Identity.
+
+* Key AD point : Strong password policies, with Fine Grained Policies in use.
+
+* Key OS point : Implement a robust N/N-1 policy for Operating Systems and regularly patch your servers and applications.
+
+<font size="5">**Appendices**</font>
+
+* In the sections that follow some high level guidance is laid out for your consideration.
+
+* The areas are:
+
+    - Active Cyber Defence
+
+    - IT Health Checks
+
+    - Logging
+
+* Also included are some additional detail in appendices for some of the sections covered in the clinic presentation
+
+<font size="5">**Active Cyber Defence**</font>
+
+Requirements for ACD to be optimal should include :
+
+* Onboard all External IP’s to the Early Warning Service
+
+* Implement Change Control
+
+* Onboard all Public Websites to ACD WebCheck
+
+* Onboard to ACD PDNS
+
+* Onboard to ACD Mail Check
+
+* Implement and Regularly Check DKIM and SPF records
+
+* Implement DMARC Reject setting (go via Quarantine if DMARC not used yet)
+
+* Implement Logging Made Easy (or a reputable SIEM product)
+
+* Sign up to and Implement ‘Regular Exercise In A Box’ preparedness tests
+
+<font size="5">**IT Health Checks**</font>
+
+Requirements for ITHC to be optimal should include :
+
+* Regular IT Health Checks with a relevant Expanded Scope
+
+* Principle Security Concerns to be identified and addressed
+
+* Corrective Action Plans to be drawn up and followed ASAP and to address ALL findings, not just Critical/High ones
+
+* Regular Vulnerability Scanning to be carried out.
+
+* Event Chaining to be implemented
+
+<font size="5">**Logging**</font>
+
+Requirements for Logging to be optimal should include :
+
+* Implement a Centralised Logging Solution
+
+* Decide on the required data capture
+
+* Decide on the required retention periods
+
+* Decide on Alerting and Triaging of the alerts
+
+<font size="5">**Backup Additional Detail**</font>
+
+**How can I implement offline media?**
+
+* Tape Autoloaders or Removable Disks can be added to backup servers as additional backup locations.
+
+* VTL products will require sufficient additional storage to back the VTL software. They will be presented to the backups servers as additional backup locations.
+
+* Cloud Storage Gateways can be added to backup servers to connect your on premise backup server to cloud storage providers (Amazon AWS Storage, Microsoft Azure Storage, etc).
+
+* SAN Based Storage will require at the least additional licensing and will be dependent on the hardware vendor and the backup solution that is in place.
+
+<font size="5">**Operating Systems Additional Detail**</font>
+
+Where application software still is dependent on an unsupported operating system **(and there are no supported alternatives available in the short term)** additional technical controls should be considered:
+
+* Run the application in compatibility mode on Windows 10
+
+* Virtualised containers, e.g. Docker
+
+* Or have workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks
+
+* Consider replacing application
+
+
+
+
+
+
