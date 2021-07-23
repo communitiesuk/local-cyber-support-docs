@@ -1,0 +1,369 @@
+---
+title: Secure Teams
+weight: 30
+hide_in_navigation: false
+---
+
+# Overview of Considerations for Securing Microsoft Teams
+
+<font size="5">**Objective**</font>
+
+* Outline guidance of considerations to be given when securing Teams Internally and with External Organisations and Individuals
+
+* There is no single approach to Teams security that is the best for every organisation.
+
+* Part of the process is to find out what you want to do to secure your organisation from the detail listed here (and other links provided) and work towards those goals.
+
+* The notes presented here are discussion points for you to start the conversations in your own organisations.
+
+* This artefact was produced as a response to a query we received on how to tackle securing Teams meetings, but we have expanded this to cover other aspects of Teams security for consideration
+
+<font size="5">**Background**</font>
+
+As Microsoft Teams is now considered to be one of the key communication and collaboration tools for most organisations, some thought needs to be put into how to securely use the features Teams provides.
+
+A lot of the principles put forward in this document have relevance with all of the collaboration tools that are available (Zoom, Slack, etc). The usage of these tools drastically increased during the pandemic, and kept on growing !
+
+The first and most important security element for your Microsoft 365 environment is: **MFA to be employed for all user access**
+
+**All M365 user accounts MUST be secured with MFA, especially those with privileged access**
+
+<font size="5">**General Definitions**</font>
+
+<font size="4">**There are key differences between Guest Users, External Users and Anonymous Users, and they are not necessarily what you would expect !**</font>
+
+* **Guest Users** are users people with an email address who are invited to participate in your Teams Channels and Chats (including meetings). 
+
+Note that only users who are added through Azure AD can access your team.
+
+* **External Users** are registered Teams users in other tenancies who can participate in chat and meetings. 
+
+Use External Teams access for those users outside your organization with who you need to communicate rather than collaborate on files.
+
+* **Anonymous Users** are users who join your meetings without a registered MS Account. These should generally be treated as suspicious unless you are hosting a fully public meeting, and do not wish to track who is attending.
+
+<font size="5">**Considerations**</font>
+
+The following section details some key security concepts which can be employed in Microsoft Teams
+
+* Perimeter Security
+
+* Federation of M365 with other organisations
+
+* Information Barriers
+
+* Security Analytics (via Azure Sentinel)
+
+* Considerations for Least Privilege Access
+
+<font size="5">**Perimeter Security**</font>
+
+Often overlooked, as part of your internal network security you should only allow traffic through your firewall that is needed outbound as well as inbound. And as such you should secure the firewall port flow for Teams:
+
+<font size="4">**Firewall Ports
+
+* Your perimeter firewall should be configured (Teams-wise) to allow two way traffic on ports TCP443 and UDP3478-3481
+
+* Having your firewall with unnecessarily open ports is a security risk.
+
+* The default should be that ports are closed unless required and all Firewall changes should go via a formal Change Control process
+
+<font size="4">**Consider : Block access to SharePoint for specific users**</font>
+
+* Applying any Conditional Access (CA) policy on SharePoint in Microsoft 365 is also applied to Teams. This could be useful to you
+
+<font size="5">**Considerations for Federation (External Access)**</font>
+
+* Federation provides your organization with the ability to communicate with other organizations to share IM and presence. 
+
+In Teams ‘open’ federation is on by default. However, tenant admins have the ability to control this via the Microsoft 365 admin center.
+
+If the other organisation is a partner, or your organisation regularly interacts with the other domain, then federation may give you additional benefits.
+
+* Open federation: This is the default setting in Teams, and it lets people in your organization find, call, chat, and set up meetings with people external to your organization in any domain.
+
+* Allow specific domains: By adding domains to an Allow list, you limit external access to only the allowed domains. Once you set up a list of allowed domains, all other domains will be blocked
+
+* Block specific domains - By adding domains to a Block list, you can communicate with all external domains except the ones you've blocked
+
+<font size="3">**Ref : https://docs.microsoft.com/en-us/microsoftteams/manage-external-access**</font>
+
+<font size="5">**Use of Information Barriers**</font>
+
+<font size="4">**Information Barriers in Microsoft Teams**</font>
+
+* Information barriers are policies that an admin can configure to prevent individuals or groups from communicating with each other. 
+
+* Usage Example : If one department is handling information that shouldn't be shared with other departments, an Information Barrier can be employed here.
+
+* Information Barrier policies also prevent lookups and discovery. 
+
+* If you attempt to communicate with someone you shouldn't be communicating with, you won't find that user in the people picker.
+
+<font size="3">**Ref : https://docs.microsoft.com/en-us/microsoftteams/information-barriers-in-teams**</font>
+
+<font size="5">**Security Analytics with Azure Sentinel**</font>
+
+<font size="4">**Overview**</font>
+
+* Azure Sentinel is a ‘next generation SIEM’ product which has the capability to not just provide intelligent security analytics for your entire organisation (including cloud services).
+
+* It is a product which can run ‘Playbooks’ allowing it to automatically respond to events in real time. 
+
+* It is a standalone purchased product from Microsoft, and although it is not ‘cheap’, it is feature laden and has perfect integration with M365.
+
+* Teams serves a central role in communication and data-sharing in the M365 Cloud. 
+
+* Since Teams touches on so many technologies in the Cloud, it can benefit from human and automated analysis. 
+
+* This applies to both hunting in logs, and real-time monitoring of meetings. 
+
+* Azure Sentinel offers admins these solutions.
+
+<font size="4">**Analysis**</font>
+
+Azure Sentinel has a built in connector for Microsoft365 logs, which enables the ingestion of Teams Data into Sentinel.
+
+Using Keyword Query Language (KQL) you can find out useful detail around such areas as:
+
+* Federated external users query
+
+* Who recently joined / whose role has changed ?
+
+* External users from unknown or new organisations
+
+* New ‘bot’ or application has been added
+
+* User accounts who are owners of large numbers of Teams
+
+* Many Team deletions by a single user
+
+* Threat hunting by combining queries
+
+* Example : Combine the detection of suspicious patterns in Azure AD SigninLogs, and use that output while hunting for Team Owners.
+
+<font size="3">**Queries are listed at: https://docs.microsoft.com/en-us/microsoftteams/teams-sentinel-guide**</font>
+
+<font size="4">**Centralisation**</font>
+
+<font size="3">**Sentinel lets administrators do security management in one location.**</font>
+
+This includes managing:
+
+* Third-party devices
+
+* Microsoft Threat Protection
+
+* Microsoft 365 Workloads (including Teams)
+
+<font size="3">**Azure Sentinel Pricing can be located at : https://azure.microsoft.com/en-gb/pricing/details/azure-sentinel/**</font>
+
+<font size="3">**Although not a SIEM, Azure Security Centre can also be considered to add to your general M365 Security Posture:**</font>
+
+<font size="3">**https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction**</font>
+
+<font size="5">**Considerations for Least Privilege access**</font>
+
+For Teams Administration, there are 5 key roles which can be assigned. 
+
+As per best practice if you need to assign any of these roles to your team members remember to grant no more privilege than required. 
+
+Refer to the role capabilities at the MS link supplied here for more detail on each of the roles. 
+
+Note that the Comms Admin role is particularly relevant when managing Teams meetings. 
+
+* Teams Administrator
+
+* Teams Communications Administrator
+
+* Teams Communications Support Engineer
+
+* Teams Communications Support Specialist
+
+* Teams Device Administrator
+
+<font size="3">**Review at https://docs.microsoft.com/en-us/microsoftteams/using-admin-roles**</font>
+
+<font size="5">**Teams Meeting Security**</font>
+
+The following information details aspects of Teams meeting security which are presented for your consideration.
+
+* Meeting Lobby Usage
+
+* External Users, Guest Users & Anonymous Users in Meetings
+
+* Safe Links
+
+* Protecting material from download
+
+<font size="5">**Meeting ‘Lobby’ usage**</font>
+
+There are two options to control who arrives in Teams meetings and who will have access to the information you present.
+
+<font size="4">**You can control who joins your meetings through settings for the lobby (Specifically the ‘Who can bypass the lobby’ setting in the meeting options page)**</font>
+
+* ‘People in my organization’ will send everyone who is not ‘in-tenant’ or a guest user of the tenancy to the meeting lobby first.
+
+* ‘People in my organization and trusted organizations’ will also allow Federated users to bypass the lobby.
+
+<font size="4">**The second way is through structured meetings**</font>
+
+* Structured Meetings are where presenters should be able to do just about anything that they should need to, but attendees have a controlled experience). 
+
+* After joining a structured meeting, _presenters control what attendees can do in the meeting._
+
+<font size="5">**Inviting External Users to Teams Channels / Meetings**</font>
+
+<font size="4">**Meetings**</font>
+
+* This is an important aspect of Teams usage - Video Meetings. Follow the simple guidance of only inviting known people and only use verified email addresses!
+
+<font size="4">**Teams Channels**</font>
+
+* An important thing to consider when inviting external users into Teams Channels is conducting Guest Access Reviews.
+
+* What Teams Channels are in use (or when a Channel is no longer required !), who has access to them and what is the information that is contained in them.
+
+* You can use Azure AD to create an access review for group members or users assigned to an application. 
+
+* Creating recurring access reviews can save you time. 
+
+* If you need to routinely review users who have access to an application, a team, or are members of a group, you can define the frequency of those reviews. 
+
+<font size="3">**Reference : https://docs.microsoft.com/en-us/microsoftteams/guest-access**</font>
+
+<font size="5">**Guest Access**</font>
+
+Guest access lets you add individual users from outside your company to your teams and channels in Microsoft Teams. 
+
+Anyone with a business or consumer email account, such as Outlook, Gmail, or others, can participate as a Teams guest with full access to team chats, meetings, and files.
+
+Guests will be able to participate in channel communication, chat in private chats, share channel files, and have access to teams’ resources (files, channel posts, wiki links etc).
+
+However, they won’t be able to create meetings, add apps, or share chat files.
+
+<font size="5">**Interacting with Anonymous Users**</font>
+
+By having an ‘open’ Teams configuration you will be able to receive chat messages (etc) from anyone with a Teams account. 
+
+If there is a good reason for this to be present you should look at securing the accounts that you may publicise. 
+
+A good alternative is to use a ‘meeting proxy’ which anonymises the internal accounts yet gives people the opportunity to interact with your internal staff in a controlled and reportable manner.
+
+Products such as Modality Systems ‘One Consultation’ (other products are available but this will give you an idea on what is possible) do this very well.
+
+It may also be worth considering turning off **Anonymous access to meetings**
+
+* If you do not wish for Anonymous users (users you don't explicitly invite) to join a meeting, you need to ensure the Anonymous users can join a meeting is set to Off for the Participant meeting section. 
+
+* This can also be achieved globally in the Teams Administration Center.
+
+<font size="5">**‘Safe Links’ in Teams**</font>
+
+Safe Links are a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs. 
+
+You can enable or disable Safe Links protection for Microsoft Teams in Safe Links policies. 
+
+Specifically, you use the Select the action for unknown or potentially malicious URLs within Microsoft Teams setting. The recommended value is On.
+
+The following settings in Safe Links policies that apply to links in email messages also apply to links in Teams:
+
+* Apply real-time URL scanning for suspicious links and links that point to files
+
+* Do not track user clicks
+
+* Do not allow users to click through to original URL
+
+<font size="3">**https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links**</font>
+
+<font size="5">**Prevent file download to unmanaged devices**</font>
+
+* Although by changing the settings on SharePoint Online to stop downloading files from Teams Channels (link in appendices), you may wish to allow this, but *only* to managed devices.
+
+* To do this you can create a Conditional Access Policy (CAP) to control access from unmanaged devices. 
+
+* Microsoft recommends you protect content in SharePoint sites with sensitive and highly-regulated content with device access controls. 
+
+* You do this by creating a policy that specifies the level of protection and the sites to apply the protection to.
+
+<font size="3">**Sensitive sites: Allow browser-only access. This prevents users from editing and downloading files.
+
+<font size="3">**Highly regulated sites: Block access from unmanaged devices.
+
+<font size="5">**Summary
+
+<font size="4">**Know your tenancy
+
+* Review your federation settings. Consider only allowing specific domains or blocking specific domains, depending on how open you want to be.
+
+* Add specific guest users to your tenancy for trusted external people. Only invite internal users and guest users of your tenancy to meetings.
+
+* Consider the use of Teams meeting proxies. These anonymise your internal Teams users to external users so you don’t have to open up your Teams to all users globally.
+
+* Keep your endpoint Teams Clients up to date.
+
+* Review and implement all recommendations that are suited to your organisation after reading Microsoft’s current guidance at https://docs.microsoft.com/en-us/microsoftteams/teams-security-guide
+
+<font size="5">**Appendices**</font>
+
+<font size="4">**3rd Party Security Tips for Microsoft Teams**</font>
+
+There is some very useful information at https://blog.netwrix.com/2020/04/16/microsoft-teams-security/ 
+
+It details 5 areas of security, and they are :
+
+* Setup Application Management (via Manage Apps in Teams Administration Center)
+
+* Establish Global Teams Management (who can interact with who etc)
+
+* Setup Secure Guest Access (Highest Security is disabled, and this is the default)
+
+* Build an Information Protection Architecture (Compliance, eDiscovery, Litigation Hold, Content Search, ATP, DLP, Backups etc).
+
+* Audit User Activity (Analytics and Reporting in Teams A/C, Azure Sentinel etc)
+
+<font size="4">**Useful Microsoft Links**</font>
+
+* https://docs.microsoft.com/en-us/microsoftteams/teams-security-guide 
+
+* https://docs.microsoft.com/en-us/microsoftteams/block-access-sharepoint 
+
+* https://docs.microsoft.com/en-us/microsoftteams/guest-access
+
+* https://docs.microsoft.com/en-us/microsoftteams/information-barriers-in-teams
+
+* https://docs.microsoft.com/en-us/microsoftteams/guest-experience#comparison-of-team-member-and-guest-capabilities 
+
+* https://docs.microsoft.com/en-us/microsoftteams/teams-sentinel-guide
+
+* https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links
+
+<font size="4">**3rd Party Websites with Interesting Content**</font>
+
+Microsoft Teams: 
+
+* https://docs.microsoft.com/en-us/microsoftteams/teams-overview
+
+Securing Teams:
+
+* https://blog.netwrix.com/2020/04/16/microsoft-teams-security/
+
+* https://zimmergren.net/securing-microsoft-teams/
+
+* https://www.avepoint.com/blog/microsoft-teams/microsoft-teams-external-sharing-webinar/ 
+
+Azure Sentinel:
+
+* https://www.infusedinnovations.com/blog/intelligent-cloud/step-by-step-guide-to-deploy-azure-sentinel
+
+Teams Call Proxy Example:
+
+* https://www.modalitysystems.com/software/one-meeting
+
+Prevention of downloads
+
+* https://cloudbuild.co.uk/prevent-users-from-downloading-files-from-microsoft-teams-channel/
+
+Teams Roles
+
+* https://blog.enablingtechcorp.com/role-based-access-for-teams-use-least-privilege-to-strengthen-user-support 
