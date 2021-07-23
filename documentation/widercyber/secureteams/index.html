@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en" class="govuk-template no-js">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <title>Secure Teams - MHCLG Technical Documentation Library</title>
+
+    <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
+
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/secureteams/">
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:domain" content="github.com" />
+      <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta name="twitter:title" content="Secure Teams - MHCLG Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/secureteams/" />
+
+      <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
+      <meta property="og:site_name" content="MHCLG Technical Documentation Library" />
+      <meta property="og:title" content="Secure Teams" />
+      <meta property="og:type" content="object" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/widercyber/secureteams/" />
+
+    
+  </head>
+
+  <body class="govuk-template__body">
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div class="app-pane">
+      <div class="app-pane__header toc-open-disabled">
+        <a href="#content" class="govuk-skip-link">Skip to main content</a>
+
+        <header class="govuk-header app-header" role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-header__container--full-width">
+    <div class="govuk-header__logo">
+      <a href="https://github.com/communitiesuk/local-cyber-support-docs" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__product-name">
+          MHCLG Technical Documentation Library
+        </span>
+      </a>
+        <strong class="govuk-tag">Beta</strong>
+    </div>
+    <div class="govuk-header__content">
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+      <nav>
+        <ul id="navigation" class="govuk-header__navigation govuk-header__navigation--end" aria-label="Top Level Navigation">
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-template">Template</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="https://github.com/alphagov/tech-docs-gem">Ruby gem</a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/support">Support</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      </div>
+
+        <div id="toc-heading" class="toc-show fixedsticky">
+          <button type="button" class="toc-show__label js-toc-show" aria-controls="toc">
+            Table of contents <span class="toc-show__icon"></span>
+          </button>
+        </div>
+
+      <div class="app-pane__body" data-module="in-page-navigation">
+          <div class="app-pane__toc">
+            <div class="toc" data-module="table-of-contents" tabindex="-1" aria-label="Table of contents" role="dialog">
+              
+              <button type="button" class="toc__close js-toc-close" aria-controls="toc" aria-label="Hide table of contents"></button>
+              <nav id="toc" class="js-toc-list toc__list" aria-labelledby="toc-heading" data-module="collapsible-navigation">
+                      <ul>
+  <li>
+    <a href="/local-cyber-support-docs/#mhclg-technical-documentation-library"><span>MHCLG Technical Documentation Library</span></a>
+  </li>
+</ul>
+<ul><li><a href="/local-cyber-support-docs/documentation/logging/"><span>Logging</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/logging/guidance/#guidance-for-logging"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/ncscacd/"><span>NCSC ACD</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/ncscacd/lme/#lme-support"><span>LME support</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/healthcheck/"><span>IT Health Check</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/template/#ithc-template"><span>ITHC template</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/logging/#guidance-for-logging-2"><span>Guidance for logging</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/psc/#ithc-principle-security-concerns"><span>ITHC Principle Security Concerns</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/healthcheck/openvas/#openvas-guidance"><span>OpenVAS guidance</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/operatingsystems/"><span>Operating Systems</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/#overview-of-operating-systems-best-practice"><span>Overview of operating systems best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/activedirectory/"><span>Active Directory</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/finegrained/#overview-of-fine-grained-password-policy-implementation"><span>Overview of fine grained password policy implementation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/activedirectory/password/#ad-and-password-best-practice"><span>AD and Password Best Practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/backup/"><span>Backup</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/offline/#overview-of-offline-backup-best-practice"><span>Overview of offline backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbac/#overview-of-role-based-access-control-amp-least-privilege-best-practice"><span>Overview of role based access control & least privilege best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bestpractice/#overview-of-backup-best-practice"><span>Overview of backup best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/resilience/#resilience-business-impact-assessment"><span>Resilience business impact assessment</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rbacme/#role-based-access-control-model-example"><span>Role Based Access Control Model Example</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrplan/#overview-of-bc-dr-plan-preparation"><span>Overview of BC/DR plan preparation</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/rto/#overview-of-rto-amp-rpo"><span>Overview of RTO & RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/maintenanceplans/#overview-of-ms-sql-server-database-maintenance-plans"><span>Overview of MS-SQL server database maintenance plans</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/txlogs/#overview-of-database-transaction-logs-backups"><span>Overview of database transaction logs backups</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/m365/#backing-up-microsoft-365-guidance"><span>Backing up Microsoft 365 : Guidance</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/backup/bcdrprep/#overview-of-bc-dr-test-preparation"><span>Overview of BC/DR test preparation</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/mfa/"><span>MFA</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/byod/#overview-of-byod-best-practice"><span>Overview of BYOD best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/bestpractice/#overview-of-mfa-best-practice"><span>Overview of MFA best practice</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/mfa/condaccess/#overview-of-conditional-access-policies-best-practice"><span>Overview of conditional access policies best practice</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/widercyber/"><span>Wider Cyber Focus Areas</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/widercyber/secureteams/#overview-of-considerations-for-securing-microsoft-teams"><span>Overview of Considerations for Securing Microsoft Teams</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/widercyber/endpointsecurity/#overview-of-endpoint-device-security-elements"><span>Overview of Endpoint Device Security Elements</span></a>
+  </li>
+</ul>
+</li></ul><ul><li><a href="/local-cyber-support-docs/documentation/cyberclinics/"><span>Cyber Clinics</span></a>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/lme/#logging-made-easy-lme"><span>Logging Made Easy (LME)</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwords/#passwords-and-identity-protection"><span>Passwords and identity protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/atp/#microsoft-365-advanced-threat-protection"><span>Microsoft 365 Advanced Threat Protection</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/passwordcontrol/#cyber-security-password-control"><span>Cyber Security - Password Control</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/m365backup/#backing-up-microsoft-365-why-bother"><span>Backing up Microsoft 365 : Why Bother?</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/conditionalaccess/#conditional-access-policies"><span>Conditional Access Policies</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/adtool/#active-directory-toolkit"><span>Active Directory Toolkit</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/gbb/#cyber-security-good-better-best"><span>Cyber Security - Good, Better, Best.</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/hambleton/#rto-rpo"><span>RTO/RPO</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/#use-of-mfa-for-on-premise-privileged-accounts"><span>Use of MFA for on premise privileged accounts</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/openvas/#open-vas-vulnerability-scanning"><span>Open VAS vulnerability scanning</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/exchange/#exchange-on-premise"><span>Exchange On Premise</span></a>
+  </li>
+</ul>
+<ul>
+  <li>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/offlinebackup/#why-should-we-have-offline-backups"><span>Why should we have offline backups ?</span></a>
+  </li>
+</ul>
+</li></ul>
+
+              </nav>
+            </div>
+          </div>
+
+        <div class="app-pane__content toc-open-disabled">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
+            <h1 id="overview-of-considerations-for-securing-microsoft-teams">Overview of Considerations for Securing Microsoft Teams</h1><p><font size="5"><strong>Objective</strong></font></p>
+
+<ul>
+<li><p>Outline guidance of considerations to be given when securing Teams Internally and with External Organisations and Individuals</p></li>
+<li><p>There is no single approach to Teams security that is the best for every organisation.</p></li>
+<li><p>Part of the process is to find out what you want to do to secure your organisation from the detail listed here (and other links provided) and work towards those goals.</p></li>
+<li><p>The notes presented here are discussion points for you to start the conversations in your own organisations.</p></li>
+<li><p>This artefact was produced as a response to a query we received on how to tackle securing Teams meetings, but we have expanded this to cover other aspects of Teams security for consideration</p></li>
+</ul>
+<p><font size="5"><strong>Background</strong></font></p>
+<p>As Microsoft Teams is now considered to be one of the key communication and collaboration tools for most organisations, some thought needs to be put into how to securely use the features Teams provides.</p>
+<p>A lot of the principles put forward in this document have relevance with all of the collaboration tools that are available (Zoom, Slack, etc). The usage of these tools drastically increased during the pandemic, and kept on growing !</p>
+<p>The first and most important security element for your Microsoft 365 environment is: <strong>MFA to be employed for all user access</strong></p>
+<p><strong>All M365 user accounts MUST be secured with MFA, especially those with privileged access</strong></p>
+<p><font size="5"><strong>General Definitions</strong></font></p>
+<p><font size="4"><strong>There are key differences between Guest Users, External Users and Anonymous Users, and they are not necessarily what you would expect !</strong></font></p>
+
+<ul>
+<li><strong>Guest Users</strong> are users people with an email address who are invited to participate in your Teams Channels and Chats (including meetings). </li>
+</ul>
+<p>Note that only users who are added through Azure AD can access your team.</p>
+
+<ul>
+<li><strong>External Users</strong> are registered Teams users in other tenancies who can participate in chat and meetings. </li>
+</ul>
+<p>Use External Teams access for those users outside your organization with who you need to communicate rather than collaborate on files.</p>
+
+<ul>
+<li><strong>Anonymous Users</strong> are users who join your meetings without a registered MS Account. These should generally be treated as suspicious unless you are hosting a fully public meeting, and do not wish to track who is attending.</li>
+</ul>
+<p><font size="5"><strong>Considerations</strong></font></p>
+<p>The following section details some key security concepts which can be employed in Microsoft Teams</p>
+
+<ul>
+<li><p>Perimeter Security</p></li>
+<li><p>Federation of M365 with other organisations</p></li>
+<li><p>Information Barriers</p></li>
+<li><p>Security Analytics (via Azure Sentinel)</p></li>
+<li><p>Considerations for Least Privilege Access</p></li>
+</ul>
+<p><font size="5"><strong>Perimeter Security</strong></font></p>
+<p>Often overlooked, as part of your internal network security you should only allow traffic through your firewall that is needed outbound as well as inbound. And as such you should secure the firewall port flow for Teams:</p>
+<p><font size="4">**Firewall Ports</p>
+
+<ul>
+<li><p>Your perimeter firewall should be configured (Teams-wise) to allow two way traffic on ports TCP443 and UDP3478-3481</p></li>
+<li><p>Having your firewall with unnecessarily open ports is a security risk.</p></li>
+<li><p>The default should be that ports are closed unless required and all Firewall changes should go via a formal Change Control process</p></li>
+</ul>
+<p><font size="4"><strong>Consider : Block access to SharePoint for specific users</strong></font></p>
+
+<ul>
+<li>Applying any Conditional Access (CA) policy on SharePoint in Microsoft 365 is also applied to Teams. This could be useful to you</li>
+</ul>
+<p><font size="5"><strong>Considerations for Federation (External Access)</strong></font></p>
+
+<ul>
+<li>Federation provides your organization with the ability to communicate with other organizations to share IM and presence. </li>
+</ul>
+<p>In Teams ‘open’ federation is on by default. However, tenant admins have the ability to control this via the Microsoft 365 admin center.</p>
+<p>If the other organisation is a partner, or your organisation regularly interacts with the other domain, then federation may give you additional benefits.</p>
+
+<ul>
+<li><p>Open federation: This is the default setting in Teams, and it lets people in your organization find, call, chat, and set up meetings with people external to your organization in any domain.</p></li>
+<li><p>Allow specific domains: By adding domains to an Allow list, you limit external access to only the allowed domains. Once you set up a list of allowed domains, all other domains will be blocked</p></li>
+<li><p>Block specific domains - By adding domains to a Block list, you can communicate with all external domains except the ones you&rsquo;ve blocked</p></li>
+</ul>
+<p><font size="3"><strong>Ref : https://docs.microsoft.com/en-us/microsoftteams/manage-external-access</strong></font></p>
+<p><font size="5"><strong>Use of Information Barriers</strong></font></p>
+<p><font size="4"><strong>Information Barriers in Microsoft Teams</strong></font></p>
+
+<ul>
+<li><p>Information barriers are policies that an admin can configure to prevent individuals or groups from communicating with each other.</p></li>
+<li><p>Usage Example : If one department is handling information that shouldn&rsquo;t be shared with other departments, an Information Barrier can be employed here.</p></li>
+<li><p>Information Barrier policies also prevent lookups and discovery.</p></li>
+<li><p>If you attempt to communicate with someone you shouldn&rsquo;t be communicating with, you won&rsquo;t find that user in the people picker.</p></li>
+</ul>
+<p><font size="3"><strong>Ref : https://docs.microsoft.com/en-us/microsoftteams/information-barriers-in-teams</strong></font></p>
+<p><font size="5"><strong>Security Analytics with Azure Sentinel</strong></font></p>
+<p><font size="4"><strong>Overview</strong></font></p>
+
+<ul>
+<li><p>Azure Sentinel is a ‘next generation SIEM’ product which has the capability to not just provide intelligent security analytics for your entire organisation (including cloud services).</p></li>
+<li><p>It is a product which can run ‘Playbooks’ allowing it to automatically respond to events in real time.</p></li>
+<li><p>It is a standalone purchased product from Microsoft, and although it is not ‘cheap’, it is feature laden and has perfect integration with M365.</p></li>
+<li><p>Teams serves a central role in communication and data-sharing in the M365 Cloud.</p></li>
+<li><p>Since Teams touches on so many technologies in the Cloud, it can benefit from human and automated analysis.</p></li>
+<li><p>This applies to both hunting in logs, and real-time monitoring of meetings.</p></li>
+<li><p>Azure Sentinel offers admins these solutions.</p></li>
+</ul>
+<p><font size="4"><strong>Analysis</strong></font></p>
+<p>Azure Sentinel has a built in connector for Microsoft365 logs, which enables the ingestion of Teams Data into Sentinel.</p>
+<p>Using Keyword Query Language (KQL) you can find out useful detail around such areas as:</p>
+
+<ul>
+<li><p>Federated external users query</p></li>
+<li><p>Who recently joined / whose role has changed ?</p></li>
+<li><p>External users from unknown or new organisations</p></li>
+<li><p>New ‘bot’ or application has been added</p></li>
+<li><p>User accounts who are owners of large numbers of Teams</p></li>
+<li><p>Many Team deletions by a single user</p></li>
+<li><p>Threat hunting by combining queries</p></li>
+<li><p>Example : Combine the detection of suspicious patterns in Azure AD SigninLogs, and use that output while hunting for Team Owners.</p></li>
+</ul>
+<p><font size="3"><strong>Queries are listed at: https://docs.microsoft.com/en-us/microsoftteams/teams-sentinel-guide</strong></font></p>
+<p><font size="4"><strong>Centralisation</strong></font></p>
+<p><font size="3"><strong>Sentinel lets administrators do security management in one location.</strong></font></p>
+<p>This includes managing:</p>
+
+<ul>
+<li><p>Third-party devices</p></li>
+<li><p>Microsoft Threat Protection</p></li>
+<li><p>Microsoft 365 Workloads (including Teams)</p></li>
+</ul>
+<p><font size="3"><strong>Azure Sentinel Pricing can be located at : https://azure.microsoft.com/en-gb/pricing/details/azure-sentinel/</strong></font></p>
+<p><font size="3"><strong>Although not a SIEM, Azure Security Centre can also be considered to add to your general M365 Security Posture:</strong></font></p>
+<p><font size="3"><strong>https://docs.microsoft.com/en-us/azure/security-center/security-center-introduction</strong></font></p>
+<p><font size="5"><strong>Considerations for Least Privilege access</strong></font></p>
+<p>For Teams Administration, there are 5 key roles which can be assigned.</p>
+<p>As per best practice if you need to assign any of these roles to your team members remember to grant no more privilege than required.</p>
+<p>Refer to the role capabilities at the MS link supplied here for more detail on each of the roles.</p>
+<p>Note that the Comms Admin role is particularly relevant when managing Teams meetings.</p>
+
+<ul>
+<li><p>Teams Administrator</p></li>
+<li><p>Teams Communications Administrator</p></li>
+<li><p>Teams Communications Support Engineer</p></li>
+<li><p>Teams Communications Support Specialist</p></li>
+<li><p>Teams Device Administrator</p></li>
+</ul>
+<p><font size="3"><strong>Review at https://docs.microsoft.com/en-us/microsoftteams/using-admin-roles</strong></font></p>
+<p><font size="5"><strong>Teams Meeting Security</strong></font></p>
+<p>The following information details aspects of Teams meeting security which are presented for your consideration.</p>
+
+<ul>
+<li><p>Meeting Lobby Usage</p></li>
+<li><p>External Users, Guest Users &amp; Anonymous Users in Meetings</p></li>
+<li><p>Safe Links</p></li>
+<li><p>Protecting material from download</p></li>
+</ul>
+<p><font size="5"><strong>Meeting ‘Lobby’ usage</strong></font></p>
+<p>There are two options to control who arrives in Teams meetings and who will have access to the information you present.</p>
+<p><font size="4"><strong>You can control who joins your meetings through settings for the lobby (Specifically the ‘Who can bypass the lobby’ setting in the meeting options page)</strong></font></p>
+
+<ul>
+<li><p>‘People in my organization’ will send everyone who is not ‘in-tenant’ or a guest user of the tenancy to the meeting lobby first.</p></li>
+<li><p>‘People in my organization and trusted organizations’ will also allow Federated users to bypass the lobby.</p></li>
+</ul>
+<p><font size="4"><strong>The second way is through structured meetings</strong></font></p>
+
+<ul>
+<li><p>Structured Meetings are where presenters should be able to do just about anything that they should need to, but attendees have a controlled experience).</p></li>
+<li><p>After joining a structured meeting, <em>presenters control what attendees can do in the meeting.</em></p></li>
+</ul>
+<p><font size="5"><strong>Inviting External Users to Teams Channels / Meetings</strong></font></p>
+<p><font size="4"><strong>Meetings</strong></font></p>
+
+<ul>
+<li>This is an important aspect of Teams usage - Video Meetings. Follow the simple guidance of only inviting known people and only use verified email addresses!</li>
+</ul>
+<p><font size="4"><strong>Teams Channels</strong></font></p>
+
+<ul>
+<li><p>An important thing to consider when inviting external users into Teams Channels is conducting Guest Access Reviews.</p></li>
+<li><p>What Teams Channels are in use (or when a Channel is no longer required !), who has access to them and what is the information that is contained in them.</p></li>
+<li><p>You can use Azure AD to create an access review for group members or users assigned to an application.</p></li>
+<li><p>Creating recurring access reviews can save you time.</p></li>
+<li><p>If you need to routinely review users who have access to an application, a team, or are members of a group, you can define the frequency of those reviews.</p></li>
+</ul>
+<p><font size="3"><strong>Reference : https://docs.microsoft.com/en-us/microsoftteams/guest-access</strong></font></p>
+<p><font size="5"><strong>Guest Access</strong></font></p>
+<p>Guest access lets you add individual users from outside your company to your teams and channels in Microsoft Teams.</p>
+<p>Anyone with a business or consumer email account, such as Outlook, Gmail, or others, can participate as a Teams guest with full access to team chats, meetings, and files.</p>
+<p>Guests will be able to participate in channel communication, chat in private chats, share channel files, and have access to teams’ resources (files, channel posts, wiki links etc).</p>
+<p>However, they won’t be able to create meetings, add apps, or share chat files.</p>
+<p><font size="5"><strong>Interacting with Anonymous Users</strong></font></p>
+<p>By having an ‘open’ Teams configuration you will be able to receive chat messages (etc) from anyone with a Teams account.</p>
+<p>If there is a good reason for this to be present you should look at securing the accounts that you may publicise.</p>
+<p>A good alternative is to use a ‘meeting proxy’ which anonymises the internal accounts yet gives people the opportunity to interact with your internal staff in a controlled and reportable manner.</p>
+<p>Products such as Modality Systems ‘One Consultation’ (other products are available but this will give you an idea on what is possible) do this very well.</p>
+<p>It may also be worth considering turning off <strong>Anonymous access to meetings</strong></p>
+
+<ul>
+<li><p>If you do not wish for Anonymous users (users you don&rsquo;t explicitly invite) to join a meeting, you need to ensure the Anonymous users can join a meeting is set to Off for the Participant meeting section.</p></li>
+<li><p>This can also be achieved globally in the Teams Administration Center.</p></li>
+</ul>
+<p><font size="5"><strong>‘Safe Links’ in Teams</strong></font></p>
+<p>Safe Links are a feature in Defender for Office 365 that provides URL scanning and rewriting of inbound email messages in mail flow, and time-of-click verification of URLs.</p>
+<p>You can enable or disable Safe Links protection for Microsoft Teams in Safe Links policies.</p>
+<p>Specifically, you use the Select the action for unknown or potentially malicious URLs within Microsoft Teams setting. The recommended value is On.</p>
+<p>The following settings in Safe Links policies that apply to links in email messages also apply to links in Teams:</p>
+
+<ul>
+<li><p>Apply real-time URL scanning for suspicious links and links that point to files</p></li>
+<li><p>Do not track user clicks</p></li>
+<li><p>Do not allow users to click through to original URL</p></li>
+</ul>
+<p><font size="3"><strong>https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links</strong></font></p>
+<p><font size="5"><strong>Prevent file download to unmanaged devices</strong></font></p>
+
+<ul>
+<li><p>Although by changing the settings on SharePoint Online to stop downloading files from Teams Channels (link in appendices), you may wish to allow this, but <em>only</em> to managed devices.</p></li>
+<li><p>To do this you can create a Conditional Access Policy (CAP) to control access from unmanaged devices.</p></li>
+<li><p>Microsoft recommends you protect content in SharePoint sites with sensitive and highly-regulated content with device access controls.</p></li>
+<li><p>You do this by creating a policy that specifies the level of protection and the sites to apply the protection to.</p></li>
+</ul>
+<p><font size="3">**Sensitive sites: Allow browser-only access. This prevents users from editing and downloading files.</p>
+<p><font size="3">**Highly regulated sites: Block access from unmanaged devices.</p>
+<p><font size="5">**Summary</p>
+<p><font size="4">**Know your tenancy</p>
+
+<ul>
+<li><p>Review your federation settings. Consider only allowing specific domains or blocking specific domains, depending on how open you want to be.</p></li>
+<li><p>Add specific guest users to your tenancy for trusted external people. Only invite internal users and guest users of your tenancy to meetings.</p></li>
+<li><p>Consider the use of Teams meeting proxies. These anonymise your internal Teams users to external users so you don’t have to open up your Teams to all users globally.</p></li>
+<li><p>Keep your endpoint Teams Clients up to date.</p></li>
+<li><p>Review and implement all recommendations that are suited to your organisation after reading Microsoft’s current guidance at https://docs.microsoft.com/en-us/microsoftteams/teams-security-guide</p></li>
+</ul>
+<p><font size="5"><strong>Appendices</strong></font></p>
+<p><font size="4"><strong>3rd Party Security Tips for Microsoft Teams</strong></font></p>
+<p>There is some very useful information at https://blog.netwrix.com/2020/04/16/microsoft-teams-security/</p>
+<p>It details 5 areas of security, and they are :</p>
+
+<ul>
+<li><p>Setup Application Management (via Manage Apps in Teams Administration Center)</p></li>
+<li><p>Establish Global Teams Management (who can interact with who etc)</p></li>
+<li><p>Setup Secure Guest Access (Highest Security is disabled, and this is the default)</p></li>
+<li><p>Build an Information Protection Architecture (Compliance, eDiscovery, Litigation Hold, Content Search, ATP, DLP, Backups etc).</p></li>
+<li><p>Audit User Activity (Analytics and Reporting in Teams A/C, Azure Sentinel etc)</p></li>
+</ul>
+<p><font size="4"><strong>Useful Microsoft Links</strong></font></p>
+
+<ul>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/teams-security-guide</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/block-access-sharepoint</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/guest-access</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/information-barriers-in-teams</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/guest-experience#comparison-of-team-member-and-guest-capabilities</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoftteams/teams-sentinel-guide</p></li>
+<li><p>https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/safe-links</p></li>
+</ul>
+<p><font size="4"><strong>3rd Party Websites with Interesting Content</strong></font></p>
+<p>Microsoft Teams:</p>
+
+<ul>
+<li>https://docs.microsoft.com/en-us/microsoftteams/teams-overview</li>
+</ul>
+<p>Securing Teams:</p>
+
+<ul>
+<li><p>https://blog.netwrix.com/2020/04/16/microsoft-teams-security/</p></li>
+<li><p>https://zimmergren.net/securing-microsoft-teams/</p></li>
+<li><p>https://www.avepoint.com/blog/microsoft-teams/microsoft-teams-external-sharing-webinar/</p></li>
+</ul>
+<p>Azure Sentinel:</p>
+
+<ul>
+<li>https://www.infusedinnovations.com/blog/intelligent-cloud/step-by-step-guide-to-deploy-azure-sentinel</li>
+</ul>
+<p>Teams Call Proxy Example:</p>
+
+<ul>
+<li>https://www.modalitysystems.com/software/one-meeting</li>
+</ul>
+<p>Prevention of downloads</p>
+
+<ul>
+<li>https://cloudbuild.co.uk/prevent-users-from-downloading-files-from-microsoft-teams-channel/</li>
+</ul>
+<p>Teams Roles</p>
+
+<ul>
+<li>https://blog.enablingtechcorp.com/role-based-access-for-teams-use-least-privilege-to-strengthen-user-support </li>
+</ul>
+
+            
+          </main>
+
+          <aside>
+          </aside>
+
+          <footer class="govuk-footer app-footer" role="contentinfo">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+        <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/accessibility/">Accessibility</a>
+            </li>
+        </ul>
+
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        class="govuk-footer__licence-logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewbox="0 0 483.2 195.7"
+        height="17"
+        width="41"
+      >
+        <path
+          fill="currentColor"
+          d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+        />
+      </svg>
+      <span class="govuk-footer__licence-description">
+        All content is available under the
+        <a
+          class="govuk-footer__link"
+          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+          rel="license"
+        >Open Government Licence v3.0</a>, except where otherwise stated
+      </span>
+    </div>
+    <div class="govuk-footer__meta-item">
+      <a
+        class="govuk-footer__link govuk-footer__copyright-logo"
+        href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+      >© Crown copyright</a>
+    </div>
+  </div>
+</footer>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="/local-cyber-support-docs/javascripts/application.js"></script>
+  </body>
+</html>
