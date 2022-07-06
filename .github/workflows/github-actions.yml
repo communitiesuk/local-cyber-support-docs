@@ -28,7 +28,7 @@ jobs:
         with:
           github_token: ${{ secrets.PAGES }}
           publish_dir: ./build
-       - name: List files in the repository
+      - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
