@@ -21,7 +21,7 @@ jobs:
       - run: sudo gem install bundler
       - run: bundle install
       - run: export RUBYOPT='-W0' && bundle exec middleman build --verbose
-      - run: git config --global user.email "mpdluhc@gmail.com"
+      - run: git config --global user.email "106547995+mpdluhc@users.noreply.github.com"
       - run: git config --global user.name "mpdluhc"
       - run: git config --list
       - name: Deploy to Github Pages
@@ -29,6 +29,8 @@ jobs:
         with:
           github_token: ${{ secrets.PAGES }}
           publish_dir: ./build
+          user_name: 'mpdluhc'
+          user_email: '106547995+mpdluhc@users.noreply.github.com'
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
