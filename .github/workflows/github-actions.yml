@@ -21,16 +21,14 @@ jobs:
       - run: sudo gem install bundler
       - run: bundle install
       - run: export RUBYOPT='-W0' && bundle exec middleman build --verbose
-      - run: git config --global user.email "rob@example.com"
-      - run: git config --global user.name "rob"
+      - run: git config --global user.email "mpdluhc@gmail.com"
+      - run: git config --global user.name "mpdluhc"
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAGES }}
           publish_dir: ./build
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-      - name: List files in the repository
+       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
