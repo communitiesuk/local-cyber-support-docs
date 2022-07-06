@@ -23,6 +23,7 @@ jobs:
       - run: export RUBYOPT='-W0' && bundle exec middleman build --verbose
       - run: git config --global user.email "mpdluhc@gmail.com"
       - run: git config --global user.name "mpdluhc"
+      - run: git config --list
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
