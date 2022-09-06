@@ -3,7 +3,7 @@ host: https://github.com/communitiesuk/local-cyber-support-docs
 
 # Header-related options
 show_govuk_logo: false
-service_name: MHCLG Technical Documentation Library
+service_name: DLUHC Technical Documentation Library
 service_link: https://github.com/communitiesuk/local-cyber-support-docs
 phase: Beta
 
