@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Operating Systems Best Practice - DLUHC Technical Documentation Library</title>
+    <title>Operating System & MS365 Hardening - DLUHC Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
@@ -14,12 +14,12 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Operating Systems Best Practice - DLUHC Technical Documentation Library" />
+      <meta name="twitter:title" content="Operating System &amp; MS365 Hardening - DLUHC Technical Documentation Library" />
       <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/operatingsystems/bestpractice/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="DLUHC Technical Documentation Library" />
-      <meta property="og:title" content="Operating Systems Best Practice" />
+      <meta property="og:title" content="Operating System &amp; MS365 Hardening" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/operatingsystems/bestpractice/" />
 
@@ -182,7 +182,7 @@
     <a href="/local-cyber-support-docs/documentation/operatingsystems/endpointsecurity/"><span>Overview of Endpoint Device Security Elements</span></a>
   </li>
   <li>
-    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/"><span>Overview of operating systems best practice</span></a>
+    <a href="/local-cyber-support-docs/documentation/operatingsystems/bestpractice/"><span>Operating System & MS365 Hardening</span></a>
   </li>
 </ul>
 </li>
@@ -238,173 +238,11 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="overview-of-operating-systems-best-practice">Overview of operating systems best practice</h1>
-<p><font size="5"><strong>Objective</strong></font></p>
-<p>The guidance that follows is to provide an approach to implementing best practices for operating system hardening, patching and upgrading in Local Authority information systems.</p>
-<p><font size="5"><strong>Principles</strong></font></p>
-<p>By following the principles outlined throughout this document you will keep your servers (and hypervisors) in a secure and updated state, and most importantly, supported.</p>
-
-<ul>
-<li><p>Server hardening should be regularly tested and any known security issues resolved upon discovery.</p></li>
-<li><p>You should be following a robust patching policy with a testing process</p></li>
-<li><p>No unsupported operating systems (desktop &amp; server) should be in use</p></li>
-<li><p>All operating systems (desktop &amp; server) should be at version N or N-1</p></li>
-<li><p>There should be a roadmap in place covering O/S compliance/updates</p></li>
-</ul>
-<p><font size="5"><strong>Why are these practices important?</strong></font></p>
-<p><font size="4"><strong>OS Hardening:</strong></font></p>
-
-<ul>
-<li>By implementing server hardening you effectively &lsquo;plug&rsquo; unnecessary &lsquo;holes&rsquo; in the server security by disabling or removing unnecessary software, as well as blocking vulnerable ports and unrequired services.</li>
-</ul>
-<p><font size="4"><strong>OS Patching:</strong></font></p>
-
-<ul>
-<li>By patching your servers on a regular basis you will apply the latest critical updates and security patches which all contribute to keeping your servers in an optimal state, and most importantly, secure.</li>
-</ul>
-<p><font size="4"><strong>OS Upgrading:</strong></font></p>
-
-<ul>
-<li>By keeping on top of your OS Upgrade program it will assist in the goal of keeping all of your servers in a supported state. Unsupported servers should be viewed as potential entry points for security breaches.</li>
-</ul>
-<p><font size="5"><strong>Best Practices: OS hardening</strong></font></p>
-<p>Best practices for OS hardening include, but are not limited to the following organisation considerations:</p>
-
-<ul>
-<li><p>Implement findings from your regular IT Health Check (ITHC) reports.</p></li>
-<li><p>Follow the the latest recommended settings from Microsoft, NCSC and trusted vendors.</p></li>
-<li><p>Where possible keep all servers at the same revision level</p></li>
-<li><p>Test every proposed change before making the change in the production environment</p></li>
-<li><p>After building a new server scan it with Nessus (or other ITHC tool) to check you have no security issues.</p></li>
-<li><p>For Deployment Purposes, it is considered good practice to have a template machine for your preferred OS ready in your hypervisor environment and for it to be regularly updated with the latest patches and service packs, along with any findings from your regular ITHC (IT Health Checks) and guidance from the NCSC.</p></li>
-<li><p>It is also recommended to update your Microsoft OS ISO&rsquo;s with newer builds as Microsoft make them available.</p></li>
-</ul>
-<p>Best practices for OS Hardening include, but are not limited to*:</p>
-<p><strong>VM Settings:</strong></p>
-
-<ul>
-<li>Configure the device boot order to prevent unauthorized booting from alternate media</li>
-</ul>
-<p><strong>User Account Security:</strong></p>
-
-<ul>
-<li><p>Disable unwanted local usernames, and put complex passwords on those that remain</p></li>
-<li><p>Use LAP Services for administration accounts</p></li>
-</ul>
-<p><strong>Network Configuration:</strong></p>
-
-<ul>
-<li>Configure all network interfaces with the latest recommended settings from Microsoft, NCSC and trusted vendors.</li>
-</ul>
-<p>*For more comprehensive lists refer to:</p>
-<p>https://www.netwrix.com/windows_server_hardening_checklist.html</p>
-<p>https://www.ncsc.gov.uk/collection/10-steps-to-cyber-security/the-10-steps/secure-configuration</p>
-<p>Best practices for OS hardening include, but are not limited to:</p>
-<p><strong>Registry Security Configuration:</strong></p>
-
-<ul>
-<li>Follow the the latest recommended settings from Microsoft, NCSC and trusted vendors.</li>
-</ul>
-<p><strong>General Security Settings:</strong></p>
-
-<ul>
-<li><p>Disable unneeded services</p></li>
-<li><p>Remove unneeded Windows components</p></li>
-</ul>
-<p><strong>Audit Policy Settings</strong></p>
-<p><strong>Configure log shipping to SIEM for monitoring</strong></p>
-<p><strong>Software Security Guide:</strong></p>
-
-<ul>
-<li>Ensure AV / AntiMalware software is running and kept up to date</li>
-</ul>
-<p><font size="5">**Best practices: OS patching</p>
-<p>Best practices for OS patching include but are not limited to:</p>
-<p><strong>Server operating systems:</strong></p>
-
-<ul>
-<li><p>Utilise a product such as Microsoft WSUS to manage your patching process.</p></li>
-<li><p>Post approval of patching apply to a test group of servers that are representative of your server estate.</p></li>
-<li><p>Review server operation post patching and troubleshoot if necessary. When you are happy with the process, roll out in a tiered manner across your estate.</p></li>
-</ul>
-<p><strong>Hypervisor operating systems:</strong></p>
-
-<ul>
-<li><p>For VMware configure VMware Update Manager, Baseline your systems and regularly update/patch as issued by VMware.</p></li>
-<li><p>For Microsoft Hyper-V, patch servers as dictated by Microsoft and your Server Hardware Vendor.</p></li>
-</ul>
-<p>Best practices for OS Patching include but are not limited to:</p>
-
-<ul>
-<li><p>As mentioned earlier you should apply approved patches to your &lsquo;Gold Image&rsquo; template as part of this process. It is also recommended to update your Microsoft OS ISO&rsquo;s with newer builds as Microsoft make them available.</p></li>
-<li><p>Regular automated implementation of security patches should be implemented at least monthly to desktops and servers (virtual and physical).</p></li>
-</ul>
-<p><font size="5"><strong>Best practices : OS upgrading</strong></font></p>
-<p>Best practices for OS upgrading include but are not limited to:
-- Aim for &lsquo;N/N-1&rsquo; policy on server use</p>
-<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>This means you should only be running the current and last previous OS
-</code></pre></div>
-<ul>
-<li><p>Keep your hypervisor servers at the highest level of support / operation that your hardware allows</p>
-<p>Refer to the server manufacturer and cross-check with the hypervisor vendor (VMware or Microsoft)</p></li>
-<li><p>Hardware Compatibility List (HCL)</p>
-<p>Older Servers may not support the latest version of the hypervisor (and similarly newer servers may not support older versions of the hypervisor)</p></li>
-<li><p>Always have a strategy for the upgrading of:</p>
-<p>Server operating systems</p>
-<p>Server applications</p>
-<p>Hypervisors</p></li>
-</ul>
-<p><font size="5"><strong>Endpoint additional security considerations</strong></font></p>
-<p>End user devices have additional security considerations over and above the OS being in support and regularly patched. These affect Windows 10, Android and iOS devices. Refer to :</p>
-<p>https://www.ncsc.gov.uk/collection/end-user-device-security/platform-specific-guidance</p>
-<p>As these devices are the primary items for your users to access your systems you should also consider the following:</p>
-
-<ul>
-<li><p>Use of MDM Software (Mobile Device Management) to enforce security policies.</p></li>
-<li><p>Use of (and regular update of) Anti-Virus and Anti-Malware Software</p></li>
-<li><p>Regular education of your user base around safety and security online, with particular reference to &lsquo;Social Engineering&rsquo; techniques and how to avoid falling foul of these.</p></li>
-</ul>
-<p>https://www.ncsc.gov.uk/collection/end-user-device-security/eud-overview/common-questions</p>
-<p><font size="5"><strong>What to do next:</strong></font>
-- Carry out an IT Health Check (ITHC) at least annually and consider any recommendations from it on your server and hypervisor estate (along with your deployment template VMs).</p>
-<div class="highlight"><pre class="highlight plaintext" tabindex="0"><code>Implement the appropriate findings.
-</code></pre></div>
-<ul>
-<li><p>Regularly carry out Vulnerability Scanning with a product such as Nessus.</p>
-<p>Implement the findings.</p></li>
-<li><p>Ensure your Server Patching Regime is optimal.</p>
-<p>Regular downloads and approvals on your patching system</p>
-<p>Apply patches to test servers and then verify their suitability prior to the updates being applied across the server estate.</p>
-<p>Deploy in a structured manner across your estate</p></li>
-<li><p>Create and evolve a server upgrade plan:</p>
-<p>Goal is to not have any unsupported servers or applications in use</p>
-<p>Aim for a &lsquo;N/N-1&rsquo; approach to live servers (ie run the latest or 1-previous OS)</p>
-<p>For example this would currently be Windows Server 2019 and 2016</p>
-<p>2012/R2 servers should be in the process of being replaced at this moment in time despite still being in the extended support phase of their lifecycle.</p>
-<p>No 2008/R2 servers or earlier should be in use anymore</p></li>
-</ul>
-<p><font size="5"><strong>Threat exposure - version support</strong></font></p>
-<p><img src="../../../assets/operatingsystems/OSBP01.png" /></p>
-<p>Refer to :  https://docs.microsoft.com/en-us/lifecycle/products/</p>
-<p><font size="5"><strong>Threat exposure</strong></font></p>
-<p>Continued operation use of unsupported OS means:</p>
-
-<ul>
-<li><p>No further security patches issued by the vendor.</p></li>
-<li><p>Existing vulnerabilities remain and are well known by hackers and criminals and therefore become a soft target.</p></li>
-<li><p>AntiVirus software does not cover risk exposure of OS vulnerabilities.</p></li>
-</ul>
-<p><font size="5"><strong>Policies</strong></font></p>
-<p>Where application software still is dependent on an unsupported operating system additional technical controls should be considered:</p>
-
-<ul>
-<li><p>Run the application in compatibility mode on Windows 10</p></li>
-<li><p>Virtualised containers, e.g. Docker</p></li>
-<li><p>Place the affected workstation / server with the application behind a Layer 7 firewall providing greater control of application traffic and probe attacks</p></li>
-<li><p>Certain products may be able to have Extended Support Purchased (Such as Windows Server 2008R2)</p></li>
-<li><p>Consider replacing the application</p></li>
-</ul>
-<p>Note: The above options should only be considered until the application can be upgraded or replaced and hosted on a supported OS.</p>
+            <h1 id="operating-system-amp-ms365-hardening">Operating System &amp; MS365 Hardening</h1>
+<p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
+    <embed src="../../../assets/operatingsystems/DLUHC - Local Digital  - Operating System & MS365 Hardening.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
+    </embed>
+</object></p>
 
             
           </main>
