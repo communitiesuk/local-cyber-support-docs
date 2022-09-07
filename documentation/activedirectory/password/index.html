@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Password and best practices - DLUHC Technical Documentation Library</title>
+    <title>AD and Password Best Practices - DLUHC Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
@@ -14,12 +14,12 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Password and best practices - DLUHC Technical Documentation Library" />
+      <meta name="twitter:title" content="AD and Password Best Practices - DLUHC Technical Documentation Library" />
       <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/activedirectory/password/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="DLUHC Technical Documentation Library" />
-      <meta property="og:title" content="Password and best practices" />
+      <meta property="og:title" content="AD and Password Best Practices" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/activedirectory/password/" />
 
@@ -204,7 +204,7 @@
     <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/"><span>Use of MFA for on premise privileged accounts</span></a>
   </li>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/vulnscanning/"><span>Vulnerability Scanning with Greenbone Security Manager (GSM)</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/vulnscanning/"><span>Vulnerability Scanning with Greenbone Security Manager</span></a>
   </li>
   <li>
     <a href="/local-cyber-support-docs/documentation/cyberclinics/hambleton/"><span>RTO/RPO</span></a>
@@ -239,64 +239,11 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="ad-and-password-best-practices">AD and Password Best Practices.</h1>
-<p><font size="5"><strong>Objective</strong></font></p>
-<p>Outline guidance and approach of considerations to be given to key elements of active directory.</p>
-<p>In particular, this pack covers the areas of password policies, M365 integration and domain controller placement.</p>
-<p><font size="5"><strong>Concepts for account security</strong></font></p>
-<p><font size="4"><strong>Key areas for consideration around password policies</strong></font></p>
-<p>Password Requirements</p>
-<p>Fine Grained Policies</p>
-<p>Password Auditing</p>
-<p><font size="4"><strong>Microsoft 365 Integration</strong></font></p>
-<p>Azure AD Connect Software</p>
-<p><font size="4"><strong>Active Directory Domain Controller Placement</strong></font></p>
-<p>Local Redundancy</p>
-<p>Geographical Redundancy</p>
-<p><font size="5"><strong>Why are these practices important?</strong></font></p>
-<p><font size="4"><strong>Password Policies:</strong></font></p>
-<p>The more secure the password and the more educated your users, the lower the risk of an account breach.</p>
-<p><font size="4"><strong>M365 Integration:</strong></font></p>
-<p>By having a second Azure AD Connector ready in staging mode will facilitate a speedy recovery from a failure of the primary Connector, and ensure the configuration is identical. Microsoft only allow for a single one per domain so staging mode is the best that is currently possible.</p>
-<p><font size="4"><strong>Domain Controller Placement:</strong></font></p>
-<p>By having Domain Controllers in multiple locations logon speeds and availability will improve as well as providing a DR site Directory for aiding in recovery.</p>
-<p><font size="5"><strong>Considerations for password policies</strong></font></p>
-<p>“But we already have password complexity set, is that not enough ?”</p>
-<p>The simple answer is - probably not</p>
-<p><font size="4"><strong>Password Requirements</strong></font></p>
-<p>Using the standard domain policy for all accounts can mean privileged accounts may not be as secure as they could be.</p>
-<p>Domains that have ‘evolved’ may still have a weak level of requirements as the policies are not automatically upgraded with stronger settings.</p>
-<p><font size="4"><strong>Fine Grained Policies</strong></font></p>
-<p>These are a great way to enforce a tiered level of security, and not over complicate non-privileged accounts</p>
-<p><font size="4"><strong>Password Auditing</strong></font></p>
-<p>Auditing passwords on a regular basis will help identify users who need education on the importance of account security. It will also identify any passwords that have not been changed in a long time.</p>
-<p><font size="5"><strong>Password policies</strong></font></p>
-<p><font size="4"><strong>Password Requirements</strong></font></p>
-<p>Maintain at least an 8-character minimum length requirement</p>
-<p>Don&rsquo;t require character composition requirements. For example, *&amp;(^%$ - but do require ‘special characters’ are used as part of the password</p>
-<p>Don&rsquo;t require mandatory periodic password resets for user accounts</p>
-<p>Don&rsquo;t use a single word, eg ‘password’ or a commonly-used phrase like ‘Iloveyou’</p>
-<p><font size="4"><strong>Fine grained policies</strong></font></p>
-<p>You can use fine-grained password policies to specify multiple password policies within a single domain and apply different restrictions for password and account lockout policies to different sets of users in a domain.</p>
-<p>For example, you can apply stricter settings to privileged accounts and less strict settings to the accounts of other users. In other cases, you might want to apply a special password policy for accounts whose passwords are synchronized with other data sources.</p>
-<p>You must use the Windows Server 2012 or newer version of Active Directory Administrative Center to administer fine-grained password policies through a graphical user interface.</p>
-<p><font size="4"><strong>Password auditing</strong></font></p>
-<p>Password security audits help you test the strength of your users&rsquo; passwords and your resiliency against password attacks. Not only can they help you uncover weak passwords, but they also provide an opportunity to educate your employees on proper password utilization.</p>
-<p><font size="5"><strong>Microsoft 365 integration</strong></font></p>
-<p>Having a second Azure AD Connector ready in staging mode will facilitate a speedy recovery from a failure of the primary connector, and ensure the configuration is identical. Microsoft only allow for a single one per domain so staging mode is the best that is currently possible.</p>
-<p>If the connector (or the server it runs on) fails, then the selected options at the point of installation of the software would not be carried out until the server was rebuilt. Primarily these would be password synchronisation related, and new account synchronisation.</p>
-<p><font size="4"><strong>Additional recommendations</strong></font></p>
-<p>Keep a documented set of the configuration settings elsewhere on your network</p>
-<p>Update your Azure AD Connect software on a regular basis to take advantage of enhancements in security and features</p>
-<p>Remember to update the standby staging server!</p>
-<p><font size="5"><strong>Domain controller placement</strong></font></p>
-<p>Microsoft advise that it is best practice to ensure the physical security of domain controllers in hub and satellite locations so that unauthorized personnel cannot access them, so consider this when selecting locations for off site domain controller placement.</p>
-<p><font size="5"><strong>Further considerations</strong></font></p>
-<p><font size="4"><strong>Multi Factor Authentication</strong></font></p>
-<p>This gives you additional security on accounts in case username/password combinations are breached by requiring a 3rd (or more) level of authentication (examples : authentication apps, tokens, biometrics)</p>
-<p><font size="4"><strong>Password Storage Products</strong></font></p>
-<p>There are plenty of password storage products on the market which keep your passwords securely, and you limit access to it with its own level of security. The passwords are not displayed, but you can copy them to use.</p>
-<p>Refer to the NCSC guidelines on using these systems:</p>
-<p>https://www.ncsc.gov.uk/collection/passwords/password-manager-buyers-guide</p>
+<p>Active Directory and Password Best Practices.</p>
+<p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
+    <embed src="../../../assets/acd/DLUHC - Local Digital - AD and Password Best Practice v1.0.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
+    </embed>
+</object></p>
 
             
           </main>

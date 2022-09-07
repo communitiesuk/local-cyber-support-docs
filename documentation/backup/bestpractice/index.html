@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Best Practice - DLUHC Technical Documentation Library</title>
+    <title>Overview of backup best practice - DLUHC Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
@@ -14,12 +14,12 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Best Practice - DLUHC Technical Documentation Library" />
+      <meta name="twitter:title" content="Overview of backup best practice - DLUHC Technical Documentation Library" />
       <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/bestpractice/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="DLUHC Technical Documentation Library" />
-      <meta property="og:title" content="Best Practice" />
+      <meta property="og:title" content="Overview of backup best practice" />
       <meta property="og:type" content="object" />
       <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/bestpractice/" />
 
@@ -204,7 +204,7 @@
     <a href="/local-cyber-support-docs/documentation/cyberclinics/mfaonprem/"><span>Use of MFA for on premise privileged accounts</span></a>
   </li>
   <li>
-    <a href="/local-cyber-support-docs/documentation/cyberclinics/vulnscanning/"><span>Vulnerability Scanning with Greenbone Security Manager (GSM)</span></a>
+    <a href="/local-cyber-support-docs/documentation/cyberclinics/vulnscanning/"><span>Vulnerability Scanning with Greenbone Security Manager</span></a>
   </li>
   <li>
     <a href="/local-cyber-support-docs/documentation/cyberclinics/hambleton/"><span>RTO/RPO</span></a>
@@ -239,216 +239,11 @@
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
             <h1 id="overview-of-backup-best-practice">Overview of backup best practice</h1>
-<p><font size="5"><strong>Objective</strong></font>
-Outline guidance and approach to best practice design features for backup and replication for all local authority virtualised council information systems</p>
-<p><font size="5"><strong>Design considerations</strong></font>
-The Backup architecture will be derived from the criticality of the systems to be recovered.</p>
-<p>The Backup Design should be driven by the requirements for recovery, in particular:</p>
-
-<ul>
-<li><p>Individual system importance (may vary depending on time of year)</p></li>
-<li><p>Impact on service provision (consider services such as safeguarding, Rev&amp;Bens, etc)</p></li>
-</ul>
-<p>Different systems will have different requirements</p>
-
-<ul>
-<li>The Business Impact Analysis will be a driver for determining this</li>
-</ul>
-<p>RPO’s and RTO’s will also be key in determining how you backup and what media you will utilise.</p>
-<p>Finally, take into consideration your DR equipment:</p>
-
-<ul>
-<li><p>Can it support your key systems if you lost your primary site ?</p></li>
-<li><p>Can you recover from offline media here ?</p></li>
-</ul>
-<p><font size="5"><strong>Overview schematic of an ideal configuration</strong></font></p>
-<p><img src="../../../assets/backup/BPP01.png" /></p>
-
-<ul>
-<li><p>Veeam has been used in this example as it is the most prevalent technology in use amongst the 29 Councils reviewed.</p></li>
-<li><p>Arcserve UDP would work in effectively the same manner.</p></li>
-<li><p>SAN Based Snapshot systems (NetApp, Nimble etc) would be different from the technologies illustrated here</p></li>
-</ul>
-<p><font size="5"><strong>Best practices</strong></font></p>
-<p><font size="4"><strong>Best practices highlighted in the schematic and additional practices are</strong></font></p>
-
-<ul>
-<li><p>Separation of Backup Servers from main Domain Membership</p></li>
-<li><p>Multiple backup locations in Encrypted Repositories</p></li>
-<li><p>Encrypt data in transit between VM’s and Backup Repositories</p></li>
-<li><p>Replication of key VM’s</p></li>
-<li><p>Offline Media Storage to provide an immutable copy of backups over time (using a Tape Autoloader or Immutable Storage with Cloud Services)</p></li>
-<li><p>Backups of M365/Google Workspace to be pulled to on-premise storage</p></li>
-<li><p>Regular Database Backups during operational hours</p></li>
-</ul>
-<p><font size="5"><strong>Why are these practices important?</strong></font></p>
-<p><font size="4"><strong>Having the Backup Server not being part of the domain</strong></font>
-- This stops the backups being compromised by an attack with domain credentials</p>
-<p><font size="4"><strong>Encrypting data ‘at rest’</strong></font>
-- This provides an extra layer of security as just being able to access the storage volumes does not give you access to the files (in this case servers) within.</p>
-<p><font size="4"><strong>Encrypting data ‘in flight’</strong></font>
-- This provides you protection against data transfer being intercepted. It becomes very important if you are sending backup data over public networks.</p>
-<p><font size="4"><strong>Having backups in an offline (immutable) state</strong></font>
-- This allows you to recover from a CryptoLocker Situation / Total Site Loss</p>
-<p><font size="5"><strong>Separation of backup services from domain</strong></font></p>
-<p><font size="4"><strong>Why is this important ?</strong></font>
-- When domains are compromised at a privileged user level all domain joined devices are at risk of attack / data loss</p>
-
-<ul>
-<li><p>Removing the backup servers/appliances from the domain can slow down or stop data loss of the backups and facilitate a recovery.</p></li>
-<li><p>This helps mitigate the risk of data interception in transit to/from the Backup Server.</p></li>
-</ul>
-<p><font size="4"><strong>How can I implement them?</strong></font>
-- Create new logons on the devices (servers and software) for users</p>
-
-<ul>
-<li><p>Put the server in a unique workgroup (by removing from domain)</p></li>
-<li><p>Block all ports unnecessary for backup operations from communicating with the server/appliance</p></li>
-</ul>
-<p><font size="5"><strong>Secondary backup locations</strong></font></p>
-<p><font size="4"><strong>Benefits over a single backup location</strong></font>
-- Gives an additional storage location for multiple copies to be available and can facilitate a secondary alternate on-premise location.</p>
-
-<ul>
-<li><p>Allows for an offsite location to be used as part of the backup regime - i.e. Backup to local on-premise storage overnight, ship copies to DR site during the day.</p></li>
-<li><p>Perfect for longer term retention as NAS devices are typically used for this purpose, and larger capacities are available at lower costs than SAN based storage.</p></li>
-</ul>
-<p><font size="5"><strong>Encryption of repositories</strong></font></p>
-<p><img src="../../../assets/backup/BPP02.png" /></p>
-<p><font size="4"><strong>What are they?</strong></font></p>
-
-<ul>
-<li>Encrypted backup repositories are secure
-storage areas for backups</li>
-</ul>
-<p><font size="4"><strong>Why are they important?</strong></font>
-- They contain the backup files in an encrypted format which is not able to be read without the correct encryption keys, which are known only to source and destinations</p>
-
-<ul>
-<li>Only intended recipients who know the secret key can reverse encrypted information back to a readable format.</li>
-</ul>
-<p><font size="4"><strong>How can I implement them ?</strong></font>
-- Follow the guidance from your backup software vendor.
-- Veeam Best Practices are detailed at : https://bp.veeam.com/vbr/VBP/Support/S_Encryption/repository.html</p>
-<p><font size="5"><strong>Encryption in transit</strong></font></p>
-<p><font size="4"><strong>What is encryption in transit?</strong></font>
-- Encryption in transit is where you use an encryption key to scramble the date pre transmission. The key is known to the source and destination only.</p>
-<p><font size="4"><strong>Why is it important?</strong></font>
-- Data encryption transforms data to an unreadable, scrambled format with the help of a cryptographic algorithm and a secret key. If encrypted data is intercepted, it cannot be unlocked and read by the eavesdropper.</p>
-
-<ul>
-<li>Only intended recipients who know the secret key can reverse encrypted information back to a readable format.</li>
-</ul>
-<p><font size="4"><strong>How can I implement it ?</strong></font>
-- Backup products such as Veeam B&amp;R and Arcserve UDP offer the option to encrypt data ‘in flight’.</p>
-
-<ul>
-<li>The data is encrypted at source pre transmission.</li>
-</ul>
-<p><font size="5"><strong>Replication</strong></font></p>
-<p><font size="4"><strong>Benefits over backups alone</strong></font>
-- Replicas afford you a faster recovery time as they can simply be powered on.</p>
-
-<ul>
-<li>File level recovery is still possible from a replica.</li>
-</ul>
-<p><font size="4"><strong>How can I implement replication?</strong></font>
-- Have a matching hypervisor technology to the source with sufficient storage.</p>
-
-<ul>
-<li>Use your backup and replication software to create and manage the jobs (Veeam is a perfect example of a product set to use).</li>
-</ul>
-<p><font size="4"><strong>Additional requirements</strong></font>
-- Network / IP Subnet remapping to be taken into account if machines are required to enter production from DR Replication location.</p>
-
-<ul>
-<li>Remapping would be considered best practice in order to support RTO and BCDR </li>
-</ul>
-<p><font size="5"><strong>Offline media</strong></font></p>
-<p><font size="4"><strong>Benefits over ‘Disk to Disk’ alone</strong></font>
-- Provides an additional copy for restoration activities</p>
-
-<ul>
-<li>Very difficult to corrupt or infect</li>
-</ul>
-<p><font size="4"><strong>Types of offline media (in increasing order of TCO)</strong></font>
-- The primary type is tape. Capacities per tape can go up to 30TB native. Autoloaders with multiple drives can vastly increase capacity and reduce time to backup. Tapes should be regularly removed and securely stored.</p>
-
-<ul>
-<li><p>Virtual tape libraries (VTL)</p></li>
-<li><p>Removable disks</p></li>
-<li><p>Immutable cloud based storage (once written it cannot be changed)</p>
-<p>Costs are derived from the amount of data consumed at each storage level, and data ingress/egress costs.</p>
-<p>This will vary between councils and a major factor will be how often data is required to be recovered.</p></li>
-</ul>
-<p><font size="4"><strong>How can I implement offline media?</strong></font>
-- Tape Autoloaders or Removable Disks can be added to backup servers</p>
-
-<ul>
-<li>Cloud Storage Gateways can be added to backup servers</li>
-</ul>
-<p><font size="4"><strong>But what if I already replicate my file shares as CIFS shares direct from my SAN?</strong></font>
-- By having an offline copy of the data will allow a restore if your data is compromised by an attack.</p>
-
-<ul>
-<li>Use technologies such as NetApp SnapVault to give you immutable copies or multiple read/write points away from your primary snapshot.</li>
-</ul>
-<p><font size="5"><strong>Cloud based email and associated services</strong></font></p>
-<p><font size="4"><strong>‘But Surely Microsoft / Google back this up for me ?’</strong></font></p>
-
-<ul>
-<li><p>Microsoft 365 provides powerful services within Office 365 – but a comprehensive backup of your Microsoft 365 data is not one of them.</p></li>
-<li><p>Of over 1,000 IT professionals surveyed, 81% experienced data loss in Microsoft 365, from simple user error to major data security threats. (Source: https://www.veeam.com/backup-microsoft-office-365.html)</p></li>
-<li><p>With Microsoft 365, it&rsquo;s your data, you control it and it is your responsibility to protect it. The same is said for Google Workspace.</p></li>
-<li><p>Microsoft and Google offer you limited recovery periods from deletion of your data, but if your data is compromised then so are the copies they keep. Data retention periods vary and can be altered, but the maximum ‘recycle bin storage’ is approximately 30 days</p></li>
-</ul>
-<p><font size="4"><strong>Market leading technologies for Microsoft 365 data protection are available from:</strong></font></p>
-
-<ul>
-<li><p>Veeam (backup to an on-premise target or cloud based target)</p></li>
-<li><p>Arcserve</p></li>
-<li><p>Skykick (cloud based target)</p></li>
-<li><p>Other providers are available (BackupVault, Backblaze, etc)</p></li>
-</ul>
-<p><font size="5"><strong>Database services backups</strong></font></p>
-<p><font size="4"><strong>How often should I backup up my production databases?</strong></font></p>
-
-<ul>
-<li><p>The answer is based around how much data loss you can survive.</p></li>
-<li><p>Improve your database backups by taking regular snapshots or transaction log backups</p></li>
-</ul>
-<p><font size="4"><strong>Carry out multiple backups per day</strong></font></p>
-
-<ul>
-<li><p>Allows you to have a much shorter RPO.</p></li>
-<li><p>Data will be stored in a secondary location</p></li>
-</ul>
-<p><font size="4"><strong>Transaction (TX) Log Backups</strong></font></p>
-
-<ul>
-<li><p>Configure in line with desired recovery timeframes</p></li>
-<li><p>The higher the frequency, the shorter the RPO - so this is important to consider in your Business Continuity Planning.</p></li>
-<li><p>More frequent TX Log Backups combined with regular ‘Full’ backups will give you a more recent recovery point in the
-event of database corruptions.</p></li>
-</ul>
-<p><font size="5"><strong>Options for immutable storage with SAN replication</strong></font></p>
-<p><font size="4"><strong>SAN Based Replication</strong></font>
-(Example is NetApp SnapVault)</p>
-<p><img src="../../../assets/backup/BPP03.png" /></p>
-
-<ul>
-<li><p>This technology allows for SAN based replication to have immutable copies at the DR site (Vaulted).</p>
-<p>It’s not offline as such but it is unchangeable (but will be removed as part of an ‘ageing out’ of the ‘Snaps’).</p>
-<p>Additional licensing over standard NetApp ones will be required.</p></li>
-</ul>
-<p><font size="5"><strong>Cloud Based Storage Example</strong></font></p>
-<p><font size="4"><strong>Cloud based targets</strong></font></p>
-
-<ul>
-<li><p>Such as Amazon Web Services S3 / Glacier / Deep Glacier</p></li>
-<li><p>By introducing this tech via an on-premise gateway you can send immutable copies of data into offsite storage with long term retention periods. This does have data transit costs, along with storage costs at each layer.</p></li>
-<li><p>Veeam and other Backup Software Providers have ‘Gateway’ products to interface with AWS / MS-Azure for Backup Storage technologies.</p></li>
-</ul>
+<p>Overview of backup best practices.</p>
+<p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
+    <embed src="../../../assets/acd/DLUHC - Local Digital CYBER - Backup Best Practice.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
+    </embed>
+</object></p>
 
             
           </main>
