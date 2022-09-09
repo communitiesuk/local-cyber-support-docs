@@ -5,23 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <title>Database maintenance plans - DLUHC Technical Documentation Library</title>
+    <title>Incident Management - DLUHC Technical Documentation Library</title>
 
     <link href="/local-cyber-support-docs/stylesheets/manifest.css" rel="stylesheet" />
 
-    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/maintenanceplans/">
+    <link rel="canonical" href="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/bcdr/">
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:domain" content="github.com" />
       <meta name="twitter:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
-      <meta name="twitter:title" content="Database maintenance plans - DLUHC Technical Documentation Library" />
-      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/maintenanceplans/" />
+      <meta name="twitter:title" content="Incident Management - DLUHC Technical Documentation Library" />
+      <meta name="twitter:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/bcdr/" />
 
       <meta property="og:image" content="https://github.com/communitiesuk/local-cyber-support-docs/images/govuk-large.png" />
       <meta property="og:site_name" content="DLUHC Technical Documentation Library" />
-      <meta property="og:title" content="Database maintenance plans" />
+      <meta property="og:title" content="Incident Management" />
       <meta property="og:type" content="object" />
-      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/backup/maintenanceplans/" />
+      <meta property="og:url" content="https://github.com/communitiesuk/local-cyber-support-docs/local-cyber-support-docs/documentation/cyberclinics/bcdr/" />
 
     
   </head>
@@ -244,123 +244,11 @@
 
         <div class="app-pane__content toc-open-disabled">
           <main id="content" class="technical-documentation" data-module="anchored-headings">
-            <h1 id="overview-of-ms-sql-server-database-maintenance-plans">Overview of MS-SQL server database maintenance plans</h1>
-<p><font size="5"><strong>Objective</strong></font>
-Outline guidance and approach of considerations to be given to database maintenance plans and how they may enhance your SQL environment</p>
-<p><font size="5"><strong>Disclaimer</strong></font></p>
-<p>This detail is provided as guidance only.</p>
-<p>Changes made to your database maintenance plans and your regular backup regime are made at your own risk.</p>
-<p>Test your policies on non-production databases first, before rolling out to your database estate at large.</p>
-<p>The detail given here is for Microsoft SQL server. Although the procedures here may vary between alternate SQL and database formats the principles are essentially the same.</p>
-<p>Where relevant, useful detail on considerations for Oracle Systems 
-has been included.</p>
-<p><font size="5"><strong>What are maintenance plans?</strong></font></p>
-<p>Maintenance plans are essentially a workflow of the tasks required to make sure that your database is optimised, regularly backed up, and free of inconsistencies.</p>
-<p>The maintenance plan wizard (accessible from the SQL management studio) allows you to create core maintenance plans that are recommended to be carried out on a regular basis, but you can also create plans manually. This gives you the flexibility to do what you want if it is not a series of typical maintenance tasks.</p>
-<p>Popular maintenance plans are centred around localised backups and integrity checks.</p>
-<p>By using maintenance plans you will:
-- Keep your databases healthy
-- Reduce your chances of data corrupting, which would require a recovery (which in turn costs you downtime)</p>
-<p><font size="5"><strong>How to create a maintenance plan</strong></font></p>
-<p>Creating a maintenance plan for the databases is carried out using SQL management studio.</p>
-<p>You can create plans for databases that you may wish to group together, or create individual ones if so desired.</p>
-<p>This document is based around using the maintenance plan wizard to create plans.</p>
-
-<ul>
-<li>Open the SQL Management Studio</li>
-<li>On the Management tab</li>
-<li>R-Click ‘Maintenance Plans’ and select ‘Maintenance Plan Wizard’</li>
-<li>Name it logically, and set the schedule as decided (Schedules can be changed as required)</li>
-<li>Select the required parts of the plan</li>
-<li>Customise to your requirements (including the schedule on which to run)</li>
-<li>Save the plan.</li>
-</ul>
-<p><font size="5"><strong>Maintenance plan wizard tasks</strong></font></p>
-<p>There are several predefined tasks in the wizard (mostly self explanatory):</p>
-
-<ul>
-<li><p>Check database Integrity</p></li>
-<li><p>Shrink Database</p></li>
-<li><p>Reorganise Index</p></li>
-<li><p>Rebuild Index</p></li>
-<li><p>Update Statistics</p></li>
-<li><p>Clean Up History</p></li>
-<li><p>Execute SQL Server Agent Job</p></li>
-<li><p>Back Up Database (Full)</p></li>
-<li><p>Back Up Database (Incremental)</p></li>
-<li><p>Back Up Database (Transaction Log)</p></li>
-<li><p>Maintenance Cleanup Task</p></li>
-</ul>
-<p>Ref: https://docs.microsoft.com/en-us/sql/relational-databases/maintenance-plans/use-the-maintenance-plan-wizard?view=sql-server-ver15</p>
-<p><img src="../../../assets/backup/SQLMP01.png" /></p>
-<p><font size="5"><strong>But what do they do?</strong></font></p>
-<p><font size="4"><strong>Check Database Integrity</strong></font>
-- This task ensures that any integrity problems with the database are reported, thereby allowing them to be addressed later by a system administrator or database owner</p>
-<p><font size="4"><strong>Shrink Database</strong></font>
-- This task attempts to reduce the size of the selected database(s)</p>
-<p><font size="4"><strong>Reorganise Index</strong></font>
-- This task moving attempts to move index pages into a more efficient search order. 
-- Carrying out this task will improve the database performance, particularly if the data has changed a lot over the time since it was last ran</p>
-<p><font size="4"><strong>Rebuild Index</strong></font>
-- This task rebuilds the index pages, making them more efficient. As with reorganising the index this may give you performance gains</p>
-<p><font size="4"><strong>Update Statistics</strong></font>
-- This task defines the table and index statistics that will be updated</p>
-<p><font size="4"><strong>Clean Up History</strong></font>
-- Use this task to define the database or databases where you want to discard old task history.</p>
-<p><font size="4"><strong>Execute SQL Server Agent Job</strong></font>
-- This task allows the plan to execute one (or many) of the stored procedures via the SQL Server Agent via EXEC sp_start_job T-SQL command which you may require. Or indeed, procedures of your own.</p>
-<p><font size="4"><strong>Back Up Database (Full)</strong></font>
-- This initiates a full backup of a database or multiple databases locally on the SQL Server. If you use this to complement your regular backup schedule run it at different times. Refer to your backup configuration documentation.</p>
-<p><font size="4"><strong>Back Up Database (Incremental)</strong></font>
-- This initiates an incremental backup of a database or multiple databases locally on the SQL Server. This is a useful task to work with the above ‘Full’ Job if you have large databases with rapidly changing data, as it will reduce a backup time</p>
-<p><font size="4"><strong>Back Up Database (Transaction Log)</strong></font>
-- This initiates a backup of the transaction logs for a database or multiple databases locally on the SQL Server. Refer to the Transaction Log
-Backup documentation for further guidance.</p>
-<p><font size="4"><strong>Maintenance Cleanup Task</strong></font>
-- This task allows you to specify the types of files to delete as part of the maintenance plan, including text reports created by maintenance plans and database backup file. This is a task to run regularly to keep your database and file structure in a healthy state</p>
-<p><font size="5"><strong>Useful maintenance plan configurations</strong></font></p>
-<p><font size="4"><strong>Full Backup with Maintenance Example</strong></font>
-<font size="3"><strong>Primary Benefit: Optimises your (selected) databases and backs them up</strong></font></p>
-
-<ul>
-<li>Check Integrity</li>
-<li>Rebuild Index</li>
-<li>Update Statistics</li>
-<li>Backup (Full)</li>
-</ul>
-<p><font size="4"><strong>Cleanup Plan Example</strong></font>
-<font size="3"><strong>Primary Benefit: Keeps your (selected) databases in optimal condition</strong></font>
-- Check Integrity
-- Rebuild Index
-- Update Statistics
-- Maintenance Cleanup Task</p>
-<p><font size="5"><strong>Building a maintenance plan</strong></font>
-- Except for pure backup tasks (such as a transaction log backup), you will generally build up a maintenance plan up of a number of tasks.
-- Think about the order you wish to do them in and consider the best time for which to run them.
-- The tasks you wish to carry out are selected on the initial screen (as illustrated on the previous slide).</p>
-<p><font size="5"><strong>Oracle Maintenance Plans</strong></font>
-- For Oracle Systems, consider building a plan using some of the items detailed on the following slide:</p>
-
-<ul>
-<li><p>The intention for Oracle maintenance plans are exactly the same as for SQL databases, providing the same benefits.</p></li>
-<li><p>The commands may be slightly different, but the activities are basically the same as for MS-SQL.</p></li>
-<li><p>They ensure your database is optimised, regularly backed up, and free of inconsistencies.</p></li>
-<li><p>Refer to specific guidance for your version of Oracle and consult with your support organisation to see how you can improve on the maintenance plans which may already be in place.
-Oracle have a lot of detail in their online administration guides :</p></li>
-<li><p>https://docs.oracle.com/cd/B28359_01/server.111/b28310/tasks.htm#BABJIJFC</p></li>
-</ul>
-<p><font size="5"><strong>Oracle maintenance plans</strong></font></p>
-<p><font size="4"><strong>Popular Oracle DB maintenance areas are:</strong></font>
-<font size="3"><strong>Database integrity</strong></font>
-- DBVERIFY and ANALYZE VALIDATE
-<font size="3"><strong>History cleanup</strong></font>
-- Manage the history of backups and logs
-<font size="3"><strong>Indexes</strong></font>
-- Rebuild indexes and reorganise tables
-<font size="3"><strong>Statistics</strong></font>
-- Gather Object and system statistics</p>
-<p><font size="5"><strong>Testing a maintenance plan</strong></font>
-- Although you will have tested your plan at the point of creation, periodically you should review it is running correctly by reviewing the status of your plans in the SSMS (SQL server management studio), and the log files viewable there within.</p>
+            <h1 id="incident-management">Incident Management</h1>
+<p><object data="ad.pdf" type="application/pdf" width="100%" height="500%">
+    <embed src="../../../assets/cyberclinics/DLUHC-Local Digital CYBER - IT Disaster Recovery Plan.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="700">
+    </embed>
+</object></p>
 
             
           </main>
